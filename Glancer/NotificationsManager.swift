@@ -67,17 +67,10 @@ class NotificationsManager: ScheduleUpdateHandler, PrefsUpdateHandler
 		let analyst = block.analyst
 		var date: Date = analyst.getStartTime().asDate()
 		
-		Debug.out("A:" + dateFormatter.string(from: date))
-		
 		let blockStartDateId: Int = block.weekday.id
 		let todayId: Int = TimeUtils.getDayOfWeek(date: Date())
 		
-		var dayMultiplier: Int = blockStartDateId - todayId
-		
-		if dayMultiplier >= 0
-		{
-			dayMultiplier -= 7
-		}
+		let dayMultiplier: Int = blockStartDateId - todayId
 		
 		var alertBody = ""
 		
@@ -91,12 +84,7 @@ class NotificationsManager: ScheduleUpdateHandler, PrefsUpdateHandler
 			alertBody = "5 minutes until \(analyst.getDisplayName())"
 			
 			date = date.addingTimeInterval(-60 * 5) // call 5 minutes before the class starts
-			
-			Debug.out("B:" + dateFormatter.string(from: date))
-			
 			date = date.addingTimeInterval(TimeInterval(60 * 60 * 24 * dayMultiplier)) // Register for the previous week so it for sure works this week
-			
-			Debug.out("C:" + dateFormatter.string(from: date))
 		}
 		
 		Debug.out("Adding notification with alert: '\(alertBody)' on date: \(dateFormatter.string(from: date))")
@@ -107,10 +95,11 @@ class NotificationsManager: ScheduleUpdateHandler, PrefsUpdateHandler
 	{
 		let notification: UILocalNotification = UILocalNotification()
 		notification.alertAction = "Knight Life"
-		notification.repeatInterval = NSCalendar.Unit.weekOfYear
-		notification.soundName = UILocalNotificationDefaultSoundName
 		notification.alertBody = text
 		notification.fireDate = fireDate
+
+		notification.soundName = UILocalNotificationDefaultSoundName
+		notification.repeatInterval = .weekOfYear
 		UIApplication.shared.scheduleLocalNotification(notification)
 	}
 }
