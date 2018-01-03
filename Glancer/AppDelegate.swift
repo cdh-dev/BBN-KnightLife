@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
@@ -38,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     }
 	
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
-	{        
+	{
         let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
         var tokenString = ""
         
@@ -90,13 +89,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 			
             task.resume()
         }
-        
-        let currentInstallation = PFInstallation.current()
-        
-        currentInstallation.setDeviceTokenFrom(deviceToken)
-        currentInstallation.saveInBackground { (succeeded, e) -> Void in
-            // TODO: implement?
-        }
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error)
@@ -106,20 +98,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
 	{
-        if let aps = userInfo["aps"] as? NSDictionary
+		if let aps = userInfo as? [String: Any], let type = aps["type"] as? Int
 		{
-            let message: String = aps["alert"] as! String;
-            
-            if (message == "Auto-Updating...")
+			if type == 0 // Update local schedule
 			{
-                if (ScheduleManager.instance.loadBlocks())
-				{
-                    completionHandler(UIBackgroundFetchResult.newData);
-                }
-            }
-        }
-        
-        PFPush.handle(userInfo)
+				ScheduleManager.instance.loadBlocks()
+			}
+		}
     }
 	
     func applicationWillResignActive(_ application: UIApplication)
@@ -148,16 +133,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 	{
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
+	
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
 	{
-        if (ScheduleManager.instance.loadBlocks())
-		{
-            completionHandler(.newData)
-        } else
-		{
-            completionHandler(.failed)
-        }
+        ScheduleManager.instance.loadBlocks()
     }
-    
 }
