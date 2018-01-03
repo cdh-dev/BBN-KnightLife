@@ -29,6 +29,10 @@ class HomeViewManager: UIViewController, ScheduleUpdateHandler, PrefsUpdateHandl
 	
 	@IBOutlet weak var nextLabel: UILabel!
 	
+	@IBOutlet weak var refreshButton: UIButton!
+	@IBOutlet weak var refreshingIndicator: UIActivityIndicatorView!
+	var canRefresh = true
+	
 	override func viewDidLoad()
 	{
 		super.viewDidLoad()
@@ -38,6 +42,8 @@ class HomeViewManager: UIViewController, ScheduleUpdateHandler, PrefsUpdateHandl
 		
 		ScheduleManager.instance.addHandler(self)
 		UserPrefsManager.instance.addHandler(self)
+		
+		setRefreshing(false)
 	}
 	
 	override func 
@@ -58,6 +64,32 @@ class HomeViewManager: UIViewController, ScheduleUpdateHandler, PrefsUpdateHandl
 		self.timer.invalidate()
 	}
 	
+	private func setRefreshing(_ refreshing: Bool)
+	{
+		if refreshing
+		{
+			self.refreshButton.isHidden = true
+			self.refreshingIndicator.startAnimating()
+		} else
+		{
+			self.refreshingIndicator.stopAnimating()
+			self.refreshButton.isHidden = false
+		}
+	}
+	
+	@IBAction func refreshButtonClicked(_ sender: Any)
+	{
+		if !self.canRefresh
+		{
+			return
+		}
+		
+		self.setRefreshing(true)
+		self.canRefresh = false
+
+		ScheduleManager.instance.loadBlocks()
+	}
+	
 	@objc func updateTime()
 	{
 		if !ScheduleManager.instance.scheduleLoaded
@@ -71,7 +103,12 @@ class HomeViewManager: UIViewController, ScheduleUpdateHandler, PrefsUpdateHandl
 	
 	func scheduleDidUpdate(didUpdateSuccessfully: Bool)
 	{
-		self.updateViews()
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5)
+		{
+			self.updateViews()
+			self.canRefresh = true
+			self.setRefreshing(false)
+		}
 	}
 	
 	func prefsDidUpdate(_ type: UserPrefsManager.PrefsUpdateType)
