@@ -103,9 +103,18 @@ class HomeViewManager: UIViewController, ScheduleUpdateHandler, PrefsUpdateHandl
 	
 	func scheduleDidUpdate(didUpdateSuccessfully: Bool)
 	{
+		if self.canRefresh // Foreign call
+		{
+			self.updateViews()
+			self.tableView.setWeekData()
+			return
+		}
+		
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5)
 		{
 			self.updateViews()
+			self.tableView.setWeekData()
+			
 			self.canRefresh = true
 			self.setRefreshing(false)
 		}

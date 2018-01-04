@@ -13,10 +13,21 @@
 		740756CC1C33720A0039844B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740756CB1C33720A0039844B /* Label.swift */; };
 		C019C1611F7D3CED00FC4EED /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C019C1601F7D3CED00FC4EED /* Launch.storyboard */; };
 		C03D148B1F79479C00211D28 /* HomeViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03D148A1F79479C00211D28 /* HomeViewManager.swift */; };
+		C05A820B1FFDCDAE009F461E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C093F6331FFDA0BC004B886F /* TodayViewController.swift */; };
 		C06220E51F74A8930032A2EC /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06220E41F74A8930032A2EC /* Debug.swift */; };
 		C069CF771F6B697E001FE527 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069CF761F6B697E001FE527 /* NotificationsManager.swift */; };
 		C0707FBE1F69720800C7D2ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0707FBD1F69720800C7D2ED /* Schedule.swift */; };
 		C0707FC01F69753100C7D2ED /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0707FBF1F69753100C7D2ED /* Storage.swift */; };
+		C08EF6AB1FFDC30A0033B64A /* UserPrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D3BB1F69E07500DBDCAD /* UserPrefsManager.swift */; };
+		C08EF6AC1FFDC30F0033B64A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D3BF1F6A07D500DBDCAD /* Utils.swift */; };
+		C08EF6AD1FFDC3190033B64A /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0707FBD1F69720800C7D2ED /* Schedule.swift */; };
+		C08EF6B01FFDCB310033B64A /* Images.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 5BD285E31B03CF29007A0472 /* Images.xcassets */; };
+		C08EF6B11FFDCB310033B64A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0707FBF1F69753100C7D2ED /* Storage.swift */; };
+		C08EF6B41FFDCB310033B64A /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06220E41F74A8930032A2EC /* Debug.swift */; };
+		C08EF6B81FFDCB730033B64A /* WebCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D3B91F69874A00DBDCAD /* WebCall.swift */; };
+		C093F6311FFDA0BC004B886F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C093F61D1FFD9E5E004B886F /* NotificationCenter.framework */; };
+		C093F6371FFDA0BC004B886F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C093F6351FFDA0BC004B886F /* MainInterface.storyboard */; };
+		C093F63B1FFDA0BC004B886F /* Class Schedule.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C093F6301FFDA0BC004B886F /* Class Schedule.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0A5D3BA1F69874A00DBDCAD /* WebCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D3B91F69874A00DBDCAD /* WebCall.swift */; };
 		C0A5D3BC1F69E07500DBDCAD /* UserPrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D3BB1F69E07500DBDCAD /* UserPrefsManager.swift */; };
 		C0A5D3C01F6A07D500DBDCAD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5D3BF1F6A07D500DBDCAD /* Utils.swift */; };
@@ -25,13 +36,31 @@
 		E4AAC62330C7499CB17BB577 /* Pods_Glancer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65CD61AE617241920A2BF75 /* Pods_Glancer.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C05A820D1FFDD394009F461E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BD285CF1B03CF29007A0472 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BD285D61B03CF29007A0472;
+			remoteInfo = Glancer;
+		};
+		C093F6391FFDA0BC004B886F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BD285CF1B03CF29007A0472 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C093F62F1FFDA0BC004B886F;
+			remoteInfo = "Class Schedule";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		5BC261901B0EA7D700AEBAC1 /* Embed App Extensions */ = {
+		C093F63F1FFDA0BC004B886F /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				C093F63B1FFDA0BC004B886F /* Class Schedule.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +83,11 @@
 		C069CF761F6B697E001FE527 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		C0707FBD1F69720800C7D2ED /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		C0707FBF1F69753100C7D2ED /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		C093F61D1FFD9E5E004B886F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C093F6301FFDA0BC004B886F /* Class Schedule.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Class Schedule.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C093F6331FFDA0BC004B886F /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C093F6361FFDA0BC004B886F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C093F6381FFDA0BC004B886F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0A5D3B91F69874A00DBDCAD /* WebCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebCall.swift; sourceTree = "<group>"; };
 		C0A5D3BB1F69E07500DBDCAD /* UserPrefsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPrefsManager.swift; sourceTree = "<group>"; };
 		C0A5D3BF1F6A07D500DBDCAD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -68,6 +102,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4AAC62330C7499CB17BB577 /* Pods_Glancer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C093F62D1FFDA0BC004B886F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C093F6311FFDA0BC004B886F /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				D65CD61AE617241920A2BF75 /* Pods_Glancer.framework */,
+				C093F61D1FFD9E5E004B886F /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD285D91B03CF29007A0472 /* Glancer */,
+				C093F6321FFDA0BC004B886F /* Class Schedule */,
 				5BD285D81B03CF29007A0472 /* Products */,
 				17FD5315CD5A491C39DFBC34 /* Pods */,
 				5BBB877FDF3CF750C8AA6402 /* Frameworks */,
@@ -105,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD285D71B03CF29007A0472 /* Glancer.app */,
+				C093F6301FFDA0BC004B886F /* Class Schedule.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +186,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C093F6321FFDA0BC004B886F /* Class Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				C093F6331FFDA0BC004B886F /* TodayViewController.swift */,
+				C093F6351FFDA0BC004B886F /* MainInterface.storyboard */,
+				C093F6381FFDA0BC004B886F /* Info.plist */,
+			);
+			path = "Class Schedule";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,18 +207,37 @@
 				5BD285D31B03CF29007A0472 /* Sources */,
 				5BD285D41B03CF29007A0472 /* Frameworks */,
 				5BD285D51B03CF29007A0472 /* Resources */,
-				5BC261901B0EA7D700AEBAC1 /* Embed App Extensions */,
 				DFA2037FD5AC8DBBA0D42EFE /* [CP] Embed Pods Frameworks */,
 				572807A8D1A2EEDDD17E2D47 /* [CP] Copy Pods Resources */,
+				C093F63F1FFDA0BC004B886F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C093F63A1FFDA0BC004B886F /* PBXTargetDependency */,
 			);
 			name = Glancer;
 			productName = Glancer;
 			productReference = 5BD285D71B03CF29007A0472 /* Glancer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C093F62F1FFDA0BC004B886F /* Class Schedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C093F63C1FFDA0BC004B886F /* Build configuration list for PBXNativeTarget "Class Schedule" */;
+			buildPhases = (
+				C093F62C1FFDA0BC004B886F /* Sources */,
+				C093F62D1FFDA0BC004B886F /* Frameworks */,
+				C093F62E1FFDA0BC004B886F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C05A820E1FFDD394009F461E /* PBXTargetDependency */,
+			);
+			name = "Class Schedule";
+			productName = "Class Schedule";
+			productReference = C093F6301FFDA0BC004B886F /* Class Schedule.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -172,7 +246,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "BB&N";
 				TargetAttributes = {
@@ -196,6 +270,11 @@
 							};
 						};
 					};
+					C093F62F1FFDA0BC004B886F = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = P57BN8GJ33;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 5BD285D21B03CF29007A0472 /* Build configuration list for PBXProject "Glancer" */;
@@ -212,6 +291,7 @@
 			projectRoot = "";
 			targets = (
 				5BD285D61B03CF29007A0472 /* Glancer */,
+				C093F62F1FFDA0BC004B886F /* Class Schedule */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +304,14 @@
 				5BD072481C74AEB40074B56D /* Main.storyboard in Resources */,
 				5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */,
 				C019C1611F7D3CED00FC4EED /* Launch.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C093F62E1FFDA0BC004B886F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C093F6371FFDA0BC004B886F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +385,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C093F62C1FFDA0BC004B886F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08EF6B81FFDCB730033B64A /* WebCall.swift in Sources */,
+				C08EF6B01FFDCB310033B64A /* Images.xcassets in Sources */,
+				C08EF6B11FFDCB310033B64A /* Storage.swift in Sources */,
+				C08EF6B41FFDCB310033B64A /* Debug.swift in Sources */,
+				C05A820B1FFDCDAE009F461E /* TodayViewController.swift in Sources */,
+				C08EF6AD1FFDC3190033B64A /* Schedule.swift in Sources */,
+				C08EF6AC1FFDC30F0033B64A /* Utils.swift in Sources */,
+				C08EF6AB1FFDC30A0033B64A /* UserPrefsManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C05A820E1FFDD394009F461E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BD285D61B03CF29007A0472 /* Glancer */;
+			targetProxy = C05A820D1FFDD394009F461E /* PBXContainerItemProxy */;
+		};
+		C093F63A1FFDA0BC004B886F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C093F62F1FFDA0BC004B886F /* Class Schedule */;
+			targetProxy = C093F6391FFDA0BC004B886F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C093F6351FFDA0BC004B886F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C093F6361FFDA0BC004B886F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5BD285F41B03CF29007A0472 /* Debug */ = {
@@ -346,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -395,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -419,7 +546,7 @@
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Glancer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,7 +577,7 @@
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Glancer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +588,56 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		C093F63D1FFDA0BC004B886F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = P57BN8GJ33;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Class Schedule/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MAD.BBN.KnightLife.Class-Schedule";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C093F63E1FFDA0BC004B886F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P57BN8GJ33;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Class Schedule/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MAD.BBN.KnightLife.Class-Schedule";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -481,6 +658,15 @@
 			buildConfigurations = (
 				5BD285F71B03CF29007A0472 /* Debug */,
 				5BD285F81B03CF29007A0472 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C093F63C1FFDA0BC004B886F /* Build configuration list for PBXNativeTarget "Class Schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C093F63D1FFDA0BC004B886F /* Debug */,
+				C093F63E1FFDA0BC004B886F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
