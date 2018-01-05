@@ -16,18 +16,18 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Class_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v26-95-QE5" userLabel="Container-Now">
-                                <rect key="frame" x="15" y="0.0" width="190" height="110"/>
+                                <rect key="frame" x="15" y="0.0" width="132" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIk-fS-JhS" userLabel="Background">
-                                        <rect key="frame" x="0.0" y="25" width="60" height="60"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="55" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnw-pb-Cth">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -38,8 +38,8 @@
                                             <constraint firstItem="Lnw-pb-Cth" firstAttribute="leading" secondItem="jIk-fS-JhS" secondAttribute="leading" id="OiN-kc-8FW"/>
                                             <constraint firstAttribute="trailing" secondItem="Lnw-pb-Cth" secondAttribute="trailing" id="USI-sm-S6k"/>
                                             <constraint firstAttribute="bottom" secondItem="Lnw-pb-Cth" secondAttribute="bottom" id="XWo-Ng-vHU"/>
-                                            <constraint firstAttribute="height" constant="60" id="eed-jv-HIW"/>
-                                            <constraint firstAttribute="width" constant="60" id="isi-Z8-ceL"/>
+                                            <constraint firstAttribute="height" constant="55" id="eed-jv-HIW"/>
+                                            <constraint firstAttribute="width" constant="55" id="isi-Z8-ceL"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -47,14 +47,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" text="School Starts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEa-wY-9zZ">
-                                        <rect key="frame" x="70" y="26" width="120" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" text="History" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEa-wY-9zZ">
+                                        <rect key="frame" x="65" y="31" width="67" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" text="300 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6i-U8-n7O">
-                                        <rect key="frame" x="70" y="55" width="120" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <rect key="frame" x="65" y="55" width="67" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jPL-vg-bcJ" userLabel="Container-Next">
-                                <rect key="frame" x="215" y="29.5" width="90" height="52"/>
+                                <rect key="frame" x="395" y="29.5" width="90" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Science" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRH-N6-FnY">
                                         <rect key="frame" x="8" y="5" width="74" height="21"/>
@@ -106,7 +106,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0a-3C-4BZ">
-                                <rect key="frame" x="138" y="44.5" width="44" height="21"/>
+                                <rect key="frame" x="228" y="44.5" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -126,7 +126,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="110"/>
+                    <size key="freeformSize" width="500" height="110"/>
                     <connections>
                         <outlet property="blockBackground" destination="jIk-fS-JhS" id="bGi-XT-Yp6"/>
                         <outlet property="blockLabel" destination="Lnw-pb-Cth" id="qRe-ZG-y8c"/>

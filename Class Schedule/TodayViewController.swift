@@ -30,18 +30,11 @@ class TodayViewController: UIViewController, NCWidgetProviding
     override func viewDidLoad()
 	{
         super.viewDidLoad()
-	}
-	
-	override func viewWillAppear(_ animated: Bool)
-	{
+		
+		ScheduleManager.instance.loadBlocks()
 		updateView()
-		self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TodayViewController.updateTime), userInfo: nil, repeats: true)
-	}
-	
-	override func viewWillDisappear(_ animated: Bool)
-	{
-		self.timer.invalidate()
-		self.timer = nil
+		
+		self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
 	}
 	
 	@objc func updateTime()
@@ -52,9 +45,7 @@ class TodayViewController: UIViewController, NCWidgetProviding
 	func updateView()
 	{
 		let state = ScheduleManager.instance.getCurrentScheduleInfo()
-		
-		print(state)
-		
+				
 		if state.scheduleState == .inClass
 		{
 			self.statusLabel.isHidden = true
@@ -138,6 +129,9 @@ class TodayViewController: UIViewController, NCWidgetProviding
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void))
 	{
-        completionHandler(NCUpdateResult.newData)
+		ScheduleManager.instance.loadBlocks()
+		UserPrefsManager.instance.loadPrefs()
+		
+		completionHandler(NCUpdateResult.newData)
     }
 }

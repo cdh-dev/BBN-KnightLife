@@ -44,13 +44,6 @@
 			remoteGlobalIDString = 5BD285D61B03CF29007A0472;
 			remoteInfo = Glancer;
 		};
-		C093F6391FFDA0BC004B886F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5BD285CF1B03CF29007A0472 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C093F62F1FFDA0BC004B886F;
-			remoteInfo = "Class Schedule";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +71,7 @@
 		5BD285E31B03CF29007A0472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		740756CB1C33720A0039844B /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		C019C1601F7D3CED00FC4EED /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		C03B1E521FFDE5BB00B24506 /* Class Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Class Schedule.entitlements"; sourceTree = "<group>"; };
 		C03D148A1F79479C00211D28 /* HomeViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewManager.swift; sourceTree = "<group>"; };
 		C06220E41F74A8930032A2EC /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		C069CF761F6B697E001FE527 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
@@ -189,6 +183,7 @@
 		C093F6321FFDA0BC004B886F /* Class Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				C03B1E521FFDE5BB00B24506 /* Class Schedule.entitlements */,
 				C093F6331FFDA0BC004B886F /* TodayViewController.swift */,
 				C093F6351FFDA0BC004B886F /* MainInterface.storyboard */,
 				C093F6381FFDA0BC004B886F /* Info.plist */,
@@ -214,7 +209,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C093F63A1FFDA0BC004B886F /* PBXTargetDependency */,
 			);
 			name = Glancer;
 			productName = Glancer;
@@ -274,6 +268,11 @@
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = P57BN8GJ33;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -408,11 +407,6 @@
 			target = 5BD285D61B03CF29007A0472 /* Glancer */;
 			targetProxy = C05A820D1FFDD394009F461E /* PBXContainerItemProxy */;
 		};
-		C093F63A1FFDA0BC004B886F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C093F62F1FFDA0BC004B886F /* Class Schedule */;
-			targetProxy = C093F6391FFDA0BC004B886F /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -546,7 +540,7 @@
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Glancer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -577,7 +571,7 @@
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Glancer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -599,6 +593,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Class Schedule/Class Schedule.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -606,7 +601,7 @@
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Class Schedule/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MAD.BBN.KnightLife.Class-Schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -625,13 +620,14 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Class Schedule/Class Schedule.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Class Schedule/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MAD.BBN.KnightLife.Class-Schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";

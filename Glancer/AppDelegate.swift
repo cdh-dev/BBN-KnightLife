@@ -45,51 +45,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 		{
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
-        
+		        
         print("Device Token:", tokenString)
 		
-		var savedInDB: Bool = false
-		if Storage.DB_SAVED.exists()
-		{
-			savedInDB = Storage.DB_SAVED.getValue() as! Bool
-		} else
-		{
-			Storage.DB_SAVED.set(data: false)
-		}
+		var request = URLRequest(url: URL(string: "https://bbnknightlife.herokuapp.com/api/deviceTokens/")!)
+		request.httpMethod = "POST"
+		request.httpBody = "deviceToken=\(tokenString)".data(using: .utf8)
 
-        let tokenStringPub = tokenString
+		let task = URLSession.shared.dataTask(with: request)
+		{ data, response, error in
+			guard let data = data, error == nil else
+			{                                                 // check for fundamental networking error
+				print("error=\(error!)")
+				return
+			}
+			
+			if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200
+			{           // check for http errors
+				print("statusCode should be 200, but is \(httpStatus.statusCode)")
+				print("response = \(response!)")
+			}
+			
+			Debug.out("Recieved a response to token insert")
+			print(String(data: data, encoding: .utf8))
+		}
 		
-        if (!savedInDB)
-		{
-			Storage.DB_SAVED.set(data: true)
-			
-            var request = URLRequest(url: URL(string: "https://bbnknightlife.herokuapp.com/api/deviceTokens/")!)
-            request.httpMethod = "POST"
-            // let postString = "deviceToken=13234323"
-            let postString = "deviceToken=" + tokenStringPub
-            request.httpBody = postString.data(using: .utf8)
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data, error == nil else
-				{                                                 // check for fundamental networking error
-                    print("error=\(error!)")
-                    return
-                }
-				
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200
-				{           // check for http errors
-                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response!)")
-                    
-                }
-                
-                let responseString = String(data: data, encoding: .utf8)
-//                print("responseString = \(responseString!)")
-				
-            }
-			
-            task.resume()
-        }
-    }
+		task.resume()
+	}
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error)
 	{
