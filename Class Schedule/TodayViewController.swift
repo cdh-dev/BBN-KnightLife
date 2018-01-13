@@ -25,16 +25,42 @@ class TodayViewController: UIViewController, NCWidgetProviding
 	@IBOutlet weak var nextBlockLabel: UILabel!
 	@IBOutlet weak var nextLabel: UILabel!
 	
-	var timer: Timer!
+	var timer: Timer?
 	
     override func viewDidLoad()
 	{
         super.viewDidLoad()
 		
+		formatViews()
+		
 		ScheduleManager.instance.loadBlocks()
 		updateView()
+	}
+	
+	private func formatViews()
+	{
+		self.containerNext.layer.borderWidth = CGFloat(3)
+	}
+	
+	override func viewWillAppear(_ animated: Bool)
+	{
+		super.viewWillAppear(animated)
 		
-		self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+		if self.timer == nil
+		{
+			self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+		}
+	}
+	
+	override func viewDidDisappear(_ animated: Bool)
+	{
+		super.viewDidDisappear(animated)
+		
+		if self.timer != nil
+		{
+			self.timer!.invalidate()
+			self.timer = nil
+		}
 	}
 	
 	@objc func updateTime()
@@ -51,18 +77,21 @@ class TodayViewController: UIViewController, NCWidgetProviding
 			self.statusLabel.isHidden = true
 			self.containerNow.isHidden = false
 			
+			self.blockBackground.frame = CGRect(x: self.blockBackground.frame.origin.x, y: self.blockBackground.frame.origin.y, width: self.blockBackground.frame.height, height: self.blockBackground.frame.height)
+
 			self.blockBackground.backgroundColor = Utils.getUIColorFromHex(state.curBlock!.analyst.getColor())
 			self.blockLabel.text = state.curBlock!.analyst.getDisplayLetter()
 			
 			self.curClassLabel.text = state.curBlock!.analyst.getDisplayName(true)
-			self.curTimeLabel.text = "for \(state.minutesRemaining) min"
+			self.curTimeLabel.text = "for \(TimeUtils.formatMinutesToString(state.minutesRemaining))"
 			
 			if let nextBlock = state.nextBlock
 			{
 				containerNext.isHidden = false
+				containerNext.layer.borderColor = Utils.getUIColorFromHex(nextBlock.analyst.getColor()).cgColor
 				
 				nextBlockLabel.text = nextBlock.analyst.getDisplayName(true)
-				nextLabel.text = "next"
+				nextLabel.text = "Next"
 			} else
 			{
 				containerNext.isHidden = true
@@ -73,36 +102,43 @@ class TodayViewController: UIViewController, NCWidgetProviding
 			self.containerNext.isHidden = true
 			self.containerNow.isHidden = false
 			
+			self.blockBackground.frame = CGRect(x: self.blockBackground.frame.origin.x, y: self.blockBackground.frame.origin.y, width: self.blockBackground.frame.height, height: self.blockBackground.frame.height)
+			
 			self.blockBackground.backgroundColor = Utils.getUIColorFromHex(state.nextBlock!.analyst.getColor())
 			self.blockLabel.text = String(state.minutesRemaining)
 			
 			self.curClassLabel.text = state.nextBlock!.analyst.getDisplayName(true)
-			self.curTimeLabel.text = "get to class"
+			self.curTimeLabel.text = "Get to class"
 		} else if state.scheduleState == .beforeSchool
 		{
 			self.statusLabel.isHidden = true
 			self.containerNext.isHidden = false
 			self.containerNow.isHidden = false
 			
-			self.blockBackground.backgroundColor = Utils.getUIColorFromHex("999999")
+			self.blockBackground.frame = CGRect(x: self.blockBackground.frame.origin.x, y: self.blockBackground.frame.origin.y, width: CGFloat(0), height: self.blockBackground.frame.height)
+			
+			self.blockBackground.backgroundColor = Utils.getUIColorFromHex("000000")
 			self.blockLabel.text = ""
 			
 			self.curClassLabel.text = "School Starts"
-			self.curTimeLabel.text = "in \(state.minutesRemaining) min"
+			self.curTimeLabel.text = "in \(TimeUtils.formatMinutesToString(state.minutesRemaining))"
 			
 			self.nextBlockLabel.text = state.nextBlock!.analyst.getDisplayName(true)
-			self.nextLabel.text = "first class"
+			containerNext.layer.borderColor = Utils.getUIColorFromHex(state.nextBlock!.analyst.getColor()).cgColor
+			self.nextLabel.text = "First class"
 		} else if state.scheduleState == .beforeSchoolGetToClass
 		{
 			self.statusLabel.isHidden = true
 			self.containerNext.isHidden = true
 			self.containerNow.isHidden = false
 			
+			self.blockBackground.frame = CGRect(x: self.blockBackground.frame.origin.x, y: self.blockBackground.frame.origin.y, width: self.blockBackground.frame.height, height: self.blockBackground.frame.height)
+
 			self.blockBackground.backgroundColor = Utils.getUIColorFromHex(state.nextBlock!.analyst.getColor())
 			self.blockLabel.text = String(state.minutesRemaining)
 			
 			self.curClassLabel.text = state.nextBlock!.analyst.getDisplayName(true)
-			self.curTimeLabel.text = "get to class"
+			self.curTimeLabel.text = "Get to class"
 		} else if state.scheduleState == .noClass
 		{
 			self.statusLabel.isHidden = false
@@ -126,7 +162,7 @@ class TodayViewController: UIViewController, NCWidgetProviding
 			self.containerNext.isHidden = true
 		}
 	}
-    
+	
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void))
 	{
 		ScheduleManager.instance.loadBlocks()

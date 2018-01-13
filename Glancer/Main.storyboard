@@ -267,7 +267,7 @@
                             <constraint firstAttribute="trailing" secondItem="SvK-iD-jc9" secondAttribute="trailing" id="xzJ-2r-oRY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icon_home" selectedImage="icon_home" id="NK2-dA-SQ6">
+                    <tabBarItem key="tabBarItem" title="" image="icon_home_reg" selectedImage="icon_home" id="NK2-dA-SQ6">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -433,7 +433,7 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtK-Oz-2Nw" userLabel="Status Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.27129095792770386" green="0.51216697692871094" blue="0.80008721351623535" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.27058823529411763" green="0.51372549019607838" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="uOQ-7j-eNs"/>
                                 </constraints>
@@ -490,7 +490,7 @@
                             <constraint firstAttribute="trailing" secondItem="bIi-l5-N2P" secondAttribute="trailing" id="y1t-X2-8li"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icon_calendar" selectedImage="icon_calendar" id="obV-cy-Gty">
+                    <tabBarItem key="tabBarItem" title="" image="icon_calendar_reg" selectedImage="icon_calendar" id="obV-cy-Gty">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -515,7 +515,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.27119141819999998" green="0.51210063699999997" blue="0.80006009339999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.27058823529411763" green="0.51372549019607838" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="Jiy-hv-3ej" kind="relationship" relationship="viewControllers" id="6jh-Nm-cxe"/>
@@ -1235,7 +1235,7 @@
         <scene sceneID="8BP-D7-0DR">
             <objects>
                 <navigationController navigationBarHidden="YES" id="lJZ-6Y-Ts3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icon_settings" id="v64-sb-Zik">
+                    <tabBarItem key="tabBarItem" title="" image="icon_settings_reg" selectedImage="icon_settings" id="v64-sb-Zik">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
@@ -3117,9 +3117,12 @@
     <resources>
         <image name="icon_back" width="25" height="25"/>
         <image name="icon_calendar" width="25" height="25"/>
+        <image name="icon_calendar_reg" width="25" height="25"/>
         <image name="icon_home" width="25" height="25"/>
+        <image name="icon_home_reg" width="25" height="25"/>
         <image name="icon_refresh" width="25" height="25"/>
         <image name="icon_settings" width="25" height="25"/>
+        <image name="icon_settings_reg" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iIQ-b6-X53"/>

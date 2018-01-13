@@ -132,14 +132,14 @@ class HomeViewManager: UIViewController, ScheduleUpdateHandler, PrefsUpdateHandl
 		self.nextLabel.text = "Next"
 		
 		let state = ScheduleManager.instance.getCurrentScheduleInfo()
-
+		
 		self.tableOverrideId = nil // Reset it. It'll get changed below if we really want it overriden.
 		self.tableView.showExpiredBlocks = true
 		
 		if state.scheduleState == .inClass
 		{
 			self.headerBlockLabel.text = state.curBlock!.analyst.getDisplayName()
-			self.headerMinutesLabel.text = "for \(state.minutesRemaining) min"
+			self.headerMinutesLabel.text = "for \(TimeUtils.formatMinutesToString(state.minutesRemaining))"
 			
 			self.blockLabel.text = state.curBlock!.analyst.getDisplayName()
 			if state.nextBlock != nil
@@ -152,21 +152,21 @@ class HomeViewManager: UIViewController, ScheduleUpdateHandler, PrefsUpdateHandl
 		} else if state.scheduleState == .getToClass
 		{
 			self.headerBlockLabel.text = state.nextBlock!.analyst.getDisplayName()
-			self.headerMinutesLabel.text = "in \(state.minutesRemaining) min"
+			self.headerMinutesLabel.text = "in \(TimeUtils.formatMinutesToString(state.minutesRemaining))"
 			
 			self.blockLabel.text = "Get to Class"
 			self.nextBlockLabel.text = state.nextBlock!.analyst.getDisplayName()
 		} else if state.scheduleState == .beforeSchool
 		{
 			self.headerBlockLabel.text = "School Start"
-			self.headerMinutesLabel.text = "in \(state.minutesRemaining) min"
+			self.headerMinutesLabel.text = "in \(TimeUtils.formatMinutesToString(state.minutesRemaining))"
 			
 			self.blockLabel.text = "Before School"
 			self.nextBlockLabel.text = state.nextBlock!.analyst.getDisplayName()
 		} else if state.scheduleState == .beforeSchoolGetToClass
 		{
 			self.headerBlockLabel.text = state.nextBlock!.analyst.getDisplayName()
-			self.headerMinutesLabel.text = "in \(state.minutesRemaining) min"
+			self.headerMinutesLabel.text = "in \(TimeUtils.formatMinutesToString(state.minutesRemaining))"
 			
 			self.blockLabel.text = "Get to Class"
 			self.nextBlockLabel.text = state.nextBlock!.analyst.getDisplayName()

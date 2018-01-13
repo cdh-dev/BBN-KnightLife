@@ -80,11 +80,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
 	{
-		if let aps = userInfo as? [String: Any], let type = aps["type"] as? Int
+		if let aps = userInfo as? [String: Any]
 		{
-			if type == 0 // Update local schedule
+			if let data = aps["aps"] as? [String: Any]
 			{
-				ScheduleManager.instance.loadBlocks()
+				if let alert = data["alert"] as? String, alert == "Auto-Updating..."
+				{
+					ScheduleManager.instance.loadBlocks()
+					return
+				}
+			}
+			
+			if let type = aps["type"] as? Int
+			{
+				if type == 0 // Update local schedule
+				{
+					ScheduleManager.instance.loadBlocks()
+					return
+				}
 			}
 		}
     }

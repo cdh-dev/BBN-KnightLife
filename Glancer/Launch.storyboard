@@ -20,16 +20,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="TaE-R3-7y2">
-                                <rect key="frame" x="124.5" y="275.5" width="125" height="96"/>
+                                <rect key="frame" x="95" y="248.5" width="175" height="150.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="TaE-R3-7y2" secondAttribute="height" multiplier="250:191" id="3Nm-js-sGh"/>
-                                    <constraint firstAttribute="width" constant="125" id="HhA-HO-LPU"/>
+                                    <constraint firstAttribute="width" constant="175" id="79l-xb-FRJ"/>
+                                    <constraint firstAttribute="width" secondItem="TaE-R3-7y2" secondAttribute="height" multiplier="50:43" id="mcT-hj-kkT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TaE-R3-7y2" firstAttribute="centerX" secondItem="YEu-Wv-SfL" secondAttribute="centerX" id="npB-6q-Cth"/>
+                            <constraint firstItem="TaE-R3-7y2" firstAttribute="centerX" secondItem="YEu-Wv-SfL" secondAttribute="centerX" constant="-5" id="npB-6q-Cth"/>
                             <constraint firstItem="TaE-R3-7y2" firstAttribute="centerY" secondItem="YEu-Wv-SfL" secondAttribute="centerY" constant="-20" id="seM-RN-BTU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YEu-Wv-SfL"/>
@@ -41,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="250" height="191"/>
+        <image name="logo" width="150" height="129"/>
     </resources>
 </document>
