@@ -72,15 +72,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jPL-vg-bcJ" userLabel="Container-Next">
-                                <rect key="frame" x="395" y="29.5" width="90" height="52"/>
+                                <rect key="frame" x="436" y="28" width="49" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Science" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRH-N6-FnY">
-                                        <rect key="frame" x="8" y="5" width="74" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRH-N6-FnY">
+                                        <rect key="frame" x="27" y="5" width="14" height="22.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="next" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dI-2p-DsL">
-                                        <rect key="frame" x="49" y="26" width="33" height="21"/>
+                                        <rect key="frame" x="8" y="27.5" width="33" height="22.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                                 <constraints>
                                     <constraint firstItem="9dI-2p-DsL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jPL-vg-bcJ" secondAttribute="leading" constant="8" id="FO0-bg-Hwq"/>
                                     <constraint firstItem="zRH-N6-FnY" firstAttribute="top" secondItem="jPL-vg-bcJ" secondAttribute="top" constant="5" id="I2O-sf-uK1"/>
-                                    <constraint firstAttribute="height" priority="250" constant="1" id="LVa-OB-6DR"/>
+                                    <constraint firstAttribute="height" constant="55" id="LVa-OB-6DR"/>
                                     <constraint firstItem="zRH-N6-FnY" firstAttribute="bottom" secondItem="jPL-vg-bcJ" secondAttribute="centerY" id="SLV-7v-5bc"/>
                                     <constraint firstAttribute="bottom" secondItem="9dI-2p-DsL" secondAttribute="bottom" constant="5" id="buh-Qh-Kvq"/>
                                     <constraint firstAttribute="width" priority="250" constant="1" id="gf9-hC-ehX"/>
@@ -129,6 +129,8 @@
                     <size key="freeformSize" width="500" height="110"/>
                     <connections>
                         <outlet property="blockBackground" destination="jIk-fS-JhS" id="bGi-XT-Yp6"/>
+                        <outlet property="blockBackgroundHeightConstraint" destination="eed-jv-HIW" id="gxL-Sy-RAz"/>
+                        <outlet property="blockBackgroundWidthConstraint" destination="isi-Z8-ceL" id="dcx-Dz-vnE"/>
                         <outlet property="blockLabel" destination="Lnw-pb-Cth" id="qRe-ZG-y8c"/>
                         <outlet property="containerNext" destination="jPL-vg-bcJ" id="nNa-yO-uOj"/>
                         <outlet property="containerNow" destination="v26-95-QE5" id="cD0-i1-fWy"/>

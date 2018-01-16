@@ -19,11 +19,16 @@ class TodayViewController: UIViewController, NCWidgetProviding
 	@IBOutlet weak var blockBackground: UIView!
 	@IBOutlet weak var blockLabel: UILabel!
 	
+	@IBOutlet weak var blockBackgroundWidthConstraint: NSLayoutConstraint!
+	@IBOutlet weak var blockBackgroundHeightConstraint: NSLayoutConstraint!
+	
 	@IBOutlet weak var curClassLabel: UILabel!
 	@IBOutlet weak var curTimeLabel: UILabel!
 	
 	@IBOutlet weak var nextBlockLabel: UILabel!
 	@IBOutlet weak var nextLabel: UILabel!
+	
+	
 	
 	var timer: Timer?
 	
@@ -77,8 +82,9 @@ class TodayViewController: UIViewController, NCWidgetProviding
 			self.statusLabel.isHidden = true
 			self.containerNow.isHidden = false
 			
-			self.blockBackground.frame = CGRect(x: self.blockBackground.frame.origin.x, y: self.blockBackground.frame.origin.y, width: self.blockBackground.frame.height, height: self.blockBackground.frame.height)
-
+			self.blockBackgroundWidthConstraint.constant = self.blockBackgroundHeightConstraint.constant
+			self.updateViewConstraints()
+			
 			self.blockBackground.backgroundColor = Utils.getUIColorFromHex(state.curBlock!.analyst.getColor())
 			self.blockLabel.text = state.curBlock!.analyst.getDisplayLetter()
 			
@@ -102,7 +108,8 @@ class TodayViewController: UIViewController, NCWidgetProviding
 			self.containerNext.isHidden = true
 			self.containerNow.isHidden = false
 			
-			self.blockBackground.frame = CGRect(x: self.blockBackground.frame.origin.x, y: self.blockBackground.frame.origin.y, width: self.blockBackground.frame.height, height: self.blockBackground.frame.height)
+			self.blockBackgroundWidthConstraint.constant = self.blockBackgroundHeightConstraint.constant
+			self.updateViewConstraints()
 			
 			self.blockBackground.backgroundColor = Utils.getUIColorFromHex(state.nextBlock!.analyst.getColor())
 			self.blockLabel.text = String(state.minutesRemaining)
@@ -115,7 +122,8 @@ class TodayViewController: UIViewController, NCWidgetProviding
 			self.containerNext.isHidden = false
 			self.containerNow.isHidden = false
 			
-			self.blockBackground.frame = CGRect(x: self.blockBackground.frame.origin.x, y: self.blockBackground.frame.origin.y, width: CGFloat(0), height: self.blockBackground.frame.height)
+			self.blockBackgroundWidthConstraint.constant = CGFloat(0)
+			self.updateViewConstraints()
 			
 			self.blockBackground.backgroundColor = Utils.getUIColorFromHex("000000")
 			self.blockLabel.text = ""
@@ -132,8 +140,9 @@ class TodayViewController: UIViewController, NCWidgetProviding
 			self.containerNext.isHidden = true
 			self.containerNow.isHidden = false
 			
-			self.blockBackground.frame = CGRect(x: self.blockBackground.frame.origin.x, y: self.blockBackground.frame.origin.y, width: self.blockBackground.frame.height, height: self.blockBackground.frame.height)
-
+			self.blockBackgroundWidthConstraint.constant = self.blockBackgroundHeightConstraint.constant
+			self.updateViewConstraints()
+			
 			self.blockBackground.backgroundColor = Utils.getUIColorFromHex(state.nextBlock!.analyst.getColor())
 			self.blockLabel.text = String(state.minutesRemaining)
 			

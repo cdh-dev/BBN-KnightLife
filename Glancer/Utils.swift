@@ -19,8 +19,8 @@ class TimeUtils
 			return "\(minutes) min"
 		} else
 		{
-			let hours = minutes % 60
-			let minutesLeft = minutes - (60 * hours)
+			let hours = minutes / 60
+			let minutesLeft = minutes % 60
 			
 			if hours == 1
 			{
