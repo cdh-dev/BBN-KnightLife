@@ -111,15 +111,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shd-lV-mIA">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="110"/>
+                                <connections>
+                                    <action selector="openContainingApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="1xb-YL-1OX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="shd-lV-mIA" secondAttribute="bottom" id="3Fb-aI-Biw"/>
                             <constraint firstItem="v26-95-QE5" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="3tp-S1-97f"/>
                             <constraint firstItem="H0a-3C-4BZ" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="7yC-eb-iDG"/>
                             <constraint firstItem="v26-95-QE5" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jPL-vg-bcJ" secondAttribute="leading" constant="-10" id="FS4-Pr-jKx"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="top" secondItem="v26-95-QE5" secondAttribute="top" id="LnS-vc-7Js"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="shd-lV-mIA" secondAttribute="trailing" id="P4u-Lz-6vi"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="jPL-vg-bcJ" secondAttribute="trailing" constant="15" id="PBb-iu-FSd"/>
                             <constraint firstItem="v26-95-QE5" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="15" id="kK8-4M-oMR"/>
                             <constraint firstItem="jPL-vg-bcJ" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="okh-gd-wGf"/>
+                            <constraint firstItem="shd-lV-mIA" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="rHT-lc-I92"/>
+                            <constraint firstItem="shd-lV-mIA" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="rQF-FL-7fr"/>
                             <constraint firstItem="H0a-3C-4BZ" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="tOa-6Y-37m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>

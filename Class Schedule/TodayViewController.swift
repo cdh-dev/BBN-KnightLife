@@ -28,9 +28,12 @@ class TodayViewController: UIViewController, NCWidgetProviding
 	@IBOutlet weak var nextBlockLabel: UILabel!
 	@IBOutlet weak var nextLabel: UILabel!
 	
-	
-	
 	var timer: Timer?
+	
+	@IBAction func openContainingApp(_ sender: Any)
+	{
+		self.extensionContext?.open(URL(string: "MAD.BBN.KnightLife.URL.OpenApp://")!, completionHandler: nil)
+	}
 	
     override func viewDidLoad()
 	{
