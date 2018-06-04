@@ -65,3 +65,12 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+Pods/Alamofire
+Pods/Charcore
+Pods/FSCalendar
+Pods/Presentr
+Pods/Unbox
+Pods/Hero
+Pods/UnboxedAlamofire
+Pods/Target Support Files
+Glancer.xcworkspace/xcshareddata
