@@ -78,8 +78,6 @@
 		C02A2B141FAD527600D3A9CD /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A2B131FAD527600D3A9CD /* Block.swift */; };
 		C02A2B171FAD539E00D3A9CD /* DaySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A2B161FAD539E00D3A9CD /* DaySchedule.swift */; };
 		C02B91CB1FB6886E004E0D5D /* DayCourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B91CA1FB6886E004E0D5D /* DayCourseList.swift */; };
-		C02E5551211FA1AE00043C9E /* EventGradeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E5550211FA1AE00043C9E /* EventGradeStorage.swift */; };
-		C02E5552211FA34B00043C9E /* EventGradeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E5550211FA1AE00043C9E /* EventGradeStorage.swift */; };
 		C02E5555211FA44000043C9E /* EventsPrefsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E5554211FA44000043C9E /* EventsPrefsModule.swift */; };
 		C0315D71211B244400323661 /* PrefToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0315D70211B244400323661 /* PrefToggleCell.swift */; };
 		C0315D73211B248300323661 /* PrefToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0315D72211B248300323661 /* PrefToggleCell.xib */; };
@@ -296,7 +294,6 @@
 		C02A2B131FAD527600D3A9CD /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		C02A2B161FAD539E00D3A9CD /* DaySchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySchedule.swift; sourceTree = "<group>"; };
 		C02B91CA1FB6886E004E0D5D /* DayCourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCourseList.swift; sourceTree = "<group>"; };
-		C02E5550211FA1AE00043C9E /* EventGradeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventGradeStorage.swift; sourceTree = "<group>"; };
 		C02E5554211FA44000043C9E /* EventsPrefsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPrefsModule.swift; sourceTree = "<group>"; };
 		C0315D70211B244400323661 /* PrefToggleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefToggleCell.swift; sourceTree = "<group>"; };
 		C0315D72211B248300323661 /* PrefToggleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrefToggleCell.xib; sourceTree = "<group>"; };
@@ -668,14 +665,6 @@
 				C00232A61FA37EFC0019D328 /* CourseSchedule.swift */,
 			);
 			name = Elements;
-			sourceTree = "<group>";
-		};
-		C02E554F211FA12600043C9E /* Prefs */ = {
-			isa = PBXGroup;
-			children = (
-				C02E5550211FA1AE00043C9E /* EventGradeStorage.swift */,
-			);
-			name = Prefs;
 			sourceTree = "<group>";
 		};
 		C02E5553211FA42700043C9E /* Events */ = {
@@ -1381,7 +1370,6 @@
 		C0CB9C0E1FE4619A00437C5D /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				C02E554F211FA12600043C9E /* Prefs */,
 				C0CB9C1E1FE4695800437C5D /* Elements */,
 				C0CB9C161FE467FE00437C5D /* WebCall */,
 				C0CB9C0F1FE4634000437C5D /* EventManager.swift */,
@@ -1779,7 +1767,6 @@
 				C07EE28D2119EEF50034B383 /* CalendarView.swift in Sources */,
 				C0A123402115FF4000A72CD8 /* SettingsCourseColorCell.swift in Sources */,
 				C07D9128225EF72100A59345 /* Realm+KL.swift in Sources */,
-				C02E5551211FA1AE00043C9E /* EventGradeStorage.swift in Sources */,
 				C0A5F023210B9FBA00606ED3 /* BlockPayload.swift in Sources */,
 				C00232A51FA37E760019D328 /* Course.swift in Sources */,
 				C0600129211B2D0400ECAD1A /* BlocksPrefCell.swift in Sources */,
@@ -1882,7 +1869,6 @@
 				C0A9294E225DA04300CE2D12 /* TableSection+KL.swift in Sources */,
 				C01A6C752118CA2D000B7442 /* Scheme.swift in Sources */,
 				C07D9140225EF7E100A59345 /* BadgeTetheredPreferences.swift in Sources */,
-				C02E5552211FA34B00043C9E /* EventGradeStorage.swift in Sources */,
 				C01A6C652118C9BA000B7442 /* TimeDuration.swift in Sources */,
 				C01A6C4E2118C892000B7442 /* TodayViewController.swift in Sources */,
 				C01A6C712118CA1F000B7442 /* DayCourseList.swift in Sources */,
