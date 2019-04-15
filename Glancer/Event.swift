@@ -17,7 +17,7 @@ protocol Event {
 
 struct BlockEvent: Event {
 	
-	let block: BlockID
+	let block: Block.ID
 	let description: String
 	
 	let audience: [EventAudience]
