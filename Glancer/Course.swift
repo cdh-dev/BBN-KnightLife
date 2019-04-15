@@ -156,9 +156,8 @@ extension Course {
 		
 		set {
 			try! Realms.write {
-				let list = List<Int>()
-				list.append(objectsIn: newValue.map({ $0.rawValue }))
-				self._meetingDays = list
+				self._meetingDays.removeAll()
+				self._meetingDays.append(objectsIn: newValue.map({ $0.rawValue }))
 			}
 			
 			self.onUpdate.fire()
@@ -190,9 +189,8 @@ extension Course {
 				case .specificDays(let id, let days):
 					self._scheduleBlock = id == nil ? nil : id!.rawValue
 					
-					let list = List<Int>()
-					list.append(objectsIn: days.map({ $0.rawValue }))
-					self._meetingDays = list
+					self._meetingDays.removeAll()
+					self._meetingDays.append(objectsIn: days.map({ $0.rawValue }))
 				}
 			}
 			

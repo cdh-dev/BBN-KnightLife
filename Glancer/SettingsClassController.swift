@@ -105,9 +105,11 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 					path, day, selected in
 					
 					if selected {
-						self.course.schedule.addMeetingDay(day)
+						if !self.course.meetingDays.contains(day) {
+							self.course.meetingDays.append(day)
+						}
 					} else {
-						self.course.schedule.removeMeetingDay(day)
+						self.course.meetingDays.removeAll(where: { $0 == day })
 					}
 					
 					self.tableView.reloadRows(at: [path], with: .fade)
@@ -138,7 +140,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 		notifications.addDivider()
 		
 		notifications.addCell(PrefToggleCell(title: "Class End", on: self.course.afterClassNotifications) {
-			self.course.beforeClassNotifications = $0
+			self.course.afterClassNotifications = $0
 			self.needsNotificationUpdate()
 		})
 		
@@ -285,7 +287,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 			
 			switch self.course.schedule {
 			case .everyDay(let block): // Only need to change things if the value was changed.
-				self.course.schedule = .specificDays(block, DayOfWeek.weekdays())
+				self.course.schedule = .specificDays(block, self.course.meetingDays.isEmpty ? DayOfWeek.weekdays() : self.course.meetingDays)
 				self.needsNotificationUpdate()
 			default:
 				break

@@ -18,32 +18,6 @@ enum CourseSchedule {
 
 extension CourseSchedule {
 	
-	@discardableResult
-	mutating func addMeetingDay(_ day: DayOfWeek) -> Bool {
-		switch self {
-		case .specificDays(let block, var days):
-			days.append(day)
-			self = .specificDays(block, days)
-			return true
-		default: return false
-		}
-	}
-	
-	@discardableResult
-	mutating func removeMeetingDay(_ day: DayOfWeek) -> Bool {
-		switch self {
-		case .specificDays(let block, var days):
-			days = days.filter({ $0 != day })
-			self = .specificDays(block, days)
-			return true
-		default: return false
-		}
-	}
-	
-}
-
-extension CourseSchedule {
-	
 	func meetingDaysContains(_ day: DayOfWeek) -> Bool {
 		switch self {
 		case .specificDays(_, let days):
