@@ -81,6 +81,9 @@ extension Grade {
 			
 			Defaults[.userGrade] = newValue == nil ? nil : newValue!.rawValue
 			Grade.onUserGradeChange.fire(newValue)
+			
+			// Update server on this device's grade
+			
 		}
 	}
 	

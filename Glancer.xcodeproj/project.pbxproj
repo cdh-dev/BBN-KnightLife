@@ -14,7 +14,6 @@
 		A600C00A614BDF7292AD1D30 /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */; };
 		C006914F210EC55C0099CD57 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C006914E210EC55C0099CD57 /* SettingsController.swift */; };
 		C0107A3B212324D600C9A6D7 /* BottomPrefsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0107A3A212324D600C9A6D7 /* BottomPrefsModule.swift */; };
-		C0107A3E2123278F00C9A6D7 /* SurveyWebCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0107A3D2123278F00C9A6D7 /* SurveyWebCall.swift */; };
 		C01573BC20C462ED008CACA5 /* TodayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01573BB20C462ED008CACA5 /* TodayManager.swift */; };
 		C01862AA2118A2920042F38A /* TodayBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01862A92118A2920042F38A /* TodayBarCell.swift */; };
 		C01862AC2118A29E0042F38A /* TodayBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01862AB2118A29E0042F38A /* TodayBarCell.xib */; };
@@ -250,7 +249,6 @@
 		95FAF88FCF8A901540F9C3EB /* Pods-Glancer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glancer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Glancer/Pods-Glancer.release.xcconfig"; sourceTree = "<group>"; };
 		C006914E210EC55C0099CD57 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		C0107A3A212324D600C9A6D7 /* BottomPrefsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPrefsModule.swift; sourceTree = "<group>"; };
-		C0107A3D2123278F00C9A6D7 /* SurveyWebCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyWebCall.swift; sourceTree = "<group>"; };
 		C01573BB20C462ED008CACA5 /* TodayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayManager.swift; sourceTree = "<group>"; };
 		C01862A92118A2920042F38A /* TodayBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayBarCell.swift; sourceTree = "<group>"; };
 		C01862AB2118A29E0042F38A /* TodayBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayBarCell.xib; sourceTree = "<group>"; };
@@ -503,18 +501,9 @@
 		C0107A39212324C400C9A6D7 /* Bottom */ = {
 			isa = PBXGroup;
 			children = (
-				C0107A3C2123275C00C9A6D7 /* Web Call */,
 				C0107A3A212324D600C9A6D7 /* BottomPrefsModule.swift */,
 			);
 			name = Bottom;
-			sourceTree = "<group>";
-		};
-		C0107A3C2123275C00C9A6D7 /* Web Call */ = {
-			isa = PBXGroup;
-			children = (
-				C0107A3D2123278F00C9A6D7 /* SurveyWebCall.swift */,
-			);
-			name = "Web Call";
 			sourceTree = "<group>";
 		};
 		C01573BA20C462DC008CACA5 /* Today */ = {
@@ -1656,7 +1645,6 @@
 				C01ECD3F2129D3C80001C013 /* TodayAfterSchoolModule.swift in Sources */,
 				C024A03A211CC5150025C5B1 /* SettingsColorView.swift in Sources */,
 				C0C4550F2123B585004A41ED /* NothingUpcomingCell.swift in Sources */,
-				C0107A3E2123278F00C9A6D7 /* SurveyWebCall.swift in Sources */,
 				C021A315228C778200548FE8 /* Schedule.swift in Sources */,
 				C0E356722122746D00FDDE2F /* TabController.swift in Sources */,
 				C01ECD372129D12B0001C013 /* TodayNoClassModule.swift in Sources */,

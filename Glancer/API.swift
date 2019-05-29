@@ -10,10 +10,12 @@ import Foundation
 import Moya
 import Timepiece
 import SwiftyUserDefaults
+import SwiftyJSON
 
 enum API {
 	
-	case registerDevice(token: String)
+	case registerDevice(token: String, grade: Grade?)
+	case updateDeviceSettings(grade: Grade?)
 	
 	case getSurveyURL
 	
@@ -44,6 +46,8 @@ extension API: TargetType {
 		switch self {
 		case .registerDevice(_):
 			return "device/register"
+		case .updateDeviceSettings(_):
+			return "device/settings/change"
 			
 		case .getSurveyURL:
 			return "survey"
@@ -77,8 +81,11 @@ extension API: TargetType {
 	
 	var method: Moya.Method {
 		switch self {
-		case .registerDevice(_):
+		case .registerDevice(_, _):
 			return .post
+		case .updateDeviceSettings(_):
+			return .post
+			
 		default:
 			return .get
 		}
@@ -93,6 +100,9 @@ extension API: TargetType {
 	
 	var task: Task {
 		switch self {
+		case let .registerDevice(_, grade):
+//			return .requestJSONEncodable(JSON())
+			
 		case let .getEvents(categories, filters):
 			var parameters: [String: String] = [:]
 			
