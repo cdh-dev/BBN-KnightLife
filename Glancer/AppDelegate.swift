@@ -48,11 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		
 		BlockMetaM.loadLegacyData()
 		CourseM.loadLegacyData()
-		
 		ScheduleManager().loadLegacyData()
 		
 		// Listen to Refresh Push notifications
 		PushNotificationManager.instance.addListener(type: .REFRESH, listener: LunchPushListener())
+		PushNotificationManager.instance.addListener(type: .REFRESH, listener: SchedulePushListener())
 		PushNotificationManager.instance.addListener(type: .REFRESH, listener: EventPushListener())
 
         return true

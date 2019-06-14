@@ -37,10 +37,9 @@ class TodayController: DayController {
 		self.handleStateChange(state: TodayM.state)
 		
 //		Animate status bar for first load
-		let animateStatus: Bool = Globals.getData("animate-status") ?? false
 		self.showStatusBar = true
-		if animateStatus {
-			Globals.setData("animate-status", data: false)
+		if _ANIMATE_SPLASH_FADE {
+			_ANIMATE_SPLASH_FADE = false
 			
 			UIView.animate(withDuration: 0.5) {
 				self.setNeedsStatusBarAppearanceUpdate()

@@ -27,7 +27,6 @@
 		C01A6C632118C9BA000B7442 /* Calendar+KL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D6E9432107BC7A004BD0F4 /* Calendar+KL.swift */; };
 		C01A6C642118C9BA000B7442 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0711AF920DAC2DB009243CC /* DayOfWeek.swift */; };
 		C01A6C652118C9BA000B7442 /* TimeDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0711B0220DAC3BE009243CC /* TimeDuration.swift */; };
-		C01A6C6C2118C9E5000B7442 /* KnightlifePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C7EA4821135D2400717B53 /* KnightlifePayload.swift */; };
 		C01A6C702118CA1A000B7442 /* CourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2110C2069463200D5D2B2 /* CourseManager.swift */; };
 		C01A6C752118CA2D000B7442 /* Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C176581FAA5F450059E956 /* Scheme.swift */; };
 		C01A6C7A2118CA58000B7442 /* ScheduleVariationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1FB152001B36C004146CE /* ScheduleVariationStorage.swift */; };
@@ -187,6 +186,8 @@
 		C0BD0FA32120CD5D00C8F403 /* NoticeAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD0FA22120CD5D00C8F403 /* NoticeAttachmentView.swift */; };
 		C0BD0FA52120CE6C00C8F403 /* ScheduleChangedAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD0FA42120CE6C00C8F403 /* ScheduleChangedAttachment.swift */; };
 		C0C176591FAA5F450059E956 /* Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C176581FAA5F450059E956 /* Scheme.swift */; };
+		C0C3DC8E22B4448A00268885 /* SchedulePushListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3DC8D22B4448A00268885 /* SchedulePushListener.swift */; };
+		C0C3DC9122B4499800268885 /* UITableViewController+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3DC9022B4499800268885 /* UITableViewController+Nib.swift */; };
 		C0C4550F2123B585004A41ED /* NothingUpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4550E2123B585004A41ED /* NothingUpcomingCell.swift */; };
 		C0C455112123B592004A41ED /* NothingUpcomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C455102123B592004A41ED /* NothingUpcomingCell.xib */; };
 		C0C455132123C1D0004A41ED /* TimeEventAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C455122123C1D0004A41ED /* TimeEventAttachmentView.swift */; };
@@ -194,7 +195,6 @@
 		C0C785B0210FD980003A5EB8 /* LunchItemAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C785AF210FD980003A5EB8 /* LunchItemAttachmentView.swift */; };
 		C0C785B3210FDB88003A5EB8 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C785B2210FDB88003A5EB8 /* TitleCell.xib */; };
 		C0C785B5210FDB8E003A5EB8 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C785B4210FDB8E003A5EB8 /* TitleCell.swift */; };
-		C0C7EA4921135D2400717B53 /* KnightlifePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C7EA4821135D2400717B53 /* KnightlifePayload.swift */; };
 		C0CAF2CE210C223C001A69BF /* LunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAF2CD210C223C001A69BF /* LunchController.swift */; };
 		C0CF76F7211E24C800EC35B4 /* InClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CF76F6211E24C800EC35B4 /* InClassView.swift */; };
 		C0CF76F9211E24D200EC35B4 /* InClassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CF76F8211E24D200EC35B4 /* InClassView.xib */; };
@@ -378,6 +378,8 @@
 		C0BD0FA22120CD5D00C8F403 /* NoticeAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAttachmentView.swift; sourceTree = "<group>"; };
 		C0BD0FA42120CE6C00C8F403 /* ScheduleChangedAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChangedAttachment.swift; sourceTree = "<group>"; };
 		C0C176581FAA5F450059E956 /* Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
+		C0C3DC8D22B4448A00268885 /* SchedulePushListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePushListener.swift; sourceTree = "<group>"; };
+		C0C3DC9022B4499800268885 /* UITableViewController+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Nib.swift"; sourceTree = "<group>"; };
 		C0C4550E2123B585004A41ED /* NothingUpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingUpcomingCell.swift; sourceTree = "<group>"; };
 		C0C455102123B592004A41ED /* NothingUpcomingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingUpcomingCell.xib; sourceTree = "<group>"; };
 		C0C455122123C1D0004A41ED /* TimeEventAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEventAttachmentView.swift; sourceTree = "<group>"; };
@@ -385,7 +387,6 @@
 		C0C785AF210FD980003A5EB8 /* LunchItemAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchItemAttachmentView.swift; sourceTree = "<group>"; };
 		C0C785B2210FDB88003A5EB8 /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		C0C785B4210FDB8E003A5EB8 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
-		C0C7EA4821135D2400717B53 /* KnightlifePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightlifePayload.swift; sourceTree = "<group>"; };
 		C0CAF2CD210C223C001A69BF /* LunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchController.swift; sourceTree = "<group>"; };
 		C0CF76F6211E24C800EC35B4 /* InClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InClassView.swift; sourceTree = "<group>"; };
 		C0CF76F8211E24D200EC35B4 /* InClassView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InClassView.xib; sourceTree = "<group>"; };
@@ -1033,6 +1034,7 @@
 		C0A92942225D9A3600CE2D12 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				C0C3DC8F22B4498100268885 /* Extensions */,
 				C079C22F1FACA97D009067DE /* Controllers */,
 				C0A92950225DA0F800CE2D12 /* Views */,
 				C0A9294F225DA0D600CE2D12 /* Storyboards */,
@@ -1106,7 +1108,6 @@
 		C0A92949225D9F3E00CE2D12 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C0A9294B225D9F9F00CE2D12 /* Web */,
 				C0A9294A225D9F7700CE2D12 /* Date */,
 				C07D9135225EF7BD00A59345 /* Data */,
 			);
@@ -1119,14 +1120,6 @@
 				C0711B0220DAC3BE009243CC /* TimeDuration.swift */,
 			);
 			name = Date;
-			sourceTree = "<group>";
-		};
-		C0A9294B225D9F9F00CE2D12 /* Web */ = {
-			isa = PBXGroup;
-			children = (
-				C0C7EA4821135D2400717B53 /* KnightlifePayload.swift */,
-			);
-			name = Web;
 			sourceTree = "<group>";
 		};
 		C0A9294D225DA02E00CE2D12 /* User Interface */ = {
@@ -1235,6 +1228,14 @@
 			name = Notice;
 			sourceTree = "<group>";
 		};
+		C0C3DC8F22B4498100268885 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C0C3DC9022B4499800268885 /* UITableViewController+Nib.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		C0C4550D2123B576004A41ED /* Nothing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1259,6 +1260,7 @@
 				C021A312228C778200548FE8 /* Block.swift */,
 				C021A314228C778200548FE8 /* BlockAnalyst.swift */,
 				C021A311228C778200548FE8 /* Schedule.swift */,
+				C0C3DC8D22B4448A00268885 /* SchedulePushListener.swift */,
 				C021A313228C778200548FE8 /* Timetable.swift */,
 				C0A1FB142001B329004146CE /* Legacy */,
 			);
@@ -1560,6 +1562,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/TableManager/TableManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Timepiece/Timepiece.framework",
 				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 				"${BUILT_PRODUCTS_DIR}/UnboxedAlamofire/UnboxedAlamofire.framework",
@@ -1577,6 +1580,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TableManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Timepiece.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UnboxedAlamofire.framework",
@@ -1630,6 +1634,7 @@
 				C060011A211B280000ECAD1A /* BlockMeta.swift in Sources */,
 				C07D9143225EF7E100A59345 /* Decodable.swift in Sources */,
 				C0600127211B2C5100ECAD1A /* BlockPrefsModule.swift in Sources */,
+				C0C3DC9122B4499800268885 /* UITableViewController+Nib.swift in Sources */,
 				C05BD67A2110E2E500B5B399 /* VariationPrefsModule.swift in Sources */,
 				C0791CA82117E80C0066CE62 /* NotificationStorage.swift in Sources */,
 				C061F80B2115F90600F0374C /* SettingsTextCell.swift in Sources */,
@@ -1653,7 +1658,6 @@
 				C01ECD3D2129D2C70001C013 /* TodayInClassModule.swift in Sources */,
 				C04653C8210936B9004AD09C /* BlockCell.swift in Sources */,
 				C0BD0FA52120CE6C00C8F403 /* ScheduleChangedAttachment.swift in Sources */,
-				C0C7EA4921135D2400717B53 /* KnightlifePayload.swift in Sources */,
 				C0B4DA0122891DF20081075A /* ArtEvent.swift in Sources */,
 				C07D9141225EF7E100A59345 /* Callback.swift in Sources */,
 				C0B04F461FD177EC00F5D116 /* MeetingPrefModule.swift in Sources */,
@@ -1675,6 +1679,7 @@
 				C07D8F92225EF63B00A59345 /* Lunch.swift in Sources */,
 				C0B4DA0C228A26230081075A /* String+Date.swift in Sources */,
 				C0B4D9F722891DE40081075A /* Event.swift in Sources */,
+				C0C3DC8E22B4448A00268885 /* SchedulePushListener.swift in Sources */,
 				C0D6E9442107BC7A004BD0F4 /* Calendar+KL.swift in Sources */,
 				C01573BC20C462ED008CACA5 /* TodayManager.swift in Sources */,
 				C01862AA2118A2920042F38A /* TodayBarCell.swift in Sources */,
@@ -1732,7 +1737,6 @@
 				C021A316228C778200548FE8 /* Schedule.swift in Sources */,
 				C07D9129225EF72100A59345 /* Realm+KL.swift in Sources */,
 				C0D11272228DA0A400CE270D /* Day.swift in Sources */,
-				C01A6C6C2118C9E5000B7442 /* KnightlifePayload.swift in Sources */,
 				C03BA78C21209AE800AB9DA2 /* PushNotificationManager.swift in Sources */,
 				C029E12B211E1F4800C2BEAF /* AfterSchoolView.swift in Sources */,
 				C01A6C7A2118CA58000B7442 /* ScheduleVariationStorage.swift in Sources */,

@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Hero
-import AddictiveLib
 
 class TabController: UITabBarController {
 	
@@ -23,7 +22,7 @@ class TabController: UITabBarController {
 		self.hero.modalAnimationType = .fade
 		self.hero.tabBarAnimationType = .none
 		
-		Globals.setData("animate-status", data: true)
+		_ANIMATE_SPLASH_FADE = true
 	}
 	
 }
