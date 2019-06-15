@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import TableManager
 
-class LunchController: UITableViewController {
+class LunchViewController: UITableViewController {
 	
 	let foodCellIdentifier = "food"
 	
@@ -19,12 +19,13 @@ class LunchController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.view.backgroundColor = .groupTableViewBackground
+		
 		// Register cell nib
-		self.registerNib(name: "LunchItemCell", reuseIdentifier: self.foodCellIdentifier)
+		self.registerNib(name: "UILunchItemCell", reuseIdentifier: self.foodCellIdentifier)
 		
 		self.tableView.allowsSelection = false
-		self.tableView.separatorStyle = .singleLine
-		self.tableView.separatorColor = .gray
+		self.tableView.separatorStyle = .none
 		
 		// Set navigation title
 		self.navigationItem.title = self.menu.title ?? "Lunch"
@@ -47,28 +48,14 @@ class LunchController: UITableViewController {
 		self.tableView.clearRows()
 		
 		// Add a cell for each food
-		self.menu.items.forEach({ food in
-			self.tableView.addRow(self.foodCellIdentifier).setConfiguration({ row, cell, path in
-				// Cast cell to relevant class
-				guard let cell = cell as? UILunchItemCell else {
-					return
-				}
-				
-				// Delete all previously added attachments
-				cell.attachmentsStack.arrangedSubviews.forEach({ cell.attachmentsStack.removeArrangedSubview($0) ; $0.removeFromSuperview() })
-				
-				cell.nameLabel.text = food.name
-	
-				// Set allergy attachment
-				if let allergy = food.allergy {
-					let attachment = LunchItemAttachmentView()
-					attachment.text = allergy
-					cell.attachmentsStack.addArrangedSubview(attachment)
-				}
-				
-				// Change the bottom constraint depending on whether or not there's an allergy warning
-				cell.attachmentsBottomConstraint.constant = cell.attachmentsStack.arrangedSubviews.count > 0 ? 10.0 : 0.0
-			})
+		self.menu.items.forEach({
+			
+			// Add a cell with the FoodCell ideentifier so that we know it's a Food cell
+			self.tableView.addRow(self.foodCellIdentifier).setObject($0 as AnyObject).setConfiguration(UILunchItemCell.rowConfiguration)
+			
+			// Divider
+			self.tableView.addSpace(height: 0.5, bgColor: Scheme.dividerColor.color)
+			
 		})
 	}
 	

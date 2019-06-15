@@ -206,9 +206,7 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 	}
 	
 	func openLunch(menu: Lunch) {
-		guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "Lunch") as? LunchController else {
-			return
-		}
+		let controller = LunchViewController()
 		
 		controller.menu = menu
 		self.navigationController?.pushViewController(controller, animated: true)

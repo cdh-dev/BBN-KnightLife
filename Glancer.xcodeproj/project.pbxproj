@@ -74,8 +74,8 @@
 		C0405723211DE5A000C7A1A4 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0405722211DE5A000C7A1A4 /* LoadingView.xib */; };
 		C04653C6210936AC004AD09C /* BlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04653C5210936AC004AD09C /* BlockCell.xib */; };
 		C04653C8210936B9004AD09C /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04653C7210936B9004AD09C /* BlockCell.swift */; };
-		C04D1EC4210FD7B90001C99C /* LunchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D1EC3210FD7B90001C99C /* LunchItemCell.swift */; };
-		C04D1EC6210FD7C10001C99C /* LunchItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04D1EC5210FD7C10001C99C /* LunchItemCell.xib */; };
+		C04D1EC4210FD7B90001C99C /* UILunchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D1EC3210FD7B90001C99C /* UILunchItemCell.swift */; };
+		C04D1EC6210FD7C10001C99C /* UILunchItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04D1EC5210FD7C10001C99C /* UILunchItemCell.xib */; };
 		C051F1F3210FF841004C064F /* CoursesPrefModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051F1F2210FF841004C064F /* CoursesPrefModule.swift */; };
 		C051F1F6210FF94C004C064F /* CoursePrefCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051F1F5210FF94C004C064F /* CoursePrefCell.swift */; };
 		C051F1F8210FF957004C064F /* CoursePrefCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C051F1F7210FF957004C064F /* CoursePrefCell.xib */; };
@@ -293,8 +293,8 @@
 		C0405722211DE5A000C7A1A4 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		C04653C5210936AC004AD09C /* BlockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockCell.xib; sourceTree = "<group>"; };
 		C04653C7210936B9004AD09C /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
-		C04D1EC3210FD7B90001C99C /* LunchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchItemCell.swift; sourceTree = "<group>"; };
-		C04D1EC5210FD7C10001C99C /* LunchItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LunchItemCell.xib; sourceTree = "<group>"; };
+		C04D1EC3210FD7B90001C99C /* UILunchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILunchItemCell.swift; sourceTree = "<group>"; };
+		C04D1EC5210FD7C10001C99C /* UILunchItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UILunchItemCell.xib; sourceTree = "<group>"; };
 		C051F1F2210FF841004C064F /* CoursesPrefModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesPrefModule.swift; sourceTree = "<group>"; };
 		C051F1F5210FF94C004C064F /* CoursePrefCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePrefCell.swift; sourceTree = "<group>"; };
 		C051F1F7210FF957004C064F /* CoursePrefCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursePrefCell.xib; sourceTree = "<group>"; };
@@ -695,8 +695,8 @@
 		C04D1EC2210FD7A00001C99C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				C04D1EC3210FD7B90001C99C /* LunchItemCell.swift */,
-				C04D1EC5210FD7C10001C99C /* LunchItemCell.xib */,
+				C04D1EC3210FD7B90001C99C /* UILunchItemCell.swift */,
+				C04D1EC5210FD7C10001C99C /* UILunchItemCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1484,7 +1484,7 @@
 				C01862AC2118A29E0042F38A /* TodayBarCell.xib in Resources */,
 				C0BD0FA12120CBED00C8F403 /* NoticeCell.xib in Resources */,
 				C060012B211B2D0D00ECAD1A /* BlocksPrefCell.xib in Resources */,
-				C04D1EC6210FD7C10001C99C /* LunchItemCell.xib in Resources */,
+				C04D1EC6210FD7C10001C99C /* UILunchItemCell.xib in Resources */,
 				C0ACFD1C2111686D002886A2 /* TodayStatusCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1697,7 +1697,7 @@
 				C060011E211B291A00ECAD1A /* BlockMetaID.swift in Sources */,
 				C07D912C225EF76700A59345 /* UserDefaults+KL.swift in Sources */,
 				C0600121211B29C400ECAD1A /* BlockMetaStorage.swift in Sources */,
-				C04D1EC4210FD7B90001C99C /* LunchItemCell.swift in Sources */,
+				C04D1EC4210FD7B90001C99C /* UILunchItemCell.swift in Sources */,
 				C060011C211B28E100ECAD1A /* BlockMetaManager.swift in Sources */,
 				C0ACFD1A21116863002886A2 /* TodayStatusCell.swift in Sources */,
 				C0A167B5210E6FB800DB6BC4 /* LoadingCell.swift in Sources */,
