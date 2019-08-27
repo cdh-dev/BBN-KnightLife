@@ -28,6 +28,11 @@ class PushNotificationManager: Manager {
 	
 	init() {
 		super.init("Push Notification")
+		
+		// Register a few designated listeners
+		self.addListener(type: .REFRESH, listener: LunchPushListener())
+		self.addListener(type: .REFRESH, listener: SchedulePushListener())
+		self.addListener(type: .REFRESH, listener: EventPushListener())
 	}
 	
 	func addListener(type: PushType, listener: PushListener) {

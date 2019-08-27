@@ -24,7 +24,7 @@ class CourseManager {
 	let onMeetingUpdate = Signal<Course>()
 	
 	fileprivate init() {
-		
+		self.loadLegacyData()
 	}
 	
 	func loadLegacyData() {

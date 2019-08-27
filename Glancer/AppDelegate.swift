@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		Globals.BundleID = "MAD.BBN.KnightLife"
 		Globals.StorageID = "group.KnightLife.MAD.Storage"
 		
-		Globals.storeUrlBase(url: "https://www.bbnknightlife.com/api/")
-		
 		application.registerForRemoteNotifications()
 		
 		UNUserNotificationCenter.current().delegate = self
@@ -46,15 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		_ = CourseM
 		_ = BlockMetaM
 		
-		BlockMetaM.loadLegacyData()
-		CourseM.loadLegacyData()
-		ScheduleManager().loadLegacyData()
-		
-		// Listen to Refresh Push notifications
-		PushNotificationManager.instance.addListener(type: .REFRESH, listener: LunchPushListener())
-		PushNotificationManager.instance.addListener(type: .REFRESH, listener: SchedulePushListener())
-		PushNotificationManager.instance.addListener(type: .REFRESH, listener: EventPushListener())
-
         return true
     }
 	

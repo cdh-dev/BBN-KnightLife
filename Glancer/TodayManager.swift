@@ -378,7 +378,7 @@ final class TodayManager {
 		
 		let timetable = schedule.selectedTimetable!
 		
-		let now = Date.today
+		let now = Date()
 		if now < timetable.firstBlock!.schedule.start { // Before school
 			var minUntilStart = abs(timetable.firstBlock!.schedule.start.minuteDifference(date: now))
 			minUntilStart += 1

@@ -18,6 +18,10 @@ extension DefaultsKeys {
 
 class ScheduleManager {
 	
+	init() {
+		self.loadLegacyData()
+	}
+	
 	func loadLegacyData() {
 		if !Defaults[.scheduleMigratedToMeta] {
 			let oldStorage = ScheduleVariationStorage(manager: self)

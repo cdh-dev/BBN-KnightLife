@@ -203,6 +203,7 @@
 		C0D2110D2069463200D5D2B2 /* CourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2110C2069463200D5D2B2 /* CourseManager.swift */; };
 		C0D6E9422107B8AC004BD0F4 /* Date+KL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D6E9412107B8AC004BD0F4 /* Date+KL.swift */; };
 		C0D6E9442107BC7A004BD0F4 /* Calendar+KL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D6E9432107BC7A004BD0F4 /* Calendar+KL.swift */; };
+		C0DBE74F2310758200EBD564 /* SchedulePushListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3DC8D22B4448A00268885 /* SchedulePushListener.swift */; };
 		C0E356722122746D00FDDE2F /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E356712122746D00FDDE2F /* TabController.swift */; };
 		C0FCDBC4210978D00080A883 /* SubtitleNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FCDBC3210978D00080A883 /* SubtitleNavigationItem.swift */; };
 		C0FCDBC9210A86000080A883 /* BlockListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FCDBC8210A86000080A883 /* BlockListModule.swift */; };
@@ -1739,6 +1740,7 @@
 				C0D11272228DA0A400CE270D /* Day.swift in Sources */,
 				C03BA78C21209AE800AB9DA2 /* PushNotificationManager.swift in Sources */,
 				C029E12B211E1F4800C2BEAF /* AfterSchoolView.swift in Sources */,
+				C0DBE74F2310758200EBD564 /* SchedulePushListener.swift in Sources */,
 				C01A6C7A2118CA58000B7442 /* ScheduleVariationStorage.swift in Sources */,
 				C022316E211E1DE20018D517 /* NoClassView.swift in Sources */,
 				C0B4D9FA22891DE40081075A /* EventTypes.swift in Sources */,

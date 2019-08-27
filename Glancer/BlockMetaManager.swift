@@ -27,7 +27,7 @@ class BlockMetaManager {
 	let onMetaUpdate = Signal<BlockMeta>()
 	
 	fileprivate init() {
-
+		self.loadLegacyData()
 	}
 	
 	func loadLegacyData() {
