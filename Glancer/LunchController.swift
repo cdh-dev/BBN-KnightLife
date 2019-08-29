@@ -8,40 +8,55 @@
 
 import Foundation
 import UIKit
-import AddictiveLib
+import TableManager
 
-class LunchController: UIViewController, TableHandlerDataSource {
+class LunchViewController: UITableViewController {
 	
-	var menu: LunchMenu!
+	let foodCellIdentifier = "food"
 	
-	@IBOutlet weak var tableView: UITableView!
-	private var tableHandler: TableHandler!
+	var menu: Lunch!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.tableHandler = TableHandler(table: self.tableView)
-		self.tableHandler.dataSource = self
+		self.view.backgroundColor = .groupTableViewBackground
 		
+		// Register cell nib
+		self.registerNib(name: "UILunchItemCell", reuseIdentifier: self.foodCellIdentifier)
+		
+		self.tableView.allowsSelection = false
+		self.tableView.separatorStyle = .none
+		
+		// Set navigation title
 		self.navigationItem.title = self.menu.title ?? "Lunch"
-
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
 		
-		self.tableHandler.reload()
-	}
-	
-	func buildCells(handler: TableHandler, layout: TableLayout) {
-		let section = layout.addSection()
-		
-		section.addDivider()
-		
-		for item in self.menu.items {
-			section.addCell(LunchItemCell(item: item, showAllergen: LunchManager.instance.showAllergens))
-			section.addDivider()
+		// Listen to menu updates
+		self.menu.onUpdate.subscribe(with: self) { _ in
+			self.configureCells()
 		}
+		
+		// Initial layout of table
+		self.configureCells()
+	}
+	
+	deinit {
+		// Stop listening to menu updates when this controller is dismissed
+		self.menu.onUpdate.cancelSubscription(for: self)
+	}
+	
+	private func configureCells() {
+		self.tableView.clearRows()
+		
+		// Add a cell for each food
+		self.menu.items.forEach({
+			
+			// Add a cell with the FoodCell ideentifier so that we know it's a Food cell
+			self.tableView.addRow(self.foodCellIdentifier).setObject($0 as AnyObject).setConfiguration(UILunchItemCell.rowConfiguration)
+			
+			// Divider
+			self.tableView.addSpace(height: 0.5, bgColor: Scheme.dividerColor.color)
+			
+		})
 	}
 	
 }

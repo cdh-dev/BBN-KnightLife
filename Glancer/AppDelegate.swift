@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 import AddictiveLib
 import UserNotifications
+import Moya
+import SwiftyJSON
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -21,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		
 		Globals.BundleID = "MAD.BBN.KnightLife"
 		Globals.StorageID = "group.KnightLife.MAD.Storage"
-		
-		Globals.storeUrlBase(url: "https://www.bbnknightlife.com/api/")
 		
 		application.registerForRemoteNotifications()
 		
@@ -39,39 +40,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 						
 		_ = NotificationManager.instance
 		
-		_ = TodayManager.instance
-		_ = ScheduleManager.instance
-		_ = CourseManager.instance
-		_ = LunchManager.instance
-		_ = EventManager.instance
+		_ = TodayM
+		_ = CourseM
+		_ = BlockMetaM
 		
         return true
     }
 	
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
-        var tokenString = ""
-        
-        for i in 0..<deviceToken.count {
-            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
-        }
-        
-		Globals.DeviceID = tokenString
+	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+		// Convert token to String
+		let tokenString = deviceToken.map({ String(format: "%02.2hhx", $0) }).joined()
 		
-		RegistrationWebCall().callback() {
-			result in
-			
-			switch result {
-			case .failure(let error):
-				if error is InvalidWebCodeError {
-					print((error as! InvalidWebCodeError).code)
+		// Store token
+		Defaults[.deviceId] = tokenString
+				
+		// Perform device registration call
+		let moyaProvider = MoyaProvider<API>()
+		moyaProvider.request(.registerDevice(token: tokenString)) {
+			switch $0 {
+			case .success(let response):
+				do {
+					_ = try response.filterSuccessfulStatusCodes()
+					
+					let data = response.data
+					let json = try JSON(data: data)
+					
+					if let success = json["success"].bool {
+						print("Registration of device token resulted in success: \(success)")
+					} else {
+						print("Invalid server response when receiving token registration response.")
+					}
+				} catch {
+					print("An error occurred while registering device token: \( error.localizedDescription )")
 				}
-				print(error.localizedDescription)
-			case .success(_):
-				break
+			case .failure(let error):
+				print("An error occurred while registering device token: \( error.localizedDescription )")
 			}
-		}.execute()
-    }
+		}
+	}
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("failed to register for remote notifications: \(error.localizedDescription)")
@@ -88,13 +94,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 	
 	func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
-		ScheduleManager.instance.clearCache()
-		LunchManager.instance.clearCache()
-		EventManager.instance.clearCache()
+
 	}
 	
     func applicationWillResignActive(_ application: UIApplication) {
-		TodayManager.instance.stopTimer()
+		TodayM.stopTimer()
 	}
     
     func applicationDidEnterBackground(_ application: UIApplication){
@@ -106,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 	}
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-		TodayManager.instance.startTimer()
+		TodayM.startTimer()
 	}
 	
 	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

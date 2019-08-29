@@ -21,10 +21,10 @@ class EventsPrefsModule: TableModule {
 	override func build() {
 		let section = self.addSection()
 		section.addDivider()
-		section.addCell(TitleCell(title: "Events"))
+		section.addCell(TitleCell(title: "Grade"))
 		section.addDivider()
 		
-		section.addCell(SettingsTextCell(left: "Your Grade", right: EventManager.instance.userGrade.settingsDisplayName) {
+		section.addCell(SettingsTextCell(left: "Your Grade", right: Grade.userGrade == nil ? "Not Set" : Grade.userGrade!.singular) {
 			self.showChangeGrade()
 		})
 		
@@ -41,12 +41,12 @@ class EventsPrefsModule: TableModule {
 		let handler: (UIAlertAction) -> Void = {
 			alert in
 			
-			//			Get the tuple with this specific action, and thus its blockId
+			//			Get the tuple with this specific action, and thus its Block.ID
 			guard let key = blockActions.filter({ $0.alert === alert }).first?.id else {
 				return
 			}
 			
-			EventManager.instance.setGrade(grade: key)
+			Grade.userGrade = key
 			self.controller.tableHandler.reload()
 		}
 		
@@ -54,21 +54,33 @@ class EventsPrefsModule: TableModule {
 			(.freshmen, UIAlertAction(title: "Freshman", style: .default, handler: handler)),
 			(.sophomores, UIAlertAction(title: "Sophomore", style: .default, handler: handler)),
 			(.juniors, UIAlertAction(title: "Junior", style: .default, handler: handler)),
-			(.seniors, UIAlertAction(title: "Senior", style: .default, handler: handler)),
-			(.allSchool, UIAlertAction(title: "Not Set", style: .default, handler: handler)),
+			(.seniors, UIAlertAction(title: "Senior", style: .default, handler: handler))
 		]
 		
+		// Set normal grade values to be checked
 		for (id, action) in blockActions {
-			if EventManager.instance.userGrade == id {
+			if Grade.userGrade == id {
 				action.setValue(true, forKey: "checked")
 			}
 			
 			alert.addAction(action)
 		}
 		
+		// Set no grade set action to be checked
+		let nullAction = UIAlertAction(title: "Not Set", style: .default) { alert in
+			Grade.userGrade = nil
+			self.controller.tableHandler.reload()
+		}
+		
+		if Grade.userGrade == nil {
+			nullAction.setValue(true, forKey: "checked")
+		}
+		
+		alert.addAction(nullAction)
+		
 		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 		
 		self.controller.present(alert, animated: true)
 	}
-	
+
 }

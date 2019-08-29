@@ -7,28 +7,92 @@
 //
 
 import Foundation
+import RealmSwift
 import UIKit
+import Signals
 
-class BlockMeta {
+class BlockMeta: Object {
 	
-	let block: BlockMetaID
+	// Badge functions as raw BlockMetaID
+	@objc dynamic var badge: String = ""
 	
-	var color: UIColor
-	var beforeClassNotifications: Bool
-	var afterClassNotifications: Bool
+	let onUpdate = Signal<Void>()
 	
-	var customName: String?
+	var id: BlockMeta.ID {
+		return BlockMeta.ID(rawValue: self.badge)!
+	}
 	
-	init(block: BlockMetaID, color: UIColor? = nil, beforeClassNotifications: Bool? = nil, afterClassNotifications: Bool? = nil, customName: String? = nil) {
-		self.block = block
-		
-		self.color = color ?? Scheme.nullColor.color
-		
-		self.beforeClassNotifications = beforeClassNotifications ?? true
-		self.afterClassNotifications = afterClassNotifications ?? false
-		
-		self.customName = customName
+	@objc dynamic var _color: String? = nil
+	@objc dynamic var _customName: String? = nil
+	@objc dynamic var _beforeClassNotifications: Bool = true
+	@objc dynamic var _afterClassNotifications: Bool = false
+
+	override static func primaryKey() -> String {
+		return "badge"
 	}
 	
 }
 
+extension BlockMeta {
+	
+	var color: UIColor {
+		get {
+			return UIColor(hex: self._color ?? "") ?? Scheme.nullColor.color
+		}
+		
+		set {
+			try! Realms.write {
+				self._color = newValue.toHex!
+			}
+			
+			self.onUpdate.fire()
+			BlockMetaM.onMetaUpdate.fire(self)
+		}
+	}
+	
+	var customName: String? {
+		get {
+			return self._customName
+		}
+		
+		set {
+			try! Realms.write {
+				self._customName = newValue
+			}
+			
+			self.onUpdate.fire()
+			BlockMetaM.onMetaUpdate.fire(self)
+		}
+	}
+	
+	var beforeClassNotifications: Bool {
+		get {
+			return self._beforeClassNotifications
+		}
+		
+		set {
+			try! Realms.write {
+				self._beforeClassNotifications = newValue
+			}
+			
+			self.onUpdate.fire()
+			BlockMetaM.onMetaUpdate.fire(self)
+		}
+	}
+	
+	var afterClassNotifications: Bool {
+		get {
+			return self._afterClassNotifications
+		}
+		
+		set {
+			try! Realms.write {
+				self._afterClassNotifications = newValue
+			}
+			
+			self.onUpdate.fire()
+			BlockMetaM.onMetaUpdate.fire(self)
+		}
+	}
+	
+}

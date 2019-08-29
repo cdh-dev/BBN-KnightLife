@@ -15,12 +15,12 @@ class BlockListModule: TableModule {
 	
 	let title: String?
 	
-	let bundle: DayBundle
+	let bundle: Day
 	let blocks: [Block]
 	
 	let options: [DayModuleOptions]
 	
-	init(controller: DayController, bundle: DayBundle, title: String?, blocks: [Block], options: [DayModuleOptions] = []) {
+	init(controller: DayController, bundle: Day, title: String?, blocks: [Block], options: [DayModuleOptions] = []) {
 		self.controller = controller
 		
 		self.title = title
@@ -48,7 +48,7 @@ class BlockListModule: TableModule {
 		}
 		
 		for block in self.blocks {
-			let composite = CompositeBlock(schedule: self.bundle.schedule, block: block, lunch: (block.id == .lunch && !self.bundle.menu.items.isEmpty ? bundle.menu : nil), events: self.bundle.events.getEventsByBlock(block: block.id))
+			let composite = CompositeBlock(schedule: self.bundle.schedule, block: block, lunch: (block.id == .lunch && !self.bundle.lunch.items.isEmpty ? bundle.lunch : nil), events: self.bundle.events.eventsFor(block: block.id))
 			
 			section.addCell(BlockCell(controller: self.controller, composite: composite))
 			
@@ -64,10 +64,10 @@ class BlockListModule: TableModule {
 
 struct CompositeBlock {
 	
-	let schedule: DateSchedule
+	let schedule: Schedule
 	let block: Block
 	
-	let lunch: LunchMenu?
+	let lunch: Lunch?
 	let events: [Event]
 	
 }

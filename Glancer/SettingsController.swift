@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import AddictiveLib
 import SafariServices
+import Moya
+import SwiftyJSON
 
 class SettingsController: UIViewController, TableHandlerDataSource {
 	
@@ -34,26 +36,40 @@ class SettingsController: UIViewController, TableHandlerDataSource {
 		layout.addModule(BlockPrefsModule(controller: self))
 		layout.addModule(VariationPrefsModule())
 		layout.addModule(EventsPrefsModule(controller: self))
-		layout.addModule(LunchPrefsModule())
+//		layout.addModule(LunchPrefsModule())
 		layout.addModule(BottomPrefsModule())
 	}
 	
 	@IBAction func surveyClicked(_ sender: Any) {
-		if let text = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-			SurveyWebCall(version: text).callback() {
-				result in
-				
-				switch result {
-				case .success(let url):
-					let safariController = SFSafariViewController(url: url)
-					self.present(safariController, animated: true, completion: nil)
-				default:
-					let alertController = UIAlertController(title: "Error", message: "Couldn't fetch the survey", preferredStyle: .alert)
-					alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-					self.present(alertController, animated: true, completion: nil)
+		let provider = MoyaProvider<API>()
+		provider.request(.getSurveyURL) {
+			switch $0 {
+			case .success(let res):
+				do {
+					_ = try res.filterSuccessfulStatusCodes()
+					let json = try JSON(data: res.data)
+					
+					if let urlString = json["url"].string, let url = URL(string: urlString) {
+						let safariController = SFSafariViewController(url: url)
+						self.present(safariController, animated: true, completion: nil)
+					} else {
+						self.showError()
+					}
+				} catch {
+					print(error)
+					self.showError()
 				}
-			}.execute()
+			case .failure(let error):
+				print(error)
+				self.showError()
+			}
 		}
+	}
+	
+	private func showError() {
+		let alertController = UIAlertController(title: "Error", message: "Couldn't fetch the survey", preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 }

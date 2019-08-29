@@ -13,10 +13,10 @@ class TodayAfterSchoolModule: TableModule {
 	
 	let controller: DayController
 	let table: UITableView
-	let today: DayBundle
-	let tomorrow: DayBundle?
+	let today: Day
+	let tomorrow: Day?
 	
-	init(controller: DayController, table: UITableView, today: DayBundle, tomorrow: DayBundle?) {
+	init(controller: DayController, table: UITableView, today: Day, tomorrow: Day?) {
 		self.controller = controller
 		self.table = table
 		self.today = today
@@ -28,9 +28,9 @@ class TodayAfterSchoolModule: TableModule {
 	override func build() {
 //		Today
 		if self.tomorrow == nil {
-			self.addSection().addCell(TodayDoneCell()).setHeight(self.today.events.hasOutOfSchoolEvents ? 120 : self.table.frame.height)
+			self.addSection().addCell(TodayDoneCell()).setHeight(!self.today.events.timeEvents.isEmpty ? 120 : self.table.frame.height)
 			
-			if self.today.events.hasOutOfSchoolEvents {
+			if !self.today.events.timeEvents.isEmpty {
 				self.addModule(AfterSchoolEventsModule(bundle: self.today, title: "After School", options: [ .topBorder, .bottomBorder ]))
 			}
 			
@@ -40,7 +40,7 @@ class TodayAfterSchoolModule: TableModule {
 //		Tomorrow
 		self.addSection().addCell(TodayDoneCell()).setHeight(120)
 		
-		if self.today.events.hasOutOfSchoolEvents {
+		if !self.today.events.timeEvents.isEmpty {
 			self.addModule(AfterSchoolEventsModule(bundle: self.today, title: "After School", options: [ .topBorder ]))
 		}
 		

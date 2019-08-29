@@ -7,88 +7,99 @@
 //
 
 import Foundation
+import Signals
 import AddictiveLib
+import SwiftyUserDefaults
 
-class CourseManager: Manager {
+private(set) var CourseM = CourseManager()
+
+extension DefaultsKeys {
 	
-	static let instance = CourseManager()
+	fileprivate static let courseMigratedToRealm = DefaultsKey<Bool>("migrated.course")
 	
-	private(set) var meetings: [Course] = [] // All added meetings including one time ones.
-	let meetingsUpdatedWatcher = ResourceWatcher<Course>()
+}
+
+class CourseManager {
 	
-	init() {
-		super.init("Meetings")
-		
-		self.registerStorage(MeetingPrefModule(self))		
+	let onMeetingUpdate = Signal<Course>()
+	
+	fileprivate init() {
+		self.loadLegacyData()
 	}
 	
-	func loadedCourse(course: Course) {
-		self.meetings.append(course)
-	}
-	
-	func courseChanged(course: Course) {
-		self.saveStorage()
-		self.meetingsUpdatedWatcher.handle(nil, course)
-	}
-	
-	func removeCourse(_ meeting: Course) {
-		while self.meetings.contains(meeting) {
-			for i in 0..<self.meetings.count {
-				if self.meetings[i] == meeting {
-					self.meetings.remove(at: i)
-					
-					self.courseChanged(course: meeting)
-					break
-				}
-			}
+	func loadLegacyData() {
+		if !Defaults[.courseMigratedToRealm] {
+			let oldStorage = MeetingPrefModule(self)
+			StorageHub.instance.loadPrefs(oldStorage)
+			
+			Defaults[.courseMigratedToRealm] = true
 		}
 	}
 	
-	func addCourse(_ meeting: Course) {
-		self.meetings.append(meeting)
-		self.courseChanged(course: meeting)
-	}
-	
-	func getCourses(schedule: DateSchedule, block: BlockID) -> BlockCourseList {
-		return self.getCourses(date: schedule.date, schedule: schedule).fromBlock(block)
-	}
-	
-	func getCourses(date: Date, schedule: DateSchedule) -> DayCourseList {
-		var list: [Course] = []
-		
-		for activity in self.meetings {
-			if self.doesMeetOnDate(activity, date: date, schedule: schedule) {
-				list.append(activity)
-			}
+	func loadLegacyCourse(course: Course) {
+		try! Realms.write {
+			Realms.add(course, update: true)
 		}
 		
-		return DayCourseList(date: date, meetings: list)
+		print("Loaded legacy course \( course.name )")
 	}
 	
-	private func doesMeetOnDate(_ meeting: Course, date: Date, schedule: DateSchedule) -> Bool {
-		let meetingSchedule = meeting.courseSchedule
-		switch meetingSchedule.frequency {
-		case .everyDay:
-			if schedule.hasBlock(meetingSchedule.block) {
-				return true
-			}
-			break
-		case .specificDays:
-			if let daySub = schedule.day { // Is actually standing in for a different day.
-				if meetingSchedule.meetingDaysContains(daySub) {
-					if schedule.hasBlock(meetingSchedule.block) {
-						return true
-					}
-				}
-			} else {
-				if meetingSchedule.meetingDaysContains(date.weekday) {
-					if schedule.hasBlock(meetingSchedule.block) {
-						return true
-					}
-				}
-			}
-			break
-		}
-		return false
+	var courses: [Course] {
+		return Array(Realms.objects(Course.self))
 	}
+	
+	func createCourse(name: String) -> Course {
+		let course = Course()
+		
+		course.name = name
+		
+		try! Realms.write {
+			Realms.add(course)
+		}
+		
+		return course
+	}
+	
+	func deleteCourse(course: Course) {
+		try! Realms.write {
+			Realms.delete(course)
+		}
+	}
+	
+	func getCourses(block: Block) -> [Course] {
+		return self.getCourses(schedule: block.timetable.schedule, block: block.id)
+	}
+	
+	func getCourses(schedule: Schedule, block: Block.ID) -> [Course] {
+		return self.getCourses(schedule: schedule).filter({ $0.scheduleBlock == block })
+	}
+	
+	func getCourses(schedule: Schedule) -> [Course] {
+		return self.courses.filter({ self.doesMeetOnDate($0, schedule: schedule) })
+	}
+	
+	private func doesMeetOnDate(_ meeting: Course, schedule: Schedule) -> Bool {
+		// No school means it doesn't meet
+		guard let timetable = schedule.selectedTimetable else {
+			return false
+		}
+		
+		switch meeting.schedule {
+		case let .everyDay(blockId):
+			if let blockId = blockId {
+				if timetable.hasBlock(id: blockId) {
+					return true
+				}
+			}
+			return false
+		case let .specificDays(block, days):
+			if let block = block {
+				if days.contains(schedule.dayOfWeek) && timetable.hasBlock(id: block) {
+					return true
+				}
+			}
+			return false
+		}
+	}
+	
 }

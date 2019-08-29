@@ -62,9 +62,7 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 	private func registerListeners() {
 		PushNotificationManager.instance.addListener(type: .REFRESH, listener: self)
 		
-		TodayManager.instance.nextDayWatcher.onSuccess(self) {
-			date in
-			
+		TodayM.onNextDay.subscribe(with: self) { date in
 			self.calendarView.setupViews()
 			self.setupNavigation()
 			
@@ -124,22 +122,22 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 		self.upcomingItems = nil
 		self.upcomingItemsError = nil
 		
-		UpcomingWebCall(date: Date.today).callback() {
-			result in
-			
-			switch result {
-			case .success(let items):
-				self.upcomingItems = items
-			case .failure(let error):
-				self.upcomingItemsError = error
-				print(error.localizedDescription)
-			}
-			
-			Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) {
-				timer in
-				then()
-			}
-		}.execute()
+//		UpcomingWebCall(date: Date.today).callback() {
+//			result in
+//
+//			switch result {
+//			case .success(let items):
+//				self.upcomingItems = items
+//			case .failure(let error):
+//				self.upcomingItemsError = error
+//				print(error.localizedDescription)
+//			}
+//			
+//			Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) {
+//				timer in
+//				then()
+//			}
+//		}.execute()
 	}
 	
 	
@@ -171,7 +169,7 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 			var invalidEvents = 0
 			for upcoming in item.items {
 				if upcoming.type == .event {
-					if !(upcoming as? EventUpcomingItem)!.event.isRelevantToUser() {
+					if !(upcoming as? EventUpcomingItem)!.event.gradeRelevant {
 						invalidEvents += 1
 					}
 				}
@@ -191,7 +189,7 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 			var views: [AttachmentView] = []
 			for upcoming in item.items {
 				if let eventUpcoming = upcoming as? EventUpcomingItem {
-					if !eventUpcoming.event.isRelevantToUser() {
+					if !eventUpcoming.event.gradeRelevant {
 						continue
 					}
 				}

@@ -34,11 +34,11 @@ class InClassView: CustomView {
 		}
 	}
 	
-	let schedule: DateSchedule!
+	let schedule: Schedule!
 	let block: Block!
 	let minutes: Int!
 	
-	init(schedule: DateSchedule!, block: Block, minutes: Int) {
+	init(schedule: Schedule!, block: Block, minutes: Int) {
 		self.schedule = schedule
 		self.block = block
 		self.minutes = minutes
@@ -58,13 +58,13 @@ class InClassView: CustomView {
 		Bundle.main.loadNibNamed("InClassView", owner: self, options: nil)
 		self.secure(view: self.backgroundView)
 		
-		let analyst = BlockAnalyst(schedule: self.schedule, block: self.block)
+		let analyst = self.block.analyst
 		
 		self.statusIconImage.image = self.statusIconImage.image?.withRenderingMode(.alwaysTemplate)
 		self.blockImage.image = self.blockImage.image?.withRenderingMode(.alwaysTemplate)
 
 		self.blockLabel.text = "\(self.block.id.displayName)"
-		self.statusLabel.text = "in \(analyst.getDisplayName())"
+		self.statusLabel.text = "in \(analyst.displayName)"
 		self.minuteLabel.text = {
 			let hours: Int = Int(floor(Double(self.minutes / 60)))
 			let minutes: Int = self.minutes % 60
@@ -78,15 +78,15 @@ class InClassView: CustomView {
 			}
 		}()
 		
-		let secondPassed = Calendar.normalizedCalendar.dateComponents([.second], from: self.block.time.start, to: Date.today).second!
-		let secondDuration = Calendar.normalizedCalendar.dateComponents([.second], from: self.block.time.start, to: self.block.time.end).second!
+		let secondPassed = Calendar.normalizedCalendar.dateComponents([.second], from: self.block.schedule.start, to: Date.today).second!
+		let secondDuration = Calendar.normalizedCalendar.dateComponents([.second], from: self.block.schedule.start, to: self.block.schedule.end).second!
 		
 		let secondsLeft = secondDuration - secondPassed
 		
 		let percentage = Float(secondsLeft) / Float(secondDuration)
 		self.percentage = percentage
 		
-		self.color = analyst.getColor()
+		self.color = analyst.color
 	}
 	
 	override func willMove(toSuperview newSuperview: UIView?) {

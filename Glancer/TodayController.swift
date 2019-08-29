@@ -13,7 +13,7 @@ import SnapKit
 
 class TodayController: DayController {
 	
-	private var state: TodayManager.TodayScheduleState!
+	private var state: TodayManager.ScheduleState!
 	
 	private var showStatusBar = false
 	override var prefersStatusBarHidden: Bool {
@@ -33,14 +33,13 @@ class TodayController: DayController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		TodayManager.instance.startTimer()
-		self.handleStateChange(state: TodayManager.instance.currentState)
+		TodayM.startTimer()
+		self.handleStateChange(state: TodayM.state)
 		
 //		Animate status bar for first load
-		let animateStatus: Bool = Globals.getData("animate-status") ?? false
 		self.showStatusBar = true
-		if animateStatus {
-			Globals.setData("animate-status", data: false)
+		if _ANIMATE_SPLASH_FADE {
+			_ANIMATE_SPLASH_FADE = false
 			
 			UIView.animate(withDuration: 0.5) {
 				self.setNeedsStatusBarAppearanceUpdate()
@@ -62,14 +61,14 @@ class TodayController: DayController {
 		self.navigationItem.title = "Today"
 		
 		if let subtitleItem = self.navigationItem as? SubtitleNavigationItem {
-			if let bundle = self.bundle {
-				if bundle.schedule.changed {
-					subtitleItem.subtitle = "Special"
-					subtitleItem.subtitleColor = .red
-					
-					return
-				}
-			}
+//			if let bundle = self.bundle {
+//				if bundle.schedule.changed {
+//					subtitleItem.subtitle = "Special"
+//					subtitleItem.subtitleColor = .red
+//
+//					return
+//				}
+//			}
 			
 			subtitleItem.subtitle = Date.today.prettyDate
 			subtitleItem.subtitleColor = UIColor.darkGray
@@ -77,9 +76,9 @@ class TodayController: DayController {
 	}
 	
 	override func registerListeners() {
-		TodayManager.instance.statusWatcher.onSuccess(self) {
-			state in
-			
+		super.registerListeners()
+		
+		TodayM.onStateChange.subscribe(with: self) { state in
 			self.handleStateChange(state: state)
 		}
 	}
@@ -89,18 +88,18 @@ class TodayController: DayController {
 	}
 	
 	override func reloadData() {
-		switch TodayManager.instance.currentState {
+		switch TodayM.state {
 		case .LOADING:
 			break
 		default:
-			TodayManager.instance.reloadTodayBundle()
+			TodayM.fetchTodayBundle()
 			break
 		}
 		
-		self.handleStateChange(state: TodayManager.instance.currentState)
+		self.handleStateChange(state: TodayM.state)
 	}
 	
-	private func handleStateChange(state: TodayManager.TodayScheduleState) {
+	private func handleStateChange(state: TodayManager.ScheduleState) {
 		self.state = state
 		self.tableHandler.reload()
 	}

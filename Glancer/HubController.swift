@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Hero
 
+var _ANIMATE_SPLASH_FADE: Bool = false
+
 class HubController: UIViewController {
 	
 	@IBOutlet weak var backgroundImage: UIImageView!
