@@ -11,8 +11,7 @@ import UIKit
 
 enum UpcomingItemType: String {
 	
-	case scheduleChanged = "schedule"
-	case scheduleNotice = "notice"
+	case scheduleChanged = "special-schedule"
 	case event = "event"
 	
 }
@@ -36,7 +35,11 @@ class UpcomingItem {
 
 class ScheduleChangedUpcomingItem: UpcomingItem {
 	
-	init(date: Date) {
+	let badge: String
+	
+	init(badge: String, date: Date) {
+		self.badge = badge
+		
 		super.init(type: .scheduleChanged, date: date)
 	}
 	
@@ -46,31 +49,13 @@ class ScheduleChangedUpcomingItem: UpcomingItem {
 	
 }
 
-class ScheduleNoticeUpcomingItem: UpcomingItem {
-	
-//	let notice: DateNotice
-	
-	init(
-//		notice: DateNotice,
-		date: Date) {
-//		self.notice = notice
-		
-		super.init(type: .scheduleNotice, date: date)
-	}
-	
-	override func generateAttachmentView() -> AttachmentView {
-		let view = NoticeAttachmentView()
-//		view.notice = notice
-		return view
-	}
-	
-}
-
 class EventUpcomingItem: UpcomingItem {
 	
+	let badge: String
 	let event: Event
 	
-	init(event: Event, date: Date) {
+	init(badge: String, event: Event, date: Date) {
+		self.badge = badge
 		self.event = event
 		
 		super.init(type: .event, date: date)

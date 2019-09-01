@@ -74,7 +74,7 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 			self.tableHandler.reload()
 		}.filter({ $0.dayOfWeek == self.date.weekday })
 		
-		Grade.onUserGradeChange.subscribe(with: self) { grade in
+		DeviceProfile.shared.onUserGradeChange.subscribe(with: self) { grade in
 			self.tableHandler.reload()
 		}
 	}

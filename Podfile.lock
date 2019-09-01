@@ -5,21 +5,21 @@ PODS:
     - UnboxedAlamofire
   - Alamofire (4.8.2)
   - Hero (1.4.0)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
-  - Realm (3.14.1):
-    - Realm/Headers (= 3.14.1)
-  - Realm/Headers (3.14.1)
-  - RealmSwift (3.14.1):
-    - Realm (= 3.14.1)
+    - Result (~> 4.1)
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
   - Result (4.1.0)
-  - Signals (6.0.1)
-  - SnapKit (4.2.0)
-  - SwiftyJSON (4.3.0)
-  - SwiftyUserDefaults (3.0.1)
+  - Signals (6.1.0)
+  - SnapKit (5.0.1)
+  - SwiftyJSON (5.0.0)
+  - SwiftyUserDefaults (4.0.0)
   - TableManager (1.11.0)
   - Timepiece (1.3.1)
   - Unbox (2.5.0)
@@ -62,14 +62,14 @@ SPEC CHECKSUMS:
   AddictiveLib: 3ebfbb9e1244eb61196e59c52bd9d9ce92889b48
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Realm: e12c9c2387d05c5bba3a9c394838f5870e85763b
-  RealmSwift: a82eab9b04c3e1616082c7e17aa300740847769c
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  Signals: 2c92e8639f97fe45678460840fabe2056b3190b4
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+  Signals: f8e5c979e93c35273f8dfe55ee7f47213d3e8fe8
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
   TableManager: f37977cc9709548060b42dd3cb872ee7668cfe22
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   Unbox: 30e437e6151a6de16139375fd4e8dd9a664cfbf7

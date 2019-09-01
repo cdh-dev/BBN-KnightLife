@@ -18,7 +18,7 @@ private(set) var BlockMetaM = BlockMetaManager()
 
 extension DefaultsKeys {
 	
-	fileprivate static let blockMetaMigratedToRealm = DefaultsKey<Bool>("migrated.blockmeta")
+	fileprivate static let blockMetaMigratedToRealm = DefaultsKey<Bool>("migrated.blockmeta", defaultValue: false)
 	
 }
 

@@ -17,7 +17,7 @@ import SwiftyUserDefaults
 extension DefaultsKeys {
 	
 	// Key is String: Any because Int indexes don't work with this version of SwiftyUD
-	fileprivate static let firstLunches: DefaultsKey<[String: Any]> = DefaultsKey<[String: Any]>("firstLunches")
+	fileprivate static let firstLunches: DefaultsKey<[String: Any]> = DefaultsKey<[String: Any]>("firstLunches", defaultValue: [:])
 	
 }
 
@@ -129,7 +129,7 @@ final class Schedule: BadgeTethered, Decodable, Refreshable {
 			return nil
 		}
 		
-		if let userGrade = Grade.userGrade {
+		if let userGrade = DeviceProfile.shared.userGrade {
 			// Get the first timetable relevant to user's grade
 			if let gradeTimetable = self.timetables.filter({ $0.gradeSpecific && $0.grades.contains(userGrade) }).first {
 				return gradeTimetable

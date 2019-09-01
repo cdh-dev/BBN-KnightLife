@@ -15,7 +15,7 @@ private(set) var CourseM = CourseManager()
 
 extension DefaultsKeys {
 	
-	fileprivate static let courseMigratedToRealm = DefaultsKey<Bool>("migrated.course")
+	fileprivate static let courseMigratedToRealm = DefaultsKey<Bool>("migrated.course", defaultValue: false)
 	
 }
 
