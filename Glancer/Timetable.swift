@@ -20,6 +20,8 @@ final class Timetable: Decodable {
 	let title: String?
 	private(set) var blocks: [Block]!
 	
+	let special: Bool
+	
 	private(set) var schedule: Schedule!
 	
 	init(json: JSON) throws {
@@ -37,6 +39,8 @@ final class Timetable: Decodable {
 			
 			return block
 		})
+		
+		self.special = json["special"].boolValue
 		
 	}
 	
