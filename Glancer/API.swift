@@ -38,7 +38,13 @@ enum API {
 extension API: TargetType {
 	
 	var baseURL: URL {
-		return URL(string: "https://api.bbnknightlife.com/m/")!
+		let serverUrl = Bundle.main.object(forInfoDictionaryKey: "KlApiUrl") as! String
+		if (serverUrl != nil) {
+			return URL(string: serverUrl)!
+                }
+		else {
+			return URL(string: "https://api.bbnknightlife.com/m/")!
+		}
 	}
 	
 	var path: String {
