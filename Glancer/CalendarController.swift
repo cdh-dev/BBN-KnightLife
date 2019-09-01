@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import AddictiveLib
 import SnapKit
+import Moya
+import SwiftyJSON
+import Timepiece
 
 class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloadable, PushRefreshListener {
 
@@ -122,25 +125,73 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 		self.upcomingItems = nil
 		self.upcomingItemsError = nil
 		
-//		UpcomingWebCall(date: Date.today).callback() {
-//			result in
-//
-//			switch result {
-//			case .success(let items):
-//				self.upcomingItems = items
-//			case .failure(let error):
-//				self.upcomingItemsError = error
-//				print(error.localizedDescription)
-//			}
-//			
-//			Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) {
-//				timer in
-//				then()
-//			}
-//		}.execute()
+		let provider = MoyaProvider<API>()
+		provider.request(.getUpcoming) {
+			switch $0 {
+			case .success(let response):
+				do {
+					_ = try response.filterSuccessfulStatusCodes()
+					let json = try JSON(data: response.data)
+					
+					var upcomingItems: [(date: Date, items: [UpcomingItem])] = []
+					
+					for dateString in json["upcoming"].dictionaryValue.keys {
+						// All UpcomingItems for this day
+						var items: [UpcomingItem] = []
+						
+						// Parse date from key
+						let date = try Optionals.unwrap(dateString.dateFromInternetFormat)
+						
+						for rawItem in json[dateString].arrayValue {
+							// Parse type
+							let type = try Optionals.unwrap(UpcomingItemType(rawValue: try Optionals.unwrap(rawItem["type"].string)))
+							
+							// Grab badge
+							let badge = try Optionals.unwrap(rawItem["badge"].string)
+							
+							var item: UpcomingItem!
+							
+							switch type {
+							case .scheduleChanged:
+								// TODO: Set up for schedule changes
+								item = ScheduleChangedUpcomingItem(badge: badge, date: date)
+								break
+							case .event:
+								do {
+									let event = try Event.instantiate(json: rawItem["details"])
+									item = EventUpcomingItem(badge: badge, event: event, date: date)
+								} catch {
+									print("An error prevented the parsing of an Upcoming Item.")
+									print(error)
+									continue
+								}
+							}
+							
+							// Item shouldn't be null
+							items.append(item)
+						}
+						
+						// Append a new date items map
+						upcomingItems.append((date, items))
+					}
+					
+					self.upcomingItemsError = nil
+					self.upcomingItems = upcomingItems
+					
+					// Trigger callback after a brief delay
+					Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+						then()
+					}
+				} catch {
+					self.upcomingItemsError = error
+					self.upcomingItems = nil
+				}
+			case .failure(let error):
+				self.upcomingItemsError = error
+				self.upcomingItems = nil
+			}
+		}
 	}
-	
-	
 	
 	func buildCells(handler: TableHandler, layout: TableLayout) {
 		if !self.upcomingItemsLoaded {

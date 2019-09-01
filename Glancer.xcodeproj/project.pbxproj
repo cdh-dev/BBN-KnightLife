@@ -196,6 +196,8 @@
 		C0C785B3210FDB88003A5EB8 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C785B2210FDB88003A5EB8 /* TitleCell.xib */; };
 		C0C785B5210FDB8E003A5EB8 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C785B4210FDB8E003A5EB8 /* TitleCell.swift */; };
 		C0CAF2CE210C223C001A69BF /* LunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAF2CD210C223C001A69BF /* LunchController.swift */; };
+		C0CD10A5231B277A0068162E /* DeviceProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD10A4231B277A0068162E /* DeviceProfile.swift */; };
+		C0CD10A6231B277A0068162E /* DeviceProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD10A4231B277A0068162E /* DeviceProfile.swift */; };
 		C0CF76F7211E24C800EC35B4 /* InClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CF76F6211E24C800EC35B4 /* InClassView.swift */; };
 		C0CF76F9211E24D200EC35B4 /* InClassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CF76F8211E24D200EC35B4 /* InClassView.xib */; };
 		C0D11271228DA0A400CE270D /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D11270228DA0A400CE270D /* Day.swift */; };
@@ -389,6 +391,7 @@
 		C0C785B2210FDB88003A5EB8 /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		C0C785B4210FDB8E003A5EB8 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		C0CAF2CD210C223C001A69BF /* LunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchController.swift; sourceTree = "<group>"; };
+		C0CD10A4231B277A0068162E /* DeviceProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProfile.swift; sourceTree = "<group>"; };
 		C0CF76F6211E24C800EC35B4 /* InClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InClassView.swift; sourceTree = "<group>"; };
 		C0CF76F8211E24D200EC35B4 /* InClassView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InClassView.xib; sourceTree = "<group>"; };
 		C0D11270228DA0A400CE270D /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -1071,6 +1074,7 @@
 			children = (
 				C0C176581FAA5F450059E956 /* Scheme.swift */,
 				C07D912E225EF78200A59345 /* Grade.swift */,
+				C0CD10A4231B277A0068162E /* DeviceProfile.swift */,
 				C07D9131225EF78B00A59345 /* Networking Targets */,
 				C0A92946225D9EE000CE2D12 /* Date */,
 			);
@@ -1625,6 +1629,7 @@
 				C0815912211B46DE00522B25 /* SettingsColorPickerController.swift in Sources */,
 				C0FCDBCB210A964A0080A883 /* AttachmentView.swift in Sources */,
 				C0791CA42116B86F0066CE62 /* PushNotificationManager.swift in Sources */,
+				C0CD10A5231B277A0068162E /* DeviceProfile.swift in Sources */,
 				C09B41D0211378BD00D636D7 /* TableSection+KL.swift in Sources */,
 				C0711B0320DAC3BE009243CC /* TimeDuration.swift in Sources */,
 				C0D11271228DA0A400CE270D /* Day.swift in Sources */,
@@ -1732,6 +1737,7 @@
 				C07147ED2277769F0008EC0C /* LunchPushListener.swift in Sources */,
 				C01A6C622118C9BA000B7442 /* Date+KL.swift in Sources */,
 				C0B4DA0D228A26CE0081075A /* String+Date.swift in Sources */,
+				C0CD10A6231B277A0068162E /* DeviceProfile.swift in Sources */,
 				C080E83E211E320D000A67DB /* BetweenClassView.swift in Sources */,
 				C0B4DA0A228921570081075A /* DayEventList.swift in Sources */,
 				C0B4DA0722891E300081075A /* EventPushListener.swift in Sources */,

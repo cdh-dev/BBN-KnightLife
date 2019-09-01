@@ -121,7 +121,7 @@ extension Event {
 			return nil
 		}
 		
-		if let userGrade = Grade.userGrade {
+		if let userGrade = DeviceProfile.shared.userGrade {
 			for audience in audiences {
 				if audience.grade == userGrade {
 					return audience
@@ -134,7 +134,7 @@ extension Event {
 	// Check if the Event is relevant to the user's grade
 	var gradeRelevant: Bool {
 		// If user grade isn't set, then it is relevant
-		guard let userGrade = Grade.userGrade else {
+		guard let userGrade = DeviceProfile.shared.userGrade else {
 			return true
 		}
 		
@@ -149,7 +149,7 @@ extension Event {
 	}
 	
 	var oldCompleteTitle: String {
-		let userGrade = Grade.userGrade
+		let userGrade = DeviceProfile.shared.userGrade
 		
 		let addDescriptionPunctuation = !(self.title.last == "." || self.title.last == "?" || self.title.last == "!")
 		

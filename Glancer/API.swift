@@ -14,8 +14,9 @@ import SwiftyJSON
 
 enum API {
 	
-	case registerDevice(token: String)
-	case updateProfileGradeSetting(grade: Grade?)
+	case updateDeviceProfile(profile: DeviceProfile)
+	
+	case getUpcoming
 	
 	case getSurveyURL
 	
@@ -24,8 +25,6 @@ enum API {
 	
 	case getScheduleBy(badge: String)
 	case getScheduleFor(date: Date)
-	
-	case getNextSchoolDay
 	
 	case getLunchBy(badge: String)
 	case getLunchFor(date: Date)
@@ -39,15 +38,20 @@ enum API {
 extension API: TargetType {
 	
 	var baseURL: URL {
-		return URL(string: "https://api.bbnknightlife.com/m/")!
+		if let serverUrl = Bundle.main.object(forInfoDictionaryKey: "KlApiUrl") as? String {
+			return URL(string: serverUrl)!
+		} else {
+			return URL(string: "https://api.bbnknightlife.com/m/")!
+		}
 	}
 	
 	var path: String {
 		switch self {
-		case .registerDevice(_):
-			return "device/register"
-		case .updateProfileGradeSetting(_):
-			return "profile/settings/grade"
+		case .updateDeviceProfile(_):
+			return "device/profile"
+			
+		case .getUpcoming:
+			return "upcoming"
 			
 		case .getSurveyURL:
 			return "survey"
@@ -61,9 +65,6 @@ extension API: TargetType {
 			return "schedule/\( badge )"
 		case let .getScheduleFor(date):
 			return "schedule/\( date.year )/\( date.month )/\( date.day )"
-			
-		case .getNextSchoolDay:
-			return "schedule/next"
 			
 		case let .getLunchBy(badge):
 			return "lunch/\( badge )"
@@ -81,9 +82,7 @@ extension API: TargetType {
 	
 	var method: Moya.Method {
 		switch self {
-		case .registerDevice(_):
-			return .post
-		case .updateProfileGradeSetting(_):
+		case .updateDeviceProfile(_):
 			return .post
 			
 		default:
@@ -100,8 +99,8 @@ extension API: TargetType {
 	
 	var task: Task {
 		switch self {
-//		case let .registerDevice(_):
-//			return .requestJSONEncodable(JSON())
+		case let .updateDeviceProfile(profile):
+			return .requestJSONEncodable(profile.toJSON)
 			
 		case let .getEvents(categories, filters):
 			var parameters: [String: String] = [:]

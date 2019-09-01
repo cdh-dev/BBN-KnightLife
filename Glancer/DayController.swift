@@ -74,7 +74,7 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 			self.tableHandler.reload()
 		}.filter({ $0.dayOfWeek == self.date.weekday })
 		
-		Grade.onUserGradeChange.subscribe(with: self) { grade in
+		DeviceProfile.shared.onUserGradeChange.subscribe(with: self) { grade in
 			self.tableHandler.reload()
 		}
 	}
@@ -89,14 +89,14 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 		self.navigationItem.title = self.date.prettyDate
 		
 		if let subtitleItem = self.navigationItem as? SubtitleNavigationItem {
-//			if let bundle = self.bundle {
-//				if bundle.schedule.changed {
-//					subtitleItem.subtitle = "Special"
-//					subtitleItem.subtitleColor = .red
-//
-//					return
-//				}
-//			}
+			if let bundle = self.bundle {
+				if bundle.schedule.selectedTimetable?.special == true {
+					subtitleItem.subtitle = "Special"
+					subtitleItem.subtitleColor = .red
+
+					return
+				}
+			}
 
 			subtitleItem.subtitle = nil
 			subtitleItem.subtitleColor = UIColor.darkGray

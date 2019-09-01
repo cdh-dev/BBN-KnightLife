@@ -20,6 +20,8 @@ final class Timetable: Decodable {
 	let title: String?
 	private(set) var blocks: [Block]!
 	
+	let special: Bool
+	
 	private(set) var schedule: Schedule!
 	
 	init(json: JSON) throws {
@@ -31,13 +33,14 @@ final class Timetable: Decodable {
 		
 		self.title = json["title"].string
 		
+		self.special = json["special"].boolValue
+
 		self.blocks = try Optionals.unwrap(json["blocks"].array).map({
 			var block = try Block(json: $0)
 			block.setTimetable(timetable: self)
 			
 			return block
 		})
-		
 	}
 	
 	func setSchedule(schedule: Schedule) {

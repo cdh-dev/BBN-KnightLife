@@ -24,7 +24,7 @@ class EventsPrefsModule: TableModule {
 		section.addCell(TitleCell(title: "Grade"))
 		section.addDivider()
 		
-		section.addCell(SettingsTextCell(left: "Your Grade", right: Grade.userGrade == nil ? "Not Set" : Grade.userGrade!.singular) {
+		section.addCell(SettingsTextCell(left: "Your Grade", right: DeviceProfile.shared.userGrade == nil ? "Not Set" : DeviceProfile.shared.userGrade!.singular) {
 			self.showChangeGrade()
 		})
 		
@@ -46,7 +46,7 @@ class EventsPrefsModule: TableModule {
 				return
 			}
 			
-			Grade.userGrade = key
+			DeviceProfile.shared.userGrade = key
 			self.controller.tableHandler.reload()
 		}
 		
@@ -59,7 +59,7 @@ class EventsPrefsModule: TableModule {
 		
 		// Set normal grade values to be checked
 		for (id, action) in blockActions {
-			if Grade.userGrade == id {
+			if DeviceProfile.shared.userGrade == id {
 				action.setValue(true, forKey: "checked")
 			}
 			
@@ -68,11 +68,11 @@ class EventsPrefsModule: TableModule {
 		
 		// Set no grade set action to be checked
 		let nullAction = UIAlertAction(title: "Not Set", style: .default) { alert in
-			Grade.userGrade = nil
+			DeviceProfile.shared.userGrade = nil
 			self.controller.tableHandler.reload()
 		}
 		
-		if Grade.userGrade == nil {
+		if DeviceProfile.shared.userGrade == nil {
 			nullAction.setValue(true, forKey: "checked")
 		}
 		

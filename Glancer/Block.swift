@@ -30,7 +30,7 @@ final class Block: Decodable {
 				return true
 			}
 			
-			if let userGrade = Grade.userGrade {
+			if let userGrade = DeviceProfile.shared.userGrade {
 				// Don't include this Annotation if it doesn't match the user's grade
 				if !$0.grades.contains(userGrade) {
 					return false
@@ -46,7 +46,7 @@ final class Block: Decodable {
 			return nil
 		}
 		
-		if let userGrade = Grade.userGrade {
+		if let userGrade = DeviceProfile.shared.userGrade {
 			// Get the first timetable relevant to user's grade
 			if let gradeAnnotation = self.annotations.filter({ $0.gradeSpecific && $0.grades.contains(userGrade) }).first {
 				return gradeAnnotation

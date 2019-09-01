@@ -54,29 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		// Store token
 		Defaults[.deviceId] = tokenString
 				
-		// Perform device registration call
-		let moyaProvider = MoyaProvider<API>()
-		moyaProvider.request(.registerDevice(token: tokenString)) {
-			switch $0 {
-			case .success(let response):
-				do {
-					_ = try response.filterSuccessfulStatusCodes()
-					
-					let data = response.data
-					let json = try JSON(data: data)
-					
-					if let success = json["success"].bool {
-						print("Registration of device token resulted in success: \(success)")
-					} else {
-						print("Invalid server response when receiving token registration response.")
-					}
-				} catch {
-					print("An error occurred while registering device token: \( error.localizedDescription )")
-				}
-			case .failure(let error):
-				print("An error occurred while registering device token: \( error.localizedDescription )")
-			}
-		}
+		// Sync the device profile to server. This will also register the device for push notifications
+		DeviceProfile.shared.sync()
 	}
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

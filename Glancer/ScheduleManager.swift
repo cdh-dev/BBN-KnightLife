@@ -12,7 +12,7 @@ import AddictiveLib
 
 extension DefaultsKeys {
 	
-	fileprivate static let scheduleMigratedToMeta = DefaultsKey<Bool>("migrated.schedule")
+	fileprivate static let scheduleMigratedToMeta = DefaultsKey<Bool>("migrated.schedule", defaultValue: false)
 	
 }
 
