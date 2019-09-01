@@ -45,12 +45,7 @@ enum Grade: Int {
 	
 }
 
-extension DefaultsKeys {
-	
-	static let gradeMigratedToRealm = DefaultsKey<Bool>("migrated.grade")
-	static let gradeLegacy = DefaultsKey<Int>("events.grade")
-	
-}
+
 
 extension Grade {
 	
