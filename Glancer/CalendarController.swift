@@ -15,7 +15,7 @@ import SwiftyJSON
 import Timepiece
 
 class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloadable, PushRefreshListener {
-
+	
 	var refreshListenerType: [PushRefreshType] = [.EVENTS, .SCHEDULE]
 	
 	@IBOutlet weak var tableView: UITableView!
@@ -43,7 +43,7 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 		
 		self.tableHandler = TableHandler(table: self.tableView)
 		self.tableHandler.dataSource = self
-				
+		
 		self.calendarView.controller = self
 		
 		self.fetchUpcoming {
@@ -52,16 +52,16 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 		
 		self.registerListeners()
 	}
-
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-
+		
 		self.calendarView.setupViews()
 		self.setupNavigation()
-
+		
 		self.tableHandler.reload()
 	}
-
+	
 	private func registerListeners() {
 		PushNotificationManager.instance.addListener(type: .REFRESH, listener: self)
 		
@@ -117,7 +117,7 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 			self.tableHandler.reload()
 			queue.leave()
 		}
-
+		
 		self.tableHandler.reload()
 	}
 	
@@ -135,45 +135,56 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 					
 					var upcomingItems: [(date: Date, items: [UpcomingItem])] = []
 					
-					for dateString in json["upcoming"].dictionaryValue.keys {
+					for (dateString, subItem): (String, JSON) in json["upcoming"] {
 						// All UpcomingItems for this day
 						var items: [UpcomingItem] = []
 						
 						// Parse date from key
-						let date = try Optionals.unwrap(dateString.dateFromInternetFormat)
-						
-						for rawItem in json[dateString].arrayValue {
-							// Parse type
-							let type = try Optionals.unwrap(UpcomingItemType(rawValue: try Optionals.unwrap(rawItem["type"].string)))
+						do {
+							let date = try Optionals.unwrap(dateString.dateFromInternetFormat)
 							
-							// Grab badge
-							let badge = try Optionals.unwrap(rawItem["badge"].string)
-							
-							var item: UpcomingItem!
-							
-							switch type {
-							case .scheduleChanged:
-								// TODO: Set up for schedule changes
-								item = ScheduleChangedUpcomingItem(badge: badge, date: date)
-								break
-							case .event:
+							for rawItem in subItem.arrayValue {
 								do {
-									let event = try Event.instantiate(json: rawItem["details"])
-									item = EventUpcomingItem(badge: badge, event: event, date: date)
+									// Parse type
+									let type = try Optionals.unwrap(UpcomingItemType(rawValue: try Optionals.unwrap(rawItem["type"].string)))
+									
+									// Grab badge
+									let badge = try Optionals.unwrap(rawItem["badge"].string)
+									
+									var item: UpcomingItem!
+									
+									switch type {
+									case .scheduleChanged:
+										// TODO: Set up for schedule changes
+										item = ScheduleChangedUpcomingItem(badge: badge, date: date)
+										break
+									case .event:
+										do {
+											let event = try Event.instantiate(json: rawItem["details"])
+											item = EventUpcomingItem(badge: badge, event: event, date: date)
+										} catch {
+											print("An error prevented the parsing of an Upcoming Item.")
+											print(error)
+											continue
+										}
+									}
+									
+									// Item shouldn't be null
+									items.append(item)
 								} catch {
-									print("An error prevented the parsing of an Upcoming Item.")
 									print(error)
-									continue
 								}
 							}
 							
-							// Item shouldn't be null
-							items.append(item)
+							// Append a new date items map
+							upcomingItems.append((date, items))
+						} catch {
+							print(error)
 						}
-						
-						// Append a new date items map
-						upcomingItems.append((date, items))
 					}
+					
+					// Sort by date
+					upcomingItems.sort(by: { $0.date < $1.date })
 					
 					self.upcomingItemsError = nil
 					self.upcomingItems = upcomingItems
@@ -208,49 +219,28 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 		
 		self.setupRefresh()
 		let list = self.upcomingItems!
-
+		
 		if list.isEmpty {
 			layout.addSection().addCell(NothingUpcomingCell()).setHeight(self.tableView.bounds.size.height)
-//			No items
+			//			No items
 			return
 		}
 		
-		for item in list {
-			// Check if there are any events here that can't be displayed because of grade settings
-			var invalidEvents = 0
-			for upcoming in item.items {
-				if upcoming.type == .event {
-					if !(upcoming as? EventUpcomingItem)!.event.gradeRelevant {
-						invalidEvents += 1
-					}
-				}
-			}
-			
-			if invalidEvents >= item.items.count {
-//				If every item in here is an event, and none of them can be shown, just continue
-				continue
-			}
-			
+		for dateItemsPair in list {
 			let section = layout.addSection()
 			
-			section.addDivider()			
-			section.addCell(TitleCell(title: item.date.prettyDate))
+			section.addDivider()
+			section.addCell(TitleCell(title: dateItemsPair.date.prettyDate))
 			section.addDivider()
 			
 			var views: [AttachmentView] = []
-			for upcoming in item.items {
-				if let eventUpcoming = upcoming as? EventUpcomingItem {
-					if !eventUpcoming.event.gradeRelevant {
-						continue
-					}
-				}
-				
+			for upcoming in dateItemsPair.items {
 				views.append(upcoming.generateAttachmentView())
 			}
 			
 			let cell = AttachmentCell(attachmentViews: views)
 			cell.clickHandler = {
-				self.openDay(date: item.date)
+				self.openDay(date: dateItemsPair.date)
 			}
 			section.addCell(cell)
 		}
