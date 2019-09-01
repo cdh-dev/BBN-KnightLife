@@ -33,15 +33,14 @@ final class Timetable: Decodable {
 		
 		self.title = json["title"].string
 		
+		self.special = json["special"].boolValue
+
 		self.blocks = try Optionals.unwrap(json["blocks"].array).map({
 			var block = try Block(json: $0)
 			block.setTimetable(timetable: self)
 			
 			return block
 		})
-		
-		self.special = json["special"].boolValue
-		
 	}
 	
 	func setSchedule(schedule: Schedule) {
