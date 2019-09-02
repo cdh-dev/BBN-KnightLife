@@ -131,7 +131,7 @@ final class Schedule: BadgeTethered, Decodable, Refreshable {
 		
 		if let userGrade = DeviceProfile.shared.userGrade {
 			// Get the first timetable relevant to user's grade
-			if let gradeTimetable = self.timetables.filter({ $0.gradeSpecific && $0.grades.contains(userGrade) }).first {
+			if let gradeTimetable = self.timetables.filter({ $0.gradeSpecific && $0.grade == userGrade }).first {
 				return gradeTimetable
 			}
 		}

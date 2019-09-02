@@ -15,7 +15,7 @@ import Timepiece
 final class Timetable: Decodable {
 	
 	let badge: String
-	let grades: [Grade]
+	let grade: Grade?
 	
 	let title: String?
 	private(set) var blocks: [Block]!
@@ -27,9 +27,7 @@ final class Timetable: Decodable {
 	init(json: JSON) throws {
 		
 		self.badge = try Optionals.unwrap(json["badge"].string)
-		self.grades = try Optionals.unwrap(json["grades"].arrayObject).compactMap({
-			return Grade(rawValue: ($0 as? Int) ?? -1)
-		})
+		self.grade = Grade(rawValue: json["grade"].int ?? -1)
 		
 		self.title = json["title"].string
 		
@@ -49,7 +47,7 @@ final class Timetable: Decodable {
 	
 	// Empty grades array means the schedule is global
 	var gradeSpecific: Bool {
-		return !self.grades.isEmpty
+		return self.grade != nil
 	}
 	
 	func select() {
