@@ -333,7 +333,6 @@ final class TodayManager {
 		let now = Date()
 		for block in timetable.filterBlocksByLunch() {
 			if block.schedule.duration.contains(date: now) {
-
 				return block
 			}
 		}
@@ -343,19 +342,16 @@ final class TodayManager {
 	
 	var nextBlock: Block? {
 		guard let bundle = self.todayBundle else {
-            
 			return nil
 		}
 		
 		guard let timetable = bundle.schedule.selectedTimetable else {
-            
 			return nil
 		}
 		
 		let now = Date()
 		for block in timetable.filterBlocksByLunch() {
-            print(now)
-			if block.schedule.start < now { // Is already in progress or has passed already
+			if block.schedule.start < now { // If the block is already in progress or has passed already
 				continue
 			}
 			
