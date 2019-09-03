@@ -27,9 +27,9 @@ class TodayBetweenClassModule: TableModule {
 	
 	override func build() {
 		let analyst = self.nextBlock.analyst
-		
+        
 		let state = analyst.bestCourse == nil ? "\(analyst.displayName) starting soon" : "Get to \(analyst.displayName)"
-		
+        
 		let todaySection = self.addSection()
 		todaySection.addCell(TodayStatusCell(state: state, minutes: self.minutesUntil, image: UIImage(named: "icon_class")!, color: analyst.color))
 		
