@@ -351,8 +351,8 @@ final class TodayManager {
 		
 		let now = Date()
 		for block in timetable.filterBlocksByLunch() {
-			if block.schedule.start < now { // Is already in progress or has passed already
-				return block
+			if block.schedule.start < now { // If the block is already in progress or has passed already
+				continue
 			}
 			
 			return block

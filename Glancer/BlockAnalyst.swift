@@ -24,7 +24,7 @@ extension Block {
 		}
 		
 		var bestCourse: Course? {
-			return self.courses.first
+            return self.courses.first
 		}
 		
 		var labAssociatedBlock: Block? {
