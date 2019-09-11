@@ -12,33 +12,33 @@ import AddictiveLib
 
 class NoticeCell: TableCell {
 	
-	init(
-//		notice: DateNotice
-		) {
+	init(left: String, right: String) {
 		super.init("notice", nib: "NoticeCell")
 		
-		self.setEstimatedHeight(40)
+		self.setHeight(44)
 		self.setSelectionStyle(.none)
 		
 		self.setCallback() {
 			template, cell in
 			
-			guard let cell = cell as? UINoticeCell else {
+			guard let cell = cell as? UICWTeamEventsCell else {
 				return
 			}
 			
-			for view in cell.attachmentStack.arrangedSubviews { view.removeFromSuperview() }
-			
-			let attachment = NoticeAttachmentView()
+            cell.leftLabel.text = left
+            cell.rightLabel.text = right
+            
+            print(ColorWarEvent.goldPoints() ?? 0)
+            
 //			attachment.notice = notice
-			cell.attachmentStack.addArrangedSubview(attachment)
 		}
 	}
 	
 }
 
-class UINoticeCell: UITableViewCell {
-	
-	@IBOutlet weak var attachmentStack: UIStackView!
-	
+
+class UICWTeamEventsCell: UITableViewCell {
+    @IBOutlet weak var leftLabel: UILabel!
+    
+    @IBOutlet weak var rightLabel: UILabel!
 }

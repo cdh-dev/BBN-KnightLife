@@ -85,7 +85,7 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 	
 	func setupNavigationItem() {
 		self.setupMailButtonItem()
-		
+        
 		self.navigationItem.title = self.date.prettyDate
 		
 		if let subtitleItem = self.navigationItem as? SubtitleNavigationItem {
@@ -102,11 +102,11 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 			subtitleItem.subtitleColor = UIColor.darkGray
 		}
 	}
-	
+//	Repurposed for Color wars, was for notices.
 	private func buildMailButtonItem(badge: Int) -> UIBarButtonItem {
 		let button = UIButton()
-		button.setImage(UIImage(named: "icon_mail")?.withRenderingMode(.alwaysTemplate), for: .normal)
-		button.tintColor = Scheme.blue.color
+		button.setImage(UIImage(named: "icon_head")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = UIColor.red
 		
 		button.addTarget(self, action: #selector(self.messagesButtonClicked(_:)), for: .touchUpInside)
 		
@@ -144,7 +144,8 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 //				self.addMailButton(badge: bundle.schedule.notices.count)
 //			}
 //		} else {
-			self.removeMailButton()
+//            self.removeMailButton()
+            self.addMailButton(badge: 1)
 //		}
 	}
 	
@@ -169,7 +170,7 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 //			return
 //		}
 		
-		guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "Messages") as? NoticesController else {
+		guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "Messages") as? ColorWarController else {
 			return
 		}
 		

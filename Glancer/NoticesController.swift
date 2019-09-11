@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 import AddictiveLib
+import Moya
+import SwiftyJSON
 
 class NoticesController: UIViewController, TableHandlerDataSource {
-	
-//	var notices: [DateNotice]!
 	
 	@IBOutlet weak var tableView: UITableView!
 	private var tableHandler: TableHandler!
@@ -33,40 +33,14 @@ class NoticesController: UIViewController, TableHandlerDataSource {
 	}
 	
 	func buildCells(handler: TableHandler, layout: TableLayout) {
-//		let lowPriority = self.notices.filter({ $0.priority == .notice })
-//		let highPriority = self.notices.filter({ $0.priority == .warning })
-//
-//		if !highPriority.isEmpty {
-//			let section = layout.addSection()
-//			section.addDivider()
-//			section.addCell(TitleCell(title: "Alerts"))
-//			section.addDivider()
-//
-//			section.addSpacerCell().setBackgroundColor(.white).setHeight(5)
-//
-//			for notice in highPriority {
-//				section.addCell(NoticeCell(notice: notice))
-//			}
-//
-//			section.addSpacerCell().setBackgroundColor(.white).setHeight(5)
-//		}
-//
-//		if !lowPriority.isEmpty {
-//			let section = layout.addSection()
-//			section.addDivider()
-//			section.addCell(TitleCell(title: "Notices"))
-//			section.addDivider()
-//
-//			section.addSpacerCell().setBackgroundColor(.white).setHeight(5)
-//
-//			for notice in lowPriority {
-//				section.addCell(NoticeCell(notice: notice))
-//			}
-//
-//			section.addSpacerCell().setBackgroundColor(.white).setHeight(5)
-//		}
-//
-//		layout.addSection().addDivider() // Cap off the bottom.
+
+        let section = layout.addSection()
+        section.addDivider()
+//        section.addCell(TitleCell(title: "\(ColorWarEvent.blackPoints() ?? "0")"))
+        section.addCell(ColorWarCell(left: "Black Team", right: "\(ColorWarEvent.blackPoints() ?? "0")"))
+        section.addDivider()
+
+//        "\(ColorWarEvent.blackPoints())"
 	}
 	
 }

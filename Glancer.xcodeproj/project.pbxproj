@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225B2DEA2328AD6D00255EDF /* ColorWarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B2DE92328AD6D00255EDF /* ColorWarsController.swift */; };
+		225B2DEC2328AD8900255EDF /* ColorWarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B2DEB2328AD8900255EDF /* ColorWarCell.swift */; };
+		225B2DEE2328AD9D00255EDF /* ColorWarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B2DED2328AD9D00255EDF /* ColorWarCell.xib */; };
 		5BD072481C74AEB40074B56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD072471C74AEB40074B56D /* Main.storyboard */; };
 		5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD285DC1B03CF29007A0472 /* AppDelegate.swift */; };
 		5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD285E31B03CF29007A0472 /* Images.xcassets */; };
@@ -180,9 +183,6 @@
 		C0B7CBE12264DF0200C6EF67 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7CBDE2264DF0200C6EF67 /* Course.swift */; };
 		C0B7CBE22264DF0200C6EF67 /* CourseSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7CBDF2264DF0200C6EF67 /* CourseSchedule.swift */; };
 		C0B7CBE32264DF0200C6EF67 /* CourseSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7CBDF2264DF0200C6EF67 /* CourseSchedule.swift */; };
-		C0BD0F9B2120CAA600C8F403 /* NoticesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD0F9A2120CAA600C8F403 /* NoticesController.swift */; };
-		C0BD0F9F2120CBE400C8F403 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD0F9E2120CBE400C8F403 /* NoticeCell.swift */; };
-		C0BD0FA12120CBED00C8F403 /* NoticeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0BD0FA02120CBED00C8F403 /* NoticeCell.xib */; };
 		C0BD0FA32120CD5D00C8F403 /* NoticeAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD0FA22120CD5D00C8F403 /* NoticeAttachmentView.swift */; };
 		C0BD0FA52120CE6C00C8F403 /* ScheduleChangedAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD0FA42120CE6C00C8F403 /* ScheduleChangedAttachment.swift */; };
 		C0C176591FAA5F450059E956 /* Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C176581FAA5F450059E956 /* Scheme.swift */; };
@@ -240,6 +240,9 @@
 
 /* Begin PBXFileReference section */
 		18D275F10167B98717447A7C /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
+		225B2DE92328AD6D00255EDF /* ColorWarsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarsController.swift; sourceTree = "<group>"; };
+		225B2DEB2328AD8900255EDF /* ColorWarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarCell.swift; sourceTree = "<group>"; };
+		225B2DED2328AD9D00255EDF /* ColorWarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorWarCell.xib; sourceTree = "<group>"; };
 		2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55DC2C1B27B21500D55EB9 /* Glancer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Glancer.entitlements; sourceTree = "<group>"; };
 		5BD072471C74AEB40074B56D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -375,9 +378,6 @@
 		C0B72225211F44D40095BA70 /* AttachmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachmentCell.xib; sourceTree = "<group>"; };
 		C0B7CBDE2264DF0200C6EF67 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		C0B7CBDF2264DF0200C6EF67 /* CourseSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSchedule.swift; sourceTree = "<group>"; };
-		C0BD0F9A2120CAA600C8F403 /* NoticesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticesController.swift; sourceTree = "<group>"; };
-		C0BD0F9E2120CBE400C8F403 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
-		C0BD0FA02120CBED00C8F403 /* NoticeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeCell.xib; sourceTree = "<group>"; };
 		C0BD0FA22120CD5D00C8F403 /* NoticeAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAttachmentView.swift; sourceTree = "<group>"; };
 		C0BD0FA42120CE6C00C8F403 /* ScheduleChangedAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChangedAttachment.swift; sourceTree = "<group>"; };
 		C0C176581FAA5F450059E956 /* Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
@@ -428,6 +428,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225B2DE72328AD3F00255EDF /* ColorWars */ = {
+			isa = PBXGroup;
+			children = (
+				225B2DE82328AD5800255EDF /* Cells */,
+				225B2DE92328AD6D00255EDF /* ColorWarsController.swift */,
+			);
+			path = ColorWars;
+			sourceTree = "<group>";
+		};
+		225B2DE82328AD5800255EDF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				225B2DEB2328AD8900255EDF /* ColorWarCell.swift */,
+				225B2DED2328AD9D00255EDF /* ColorWarCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		2760815A1B310CA4470DF205 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,7 +864,7 @@
 				C024A036211CBC9C0025C5B1 /* Preferences */,
 				C0CAF2CC210C2230001A69BF /* Lunch */,
 				C09BF04E210AE36A0073C217 /* Calendar */,
-				C0BD0F992120CA9600C8F403 /* Notices */,
+				225B2DE72328AD3F00255EDF /* ColorWars */,
 				C0A3D57D21093555004F5049 /* Day */,
 				C0A3D57A21093539004F5049 /* Today */,
 			);
@@ -1207,32 +1225,6 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		C0BD0F992120CA9600C8F403 /* Notices */ = {
-			isa = PBXGroup;
-			children = (
-				C0BD0F9C2120CBCC00C8F403 /* Cells */,
-				C0BD0F9A2120CAA600C8F403 /* NoticesController.swift */,
-			);
-			name = Notices;
-			sourceTree = "<group>";
-		};
-		C0BD0F9C2120CBCC00C8F403 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				C0BD0F9D2120CBD600C8F403 /* Notice */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
-		C0BD0F9D2120CBD600C8F403 /* Notice */ = {
-			isa = PBXGroup;
-			children = (
-				C0BD0F9E2120CBE400C8F403 /* NoticeCell.swift */,
-				C0BD0FA02120CBED00C8F403 /* NoticeCell.xib */,
-			);
-			name = Notice;
-			sourceTree = "<group>";
-		};
 		C0C3DC8F22B4498100268885 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1485,9 +1477,9 @@
 				5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */,
 				C019C1611F7D3CED00FC4EED /* Launch.storyboard in Resources */,
 				C0B72226211F44D40095BA70 /* AttachmentCell.xib in Resources */,
+				225B2DEE2328AD9D00255EDF /* ColorWarCell.xib in Resources */,
 				C0929F432110C61B004A373B /* PrefsActionCell.xib in Resources */,
 				C01862AC2118A29E0042F38A /* TodayBarCell.xib in Resources */,
-				C0BD0FA12120CBED00C8F403 /* NoticeCell.xib in Resources */,
 				C060012B211B2D0D00ECAD1A /* BlocksPrefCell.xib in Resources */,
 				C04D1EC6210FD7C10001C99C /* UILunchItemCell.xib in Resources */,
 				C0ACFD1C2111686D002886A2 /* TodayStatusCell.xib in Resources */,
@@ -1634,7 +1626,6 @@
 				C0711B0320DAC3BE009243CC /* TimeDuration.swift in Sources */,
 				C0D11271228DA0A400CE270D /* Day.swift in Sources */,
 				C0791CA62117E7A20066CE62 /* NotificationManager.swift in Sources */,
-				C0BD0F9B2120CAA600C8F403 /* NoticesController.swift in Sources */,
 				5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */,
 				C01ECD412129D43C0001C013 /* TodayNextDayModule.swift in Sources */,
 				C060011A211B280000ECAD1A /* BlockMeta.swift in Sources */,
@@ -1651,7 +1642,6 @@
 				C07D913F225EF7E100A59345 /* BadgeTetheredPreferences.swift in Sources */,
 				C0B4DA09228921570081075A /* DayEventList.swift in Sources */,
 				C0FCDBC4210978D00080A883 /* SubtitleNavigationItem.swift in Sources */,
-				C0BD0F9F2120CBE400C8F403 /* NoticeCell.swift in Sources */,
 				C0B7221E211F2DF40095BA70 /* UpcomingItem.swift in Sources */,
 				C01ECD3F2129D3C80001C013 /* TodayAfterSchoolModule.swift in Sources */,
 				C024A03A211CC5150025C5B1 /* SettingsColorView.swift in Sources */,
@@ -1665,6 +1655,7 @@
 				C04653C8210936B9004AD09C /* BlockCell.swift in Sources */,
 				C0BD0FA52120CE6C00C8F403 /* ScheduleChangedAttachment.swift in Sources */,
 				C0B4DA0122891DF20081075A /* ArtEvent.swift in Sources */,
+				225B2DEC2328AD8900255EDF /* ColorWarCell.swift in Sources */,
 				C07D9141225EF7E100A59345 /* Callback.swift in Sources */,
 				C0B04F461FD177EC00F5D116 /* MeetingPrefModule.swift in Sources */,
 				C07EE28D2119EEF50034B383 /* CalendarView.swift in Sources */,
@@ -1686,6 +1677,7 @@
 				C0B4DA0C228A26230081075A /* String+Date.swift in Sources */,
 				C0B4D9F722891DE40081075A /* Event.swift in Sources */,
 				C0C3DC8E22B4448A00268885 /* SchedulePushListener.swift in Sources */,
+				225B2DEA2328AD6D00255EDF /* ColorWarsController.swift in Sources */,
 				C0D6E9442107BC7A004BD0F4 /* Calendar+KL.swift in Sources */,
 				C01573BC20C462ED008CACA5 /* TodayManager.swift in Sources */,
 				C01862AA2118A2920042F38A /* TodayBarCell.swift in Sources */,
@@ -1851,7 +1843,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -1903,7 +1895,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1933,7 +1925,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = Glancer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1969,7 +1961,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = Glancer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2001,7 +1993,7 @@
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TodayWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -2031,7 +2023,7 @@
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TodayWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = MAD.BBN.KnightLife.TodayWidget;
