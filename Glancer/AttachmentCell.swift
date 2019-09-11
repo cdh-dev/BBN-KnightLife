@@ -62,6 +62,7 @@ class UIAttachmentCell: UITableViewCell {
 		
 		if !animated {
 			self.backgroundColor = selected ? Scheme.backgroundColor.color : .white
+            
 			return
 		}
 

@@ -30,25 +30,26 @@ enum Scheme {
 	var color: UIColor {
 		switch self {
 		case .blue:
-			return UIColor(hex: "4481eb")!
+            return UIColor(named: "assetBlue")!
 		case .main:
-			return UIColor.white
+            return UIColor(named: "assetBW")!
 		case .backgroundMedium:
-			return UIColor(hex: "F8F8FA")!
+            return UIColor(named:"assetBackgroundLightGrey")!
 		case .backgroundColor:
 			return UIColor.groupTableViewBackground
 		case .darkText:
-			return UIColor.darkText
+			return UIColor(named: "assetDarkLightText")!
 		case .text:
-			return UIColor.darkGray
+            return UIColor(named: "assetText")!
 		case .lightText:
-			return UIColor.lightGray
+            return UIColor(named: "assetLightText")!
 		case .nullColor:
-			return UIColor(hex: "848484")!
+            return UIColor(named:"assetNullColor")!
 		case .hollowText:
-			return UIColor(hex: "9F9FAA")!
+			return UIColor(named: "assetHollowText")!
 		case .dividerColor:
-			return UIColor(hex: "E1E1E6")!
+            return UIColor(named:
+                "assetDividerColor")!
 		}
 	}
 	
