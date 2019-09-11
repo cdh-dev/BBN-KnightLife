@@ -99,7 +99,7 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 			}
 
 			subtitleItem.subtitle = nil
-			subtitleItem.subtitleColor = UIColor.darkGray
+            subtitleItem.subtitleColor = Scheme.darkLightGreyText.color
 		}
 	}
 	
@@ -111,13 +111,13 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 		button.addTarget(self, action: #selector(self.messagesButtonClicked(_:)), for: .touchUpInside)
 		
 		let badgeWrapper = UIView()
-		badgeWrapper.backgroundColor = UIColor.red
+        badgeWrapper.backgroundColor = Scheme.redColor.color
 		badgeWrapper.cornerRadius = 7.0
 		
 		let badgeLabel = UILabel()
 		badgeLabel.font = UIFont.systemFont(ofSize: 10.0, weight: .bold)
 		badgeLabel.text = "\(badge)"
-		badgeLabel.textColor = UIColor.white
+        badgeLabel.textColor = Scheme.backgroundMedium.color
 		
 		badgeWrapper.addSubview(badgeLabel)
 		badgeLabel.snp.makeConstraints() { $0.center.equalToSuperview() }
