@@ -65,10 +65,10 @@ class CalendarView: UIView {
 							button.setTitleColor(Scheme.blue.color, for: .normal)
 							label.font = UIFont.systemFont(ofSize: 16.0, weight: .heavy)
 						} else if day.month != today.month {
-							button.setTitleColor(Scheme.lightText.color, for: .normal)
+							button.setTitleColor(Scheme.calenderText.color, for: .normal)
 							label.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
 						} else {
-							button.setTitleColor(Scheme.text.color, for: .normal)
+							button.setTitleColor(Scheme.darkLightGreyText.color, for: .normal)
 							label.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
 						}
 					}

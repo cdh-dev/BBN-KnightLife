@@ -29,6 +29,7 @@ class SubtitleNavigationItem: UINavigationItem {
 		}
 	}
 	
+    //controls Upcoming subtitle (which shows month
     @IBInspectable var subtitleColor: UIColor = Scheme.darkLightGreyText.color {
 		didSet {
 			self.subtitleLabel.textColor = self.subtitleColor

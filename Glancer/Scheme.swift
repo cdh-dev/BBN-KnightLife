@@ -24,11 +24,18 @@ enum Scheme {
 	
 	case nullColor
 	
-	case hollowText
-	
 	case dividerColor
     
     case redColor
+    case darkGreyColor
+    
+    case calenderText
+    
+    case attachmentBlue
+    case attachmentYellow
+    case attachmentGreen
+    case attachmentRed
+    case attachmentOrange
 	
 	var color: UIColor {
 		switch self {
@@ -50,13 +57,25 @@ enum Scheme {
             return UIColor(named: "assetLightText")!
 		case .nullColor:
             return UIColor(named:"assetNullColor")!
-		case .hollowText:
-			return UIColor(named: "assetHollowText")!
 		case .dividerColor:
             return UIColor(named:
                 "assetDividerColor")!
         case .redColor:
             return UIColor(named:"assetRed")!
+        case .darkGreyColor:
+            return UIColor(named: "assetDarkGrey")!
+        case .calenderText:
+            return UIColor(named: "assetCalenderText")!
+        case .attachmentBlue:
+            return UIColor(named: "attachmentBlue")!
+        case .attachmentYellow:
+            return UIColor(named: "attachmentYellow")!
+        case .attachmentGreen:
+            return UIColor(named: "attachmentGreen")!
+        case .attachmentRed:
+            return UIColor(named: "attachmentRed")!
+        case .attachmentOrange:
+            return UIColor(named: "attachmentOrange")!
 		}
 	}
 	

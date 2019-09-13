@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import AddictiveLib
 
+
+//title cells are headers for 'after school' and 'classes' 'block configuration' etc. in settings
 class TitleCell: TableCell {
 	
 	init(title: String, alignment: NSTextAlignment = NSTextAlignment.natural) {
@@ -26,7 +28,7 @@ class TitleCell: TableCell {
 			}
 			
 			titleCell.titleLabel.text = title
-			cell.backgroundColor = Scheme.backgroundMedium.color
+            cell.backgroundColor = Scheme.backgroundMedium.color
 			
 			titleCell.titleLabel.textAlignment = alignment
 		}
