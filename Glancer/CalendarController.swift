@@ -247,7 +247,7 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 		
 		let newSection = layout.addSection()
 		newSection.addDivider()
-		newSection.addSpacerCell().setBackgroundColor(.clear).setHeight(35)
+    newSection.addSpacerCell().setBackgroundColor(Scheme.calenderAndBlocksBackground.color).setHeight(35)
 	}
 	
 	func reloadData() {

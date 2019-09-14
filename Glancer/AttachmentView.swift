@@ -60,7 +60,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 				}
 				
 				let imageView = UIImageView(image: self.leftImage!.withRenderingMode(.alwaysTemplate))
-                imageView.tintColor = Scheme.text.color.withAlphaComponent(0.4)
+                imageView.tintColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 
 				self.v_stack.insertArrangedSubview(imageView, at: 0)
 				imageView.snp.makeConstraints() {
@@ -116,7 +116,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 		
 //		Style
 		self.cornerRadius = 5.0
-        self.borderColor = Scheme.text.color.withAlphaComponent(0.2)
+        self.borderColor = Scheme.blackColor.color.withAlphaComponent(0.2)
 		self.borderWidth = 1.0
 		
 //		Stack
@@ -136,7 +136,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 //		Center label
 		let label = UILabel()
 		label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = Scheme.text.color.withAlphaComponent(0.4)
+        label.textColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 		stack.addArrangedSubview(label)
 		
 		label.lineBreakMode = .byWordWrapping
@@ -157,7 +157,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 		
 //		Disclosure image
 		let imageView = UIImageView(image: UIImage(named: "icon_circle-right")!.withRenderingMode(.alwaysTemplate))
-        imageView.tintColor = Scheme.text.color.withAlphaComponent(0.4)
+        imageView.tintColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 		
 		wrapper.addSubview(imageView)
 		

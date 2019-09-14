@@ -58,7 +58,7 @@ class TimeEventAttachmentView: AttachmentView {
 		self.timeStack.addArrangedSubview(self.startLabel)
 		
 		self.arrowImage = UIImageView(image: UIImage(named: "icon_right")?.withRenderingMode(.alwaysTemplate))
-        self.arrowImage.tintColor = Scheme.darkGreyColor.color.withAlphaComponent(0.4)
+        self.arrowImage.tintColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 		self.timeStack.addArrangedSubview(self.arrowImage)
 		
 		self.arrowImage.snp.makeConstraints() {
@@ -71,10 +71,10 @@ class TimeEventAttachmentView: AttachmentView {
 		self.timeStack.addArrangedSubview(self.endLabel)
         //sets up start time label
 		self.startLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        self.startLabel.textColor = Scheme.darkGreyColor.color.withAlphaComponent(0.4)
+        self.startLabel.textColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 		//sets up end time label
 		self.endLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        self.endLabel.textColor = Scheme.darkGreyColor.color.withAlphaComponent(0.4)
+        self.endLabel.textColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 		
 		self.startLabel.setContentHuggingPriority(.required, for: .horizontal)
 		self.endLabel.setContentHuggingPriority(.required, for: .horizontal)

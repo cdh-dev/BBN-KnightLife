@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dMb-BZ-as2">
-    <device id="retina6_5" orientation="portrait" appearance="dark"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -480,7 +480,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                                 <constraints>
                                     <constraint firstItem="5dv-o4-nSF" firstAttribute="leading" secondItem="ZyG-on-TVt" secondAttribute="leading" id="C8s-LQ-mdF"/>
                                     <constraint firstItem="Ai7-IH-0kf" firstAttribute="top" secondItem="ZyG-on-TVt" secondAttribute="top" constant="15" id="NN2-GO-Gpe"/>
@@ -1921,7 +1921,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cassandra Kane '17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suw-0I-7UY">
-                                                        <rect key="frame" x="126.33333333333331" y="263.66666666666669" width="161.66666666666669" height="21.666666666666686"/>
+                                                        <rect key="frame" x="126.33333333333333" y="263.66666666666669" width="161.66666666666669" height="21.666666666666686"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -2115,6 +2115,9 @@
         <image name="splash" width="750" height="1050"/>
         <namedColor name="assetLightText">
             <color white="0.66600000858306885" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="assetWhiteSuperDarkGrey">
+            <color red="0.070000000298023224" green="0.070000000298023224" blue="0.070000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

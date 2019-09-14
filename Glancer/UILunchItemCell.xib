@@ -25,7 +25,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                     <constraints>
                         <constraint firstItem="4u5-Ev-Ecw" firstAttribute="leading" secondItem="LDL-gk-UQs" secondAttribute="leading" constant="20" id="CPC-7Q-2nn"/>
                         <constraint firstAttribute="height" constant="45" id="lFn-wd-6md"/>
@@ -41,7 +41,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                     <constraints>
                         <constraint firstItem="6ki-qg-2KK" firstAttribute="top" secondItem="MTt-ug-cmp" secondAttribute="top" id="Lu4-Ht-IHZ"/>
                         <constraint firstItem="6ki-qg-2KK" firstAttribute="leading" secondItem="MTt-ug-cmp" secondAttribute="leading" constant="20" id="O6R-jl-Jzw"/>
@@ -50,7 +50,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
             <constraints>
                 <constraint firstItem="AoV-cw-XbL" firstAttribute="trailing" secondItem="LDL-gk-UQs" secondAttribute="trailing" id="Fah-kB-D3K"/>
                 <constraint firstItem="MTt-ug-cmp" firstAttribute="top" secondItem="LDL-gk-UQs" secondAttribute="bottom" id="MEf-7v-sLh"/>
@@ -73,6 +73,9 @@
     <resources>
         <namedColor name="assetBlackWhiteText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="assetWhiteSuperDarkGrey">
+            <color red="0.070000000000000007" green="0.070000000000000007" blue="0.070000000000000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

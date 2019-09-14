@@ -28,8 +28,10 @@ enum Scheme {
     
     case redColor
     case darkGreyColor
+    case blackColor
     
     case calenderText
+    case calenderAndBlocksBackground
     
     case attachmentBlue
     case attachmentYellow
@@ -64,8 +66,12 @@ enum Scheme {
             return UIColor(named:"assetRed")!
         case .darkGreyColor:
             return UIColor(named: "assetDarkGrey")!
+        case .blackColor:
+            return UIColor(named: "assetBlack")!
         case .calenderText:
             return UIColor(named: "assetCalenderText")!
+        case .calenderAndBlocksBackground:
+            return UIColor(named: "assetWhiteSuperDarkGrey")!
         case .attachmentBlue:
             return UIColor(named: "attachmentBlue")!
         case .attachmentYellow:

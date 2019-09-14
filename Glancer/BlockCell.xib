@@ -80,7 +80,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" name="assetBackgroundLightGrey"/>
+                    <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="75" id="7Cq-jD-eaG"/>
                         <constraint firstItem="eF9-RG-PkO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bYh-BR-FDE" secondAttribute="trailing" id="Ewg-zt-OeE"/>
@@ -101,7 +101,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" name="assetBackgroundLightGrey"/>
+                    <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="3Da-J0-5aU" secondAttribute="bottom" id="Jsd-Bc-fbp"/>
                         <constraint firstAttribute="trailing" secondItem="3Da-J0-5aU" secondAttribute="trailing" constant="20" id="Oo3-tT-wGL"/>
@@ -110,7 +110,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
             <constraints>
                 <constraint firstItem="pc8-4l-gGD" firstAttribute="bottom" secondItem="aAI-en-Pha" secondAttribute="bottom" id="Csl-z8-GHt"/>
                 <constraint firstItem="aAI-en-Pha" firstAttribute="trailing" secondItem="pc8-4l-gGD" secondAttribute="trailing" id="Dy0-ol-n80"/>
@@ -139,8 +139,8 @@
     <resources>
         <image name="icon_right" width="24" height="24"/>
         <image name="icon_tag" width="24" height="24"/>
-        <namedColor name="assetBackgroundLightGrey">
-            <color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="assetWhiteSuperDarkGrey">
+            <color red="0.070000000000000007" green="0.070000000000000007" blue="0.070000000000000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
