@@ -229,7 +229,7 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 		for dateItemsPair in list {
 			let section = layout.addSection()
 			
-			section.addDivider()
+            section.addDivider()
 			section.addCell(TitleCell(title: dateItemsPair.date.prettyDate))
 			section.addDivider()
 			

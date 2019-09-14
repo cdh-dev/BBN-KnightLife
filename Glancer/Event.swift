@@ -52,6 +52,7 @@ class Event: BadgeTethered, Decodable {
 		self.state = ""
 
 		self.kind = json["kind"].string ?? "Event"
+        print(self.kind)
 		self.categories = try Optionals.unwrap(json["categories"].arrayObject).map({ $0 as! String })
 
 		self.date = try Optionals.unwrap(try Optionals.unwrap(json["date"].string).dateFromInternetFormat)

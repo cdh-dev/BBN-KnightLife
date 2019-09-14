@@ -42,7 +42,7 @@ class ColorWarController: UIViewController, TableHandlerDataSource {
         section.addDivider()
         section.addCell(ColorWarCell(left: "Gold Team Points", right: "\(ColorWarEvent.goldPoints() ?? "0")"))
         section.addDivider()
-        section.addCell(ColorWarCell(left: "Blue Team Points", right: "\(ColorWarEvent.bluePoints() ?? "0")"))
+        section.addCell(ColorWarCell(left: "Blue Team Points", right: "\(ColorWarEvent.bluePoints() ?? 0)"))
         section.addDivider()
 
     }

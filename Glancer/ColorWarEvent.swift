@@ -35,10 +35,11 @@ class ColorWarEvent: Event {
         return points
     }
     
-    class func bluePoints() -> String? {
+    class func bluePoints() -> Int? {
         let json: JSON! = 0
-        let points = try? Optionals.unwrap(json["points"]["blue"].string)
-        return points
+//        let points = try? Optionals.unwrap(json["points"]["blue"].string)
+        let points = try? ColorWarScore(json: json["points"])
+        return points?.blue
     }
     
     class func whitePoints() -> String? {

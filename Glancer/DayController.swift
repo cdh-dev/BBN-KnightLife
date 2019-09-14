@@ -103,35 +103,37 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 		}
 	}
 //	Repurposed for Color wars, was for notices.
-	private func buildMailButtonItem(badge: Int) -> UIBarButtonItem {
+	private func buildMailButtonItem() -> UIBarButtonItem {
 		let button = UIButton()
-		button.setImage(UIImage(named: "icon_head")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        button.tintColor = UIColor.red
-		
+		button.setImage(UIImage(named: "logo_black")?.withRenderingMode(.alwaysTemplate), for: .normal)
+//        button.tintColor = UIColor.red
+       
+        button.imageView?.contentMode = .scaleAspectFit
+        
 		button.addTarget(self, action: #selector(self.messagesButtonClicked(_:)), for: .touchUpInside)
+        
+//		let badgeWrapper = UIView()
+//        badgeWrapper.backgroundColor = Scheme.blue.color
+//		badgeWrapper.cornerRadius = 7.0
+//
+//		let badgeLabel = UILabel()
+//		badgeLabel.font = UIFont.systemFont(ofSize: 10.0, weight: .bold)
+//		badgeLabel.text = "\(badge)"
+//		badgeLabel.textColor = UIColor.white
 		
-		let badgeWrapper = UIView()
-		badgeWrapper.backgroundColor = UIColor.red
-		badgeWrapper.cornerRadius = 7.0
-		
-		let badgeLabel = UILabel()
-		badgeLabel.font = UIFont.systemFont(ofSize: 10.0, weight: .bold)
-		badgeLabel.text = "\(badge)"
-		badgeLabel.textColor = UIColor.white
-		
-		badgeWrapper.addSubview(badgeLabel)
-		badgeLabel.snp.makeConstraints() { $0.center.equalToSuperview() }
-		
-		button.addSubview(badgeWrapper)
-		badgeWrapper.snp.makeConstraints() {
-			constrain in
-			
-			constrain.width.equalTo(14.0)
-			constrain.height.equalTo(14.0)
-			
-			constrain.centerX.equalTo(button.snp.trailing).inset(1)
-			constrain.centerY.equalTo(button.snp.top).inset(2)
-		}
+//		badgeWrapper.addSubview(badgeLabel)
+//		badgeLabel.snp.makeConstraints() { $0.center.equalToSuperview() }
+//
+//		button.addSubview(badgeWrapper)
+//		badgeWrapper.snp.makeConstraints() {
+//			constrain in
+//
+//			constrain.width.equalTo(14.0)
+//			constrain.height.equalTo(14.0)
+//
+//			constrain.centerX.equalTo(button.snp.trailing).inset(1)
+//			constrain.centerY.equalTo(button.snp.top).inset(2)
+//		}
 		
 		return UIBarButtonItem(customView: button)
 	}
@@ -145,7 +147,7 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 //			}
 //		} else {
 //            self.removeMailButton()
-            self.addMailButton(badge: 1)
+            self.addMailButton()
 //		}
 	}
 	
@@ -155,8 +157,8 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 		}
 	}
 	
-	private func addMailButton(badge: Int) {
-		self.navigationItem.setRightBarButton(self.buildMailButtonItem(badge: badge), animated: false)
+	private func addMailButton() {
+		self.navigationItem.setRightBarButton(self.buildMailButtonItem(), animated: false)
 	}
 	
 	@objc func messagesButtonClicked(_ sender: Any) {
