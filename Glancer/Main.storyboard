@@ -1838,10 +1838,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fow-9H-Cbg">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="572.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="685.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c8P-UL-bor">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="527.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="640.66666666666663"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPE-xi-tQm">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -1937,47 +1937,71 @@
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvs-c6-5MM">
+                                                        <rect key="frame" x="19.666666666666657" y="352" width="375" height="15"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="15" id="yH0-x5-qfv"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claudia Cortell '21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHl-7G-b8Y">
+                                                        <rect key="frame" x="132.33333333333337" y="377" width="149.66666666666663" height="21.666666666666686"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7L2-Vr-htk">
+                                                        <rect key="frame" x="19.666666666666657" y="408.66666666666669" width="375" height="15"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="15" id="PFX-5b-8VO"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henry Price '21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zn-fH-UbS">
+                                                        <rect key="frame" x="144.66666666666666" y="433.66666666666663" width="124.66666666666666" height="21.666666666666686"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MP-00-KH2">
-                                                        <rect key="frame" x="19.666666666666657" y="352" width="375" height="25"/>
+                                                        <rect key="frame" x="19.666666666666657" y="465.33333333333337" width="375" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="abT-br-UUr"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special thanks to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFq-pv-mer">
-                                                        <rect key="frame" x="151.66666666666666" y="387" width="110.66666666666666" height="17"/>
+                                                        <rect key="frame" x="151.66666666666666" y="500.33333333333337" width="110.66666666666666" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0m-R2-WMO">
-                                                        <rect key="frame" x="19.666666666666657" y="414" width="375" height="25"/>
+                                                        <rect key="frame" x="19.666666666666657" y="527.33333333333337" width="375" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="fTj-Xj-ojV"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julia McCauley '19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGQ-9x-D2q">
-                                                        <rect key="frame" x="130.33333333333331" y="449" width="153.33333333333331" height="21.666666666666686"/>
+                                                        <rect key="frame" x="130.33333333333331" y="562.33333333333337" width="153.33333333333331" height="21.666666666666629"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTQ-qZ-vue">
-                                                        <rect key="frame" x="19.666666666666657" y="480.66666666666663" width="375" height="15"/>
+                                                        <rect key="frame" x="19.666666666666657" y="594" width="375" height="15"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="h56-d9-xX3"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matt Keating '19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4n-yE-XdO">
-                                                        <rect key="frame" x="140.33333333333337" y="505.66666666666669" width="133.66666666666663" height="21.666666666666686"/>
+                                                        <rect key="frame" x="140.33333333333337" y="619" width="133.66666666666663" height="21.666666666666629"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5C-VK-eZa">
-                                                <rect key="frame" x="47" y="552.33333333333337" width="320" height="20"/>
+                                                <rect key="frame" x="47" y="665.66666666666663" width="320" height="20"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Sqr-hS-Dnh"/>
@@ -2009,7 +2033,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4a6-85-LQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="444.82758620689657"/>
+            <point key="canvasLocation" x="1800.0000000000002" y="444.64285714285711"/>
         </scene>
         <!--Today Navigation-->
         <scene sceneID="5S7-eC-QTM">
