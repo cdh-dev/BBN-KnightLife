@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,12 +35,12 @@
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSJ-Pn-ROk">
                                     <rect key="frame" x="0.0" y="0.0" width="39" height="31.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" name="assetBlackWhiteText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_clock" translatesAutoresizingMaskIntoConstraints="NO" id="vla-Kn-Pti">
                                     <rect key="frame" x="46" y="3" width="26" height="26"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="tintColor" name="assetBlackWhiteText"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="JWL-hq-3pv"/>
                                         <constraint firstAttribute="width" secondItem="vla-Kn-Pti" secondAttribute="height" multiplier="1:1" id="OsX-hH-8eJ"/>
@@ -52,7 +51,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in Precalculus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5P-78-cyQ">
                             <rect key="frame" x="68.5" y="31.5" width="103.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" name="assetBlackWhiteText"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZu-2r-bzf">
@@ -67,7 +66,7 @@
                             <subviews>
                                 <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tag" translatesAutoresizingMaskIntoConstraints="NO" id="PTN-TZ-Y8V">
                                     <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="tintColor" name="assetBlackWhiteText"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="PTN-TZ-Y8V" secondAttribute="height" multiplier="1:1" id="PxG-LA-3Pk"/>
                                         <constraint firstAttribute="height" constant="16" id="fdd-zX-Zud"/>
@@ -76,7 +75,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEO-Fw-V3U">
                                     <rect key="frame" x="21" y="0.0" width="37" height="16"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" name="assetBlackWhiteText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -117,5 +116,8 @@
     <resources>
         <image name="icon_clock" width="24" height="24"/>
         <image name="icon_tag" width="24" height="24"/>
+        <namedColor name="assetBlackWhiteText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
