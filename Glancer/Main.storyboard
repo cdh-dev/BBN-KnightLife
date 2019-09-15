@@ -12,7 +12,7 @@
         <!--Today-->
         <scene sceneID="gGS-CR-icY">
             <objects>
-                <viewController title="Today" id="UUE-dZ-2Ek" customClass="TodayController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Today" modalPresentationStyle="fullScreen" id="UUE-dZ-2Ek" customClass="TodayController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ceo-uy-qcQ"/>
                         <viewControllerLayoutGuide type="bottom" id="mGr-B7-Lse"/>
@@ -57,7 +57,7 @@
         <!--Day-->
         <scene sceneID="Md0-Sw-G8g">
             <objects>
-                <viewController storyboardIdentifier="Day" title="Day" id="qFz-0B-DqY" customClass="DayController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Day" title="Day" modalPresentationStyle="fullScreen" id="qFz-0B-DqY" customClass="DayController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Np-Mr-bXp"/>
                         <viewControllerLayoutGuide type="bottom" id="3Oh-up-C8n"/>
@@ -140,7 +140,7 @@
         <!--Upcoming Navigation-->
         <scene sceneID="Rr5-Ct-Wsk">
             <objects>
-                <navigationController title="Upcoming Navigation" id="mbO-qq-D65" sceneMemberID="viewController">
+                <navigationController title="Upcoming Navigation" modalPresentationStyle="fullScreen" id="mbO-qq-D65" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Upcoming" image="icon_calendar" id="ddf-qy-9MN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mRg-JI-ul6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -158,7 +158,7 @@
         <!--Upcoming-->
         <scene sceneID="ML7-gM-tGa">
             <objects>
-                <viewController title="Upcoming" id="2XL-7K-gSm" customClass="CalendarController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Upcoming" modalPresentationStyle="fullScreen" id="2XL-7K-gSm" customClass="CalendarController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l2Z-WV-viX"/>
                         <viewControllerLayoutGuide type="bottom" id="kb8-u0-ENq"/>
@@ -552,7 +552,7 @@
         <!--Settings Navigation-->
         <scene sceneID="kJE-VZ-QIz">
             <objects>
-                <navigationController title="Settings Navigation" id="2ZX-rT-Jz0" sceneMemberID="viewController">
+                <navigationController title="Settings Navigation" modalPresentationStyle="fullScreen" id="2ZX-rT-Jz0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="icon_settings" id="YK6-MI-DpP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qPp-bt-Ele">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -570,7 +570,7 @@
         <!--Settings-->
         <scene sceneID="jNT-FL-Ori">
             <objects>
-                <viewController title="Settings" id="72g-Bz-APE" customClass="SettingsController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" modalPresentationStyle="fullScreen" id="72g-Bz-APE" customClass="SettingsController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mT3-Bg-Tl0"/>
                         <viewControllerLayoutGuide type="bottom" id="Tqp-ei-1Dk"/>
@@ -665,7 +665,7 @@
         <!--Settings Class-->
         <scene sceneID="ZOM-e3-UwO">
             <objects>
-                <viewController storyboardIdentifier="SettingsClass" title="Settings Class" id="0t6-bI-XcP" customClass="SettingsClassController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsClass" title="Settings Class" modalPresentationStyle="fullScreen" id="0t6-bI-XcP" customClass="SettingsClassController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jJs-a8-rxu"/>
                         <viewControllerLayoutGuide type="bottom" id="g3F-n9-a4f"/>
@@ -700,7 +700,7 @@
         <!--Settings Block Controller-->
         <scene sceneID="rOO-ZW-kvt">
             <objects>
-                <viewController storyboardIdentifier="SettingsBlock" id="WQR-IT-qN0" customClass="SettingsBlockController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsBlock" modalPresentationStyle="fullScreen" id="WQR-IT-qN0" customClass="SettingsBlockController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oUn-al-dh3"/>
                         <viewControllerLayoutGuide type="bottom" id="klX-80-v7X"/>
@@ -735,7 +735,7 @@
         <!--Color Picker-->
         <scene sceneID="owg-Jz-GIE">
             <objects>
-                <viewController storyboardIdentifier="Color" title="Color Picker" id="Ynj-VW-FHR" customClass="SettingsColorPickerController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Color" title="Color Picker" modalPresentationStyle="fullScreen" id="Ynj-VW-FHR" customClass="SettingsColorPickerController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E3L-wV-mmI"/>
                         <viewControllerLayoutGuide type="bottom" id="S53-kh-fIQ"/>
@@ -1825,7 +1825,7 @@
         <!--Credits-->
         <scene sceneID="ewE-TV-P8y">
             <objects>
-                <viewController title="Credits" id="BAY-jS-KKy" sceneMemberID="viewController">
+                <viewController title="Credits" modalPresentationStyle="fullScreen" id="BAY-jS-KKy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="odI-f1-8Mv"/>
                         <viewControllerLayoutGuide type="bottom" id="tNL-JW-dgh"/>
@@ -2038,7 +2038,7 @@
         <!--Today Navigation-->
         <scene sceneID="5S7-eC-QTM">
             <objects>
-                <navigationController title="Today Navigation" id="lfo-vL-leJ" sceneMemberID="viewController">
+                <navigationController title="Today Navigation" modalPresentationStyle="fullScreen" id="lfo-vL-leJ" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Today" image="icon_today" id="GeO-Uq-eSc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9yy-aE-SVS">
@@ -2057,7 +2057,7 @@
         <!--Tab Controller-->
         <scene sceneID="s1g-XR-d2e">
             <objects>
-                <tabBarController storyboardIdentifier="Tab" id="8en-75-4py" customClass="TabController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tab" modalPresentationStyle="fullScreen" id="8en-75-4py" customClass="TabController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OGs-mX-g5j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2081,7 +2081,7 @@
         <!--Launch-->
         <scene sceneID="eAO-6b-gR5">
             <objects>
-                <viewController title="Launch" id="dMb-BZ-as2" customClass="HubController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Launch" modalPresentationStyle="fullScreen" id="dMb-BZ-as2" customClass="HubController" customModule="Glancer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H0z-P6-Bdi"/>
                         <viewControllerLayoutGuide type="bottom" id="C5a-iM-Sko"/>
