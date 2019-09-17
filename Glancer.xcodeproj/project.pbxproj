@@ -10,8 +10,6 @@
 		225B2DEA2328AD6D00255EDF /* ColorWarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B2DE92328AD6D00255EDF /* ColorWarsController.swift */; };
 		225B2DEC2328AD8900255EDF /* ColorWarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B2DEB2328AD8900255EDF /* ColorWarCell.swift */; };
 		225B2DEE2328AD9D00255EDF /* ColorWarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B2DED2328AD9D00255EDF /* ColorWarCell.xib */; };
-		22DD499A232C17EE00245E9C /* ProgressBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD4999232C17EE00245E9C /* ProgressBar.xib */; };
-		22DD499C232C1EAC00245E9C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DD499B232C1EAC00245E9C /* ProgressBar.swift */; };
 		5BD072481C74AEB40074B56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD072471C74AEB40074B56D /* Main.storyboard */; };
 		5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD285DC1B03CF29007A0472 /* AppDelegate.swift */; };
 		5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD285E31B03CF29007A0472 /* Images.xcassets */; };
@@ -245,8 +243,6 @@
 		225B2DE92328AD6D00255EDF /* ColorWarsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarsController.swift; sourceTree = "<group>"; };
 		225B2DEB2328AD8900255EDF /* ColorWarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarCell.swift; sourceTree = "<group>"; };
 		225B2DED2328AD9D00255EDF /* ColorWarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorWarCell.xib; sourceTree = "<group>"; };
-		22DD4999232C17EE00245E9C /* ProgressBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressBar.xib; sourceTree = "<group>"; };
-		22DD499B232C1EAC00245E9C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55DC2C1B27B21500D55EB9 /* Glancer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Glancer.entitlements; sourceTree = "<group>"; };
 		5BD072471C74AEB40074B56D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -446,8 +442,6 @@
 			children = (
 				225B2DEB2328AD8900255EDF /* ColorWarCell.swift */,
 				225B2DED2328AD9D00255EDF /* ColorWarCell.xib */,
-				22DD4999232C17EE00245E9C /* ProgressBar.xib */,
-				22DD499B232C1EAC00245E9C /* ProgressBar.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1468,7 +1462,6 @@
 			files = (
 				5BD072481C74AEB40074B56D /* Main.storyboard in Resources */,
 				C051F1F8210FF957004C064F /* CoursePrefCell.xib in Resources */,
-				22DD499A232C17EE00245E9C /* ProgressBar.xib in Resources */,
 				C0315D73211B248300323661 /* PrefToggleCell.xib in Resources */,
 				C061F80D2115F91700F0374C /* SettingsTextCell.xib in Resources */,
 				C0C455112123B592004A41ED /* NothingUpcomingCell.xib in Resources */,
@@ -1659,7 +1652,6 @@
 				C0760227210F8A0800398827 /* NoClassCell.swift in Sources */,
 				C07D912F225EF78200A59345 /* Grade.swift in Sources */,
 				C01ECD3D2129D2C70001C013 /* TodayInClassModule.swift in Sources */,
-				22DD499C232C1EAC00245E9C /* ProgressBar.swift in Sources */,
 				C04653C8210936B9004AD09C /* BlockCell.swift in Sources */,
 				C0BD0FA52120CE6C00C8F403 /* ScheduleChangedAttachment.swift in Sources */,
 				C0B4DA0122891DF20081075A /* ArtEvent.swift in Sources */,
