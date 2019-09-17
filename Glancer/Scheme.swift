@@ -17,38 +17,71 @@ enum Scheme {
 	case backgroundMedium
 	case backgroundColor
 	
-	case darkText
+	case blackWhiteText
+    case darkLightGreyText
 	case text
 	case lightText
 	
 	case nullColor
 	
-	case hollowText
-	
 	case dividerColor
+    
+    case redColor
+    case darkGreyColor
+    case blackColor
+    
+    case calenderText
+    case calenderAndBlocksBackground
+    
+    case attachmentBlue
+    case attachmentYellow
+    case attachmentGreen
+    case attachmentRed
+    case attachmentOrange
 	
 	var color: UIColor {
 		switch self {
 		case .blue:
-			return UIColor(hex: "4481eb")!
+            return UIColor(named: "assetBlue")!
 		case .main:
-			return UIColor.white
+            return UIColor(named: "assetWhiteBlack")!
 		case .backgroundMedium:
-			return UIColor(hex: "F8F8FA")!
+            return UIColor(named:"assetBackgroundLightGrey")!
 		case .backgroundColor:
-			return UIColor.groupTableViewBackground
-		case .darkText:
-			return UIColor.darkText
+            return UIColor(named:"assetBlackWhiteText")!
+		case .blackWhiteText:
+			return UIColor(named: "assetBlackWhiteText")!
+        case .darkLightGreyText:
+            return UIColor(named: "assetDarkGreyLightGreyText")!
 		case .text:
-			return UIColor.darkGray
+            return UIColor(named: "assetText")!
 		case .lightText:
-			return UIColor.lightGray
+            return UIColor(named: "assetLightText")!
 		case .nullColor:
-			return UIColor(hex: "848484")!
-		case .hollowText:
-			return UIColor(hex: "9F9FAA")!
+            return UIColor(named:"assetNullColor")!
 		case .dividerColor:
-			return UIColor(hex: "E1E1E6")!
+            return UIColor(named:
+                "assetDividerColor")!
+        case .redColor:
+            return UIColor(named:"assetRed")!
+        case .darkGreyColor:
+            return UIColor(named: "assetDarkGrey")!
+        case .blackColor:
+            return UIColor(named: "assetBlack")!
+        case .calenderText:
+            return UIColor(named: "assetCalenderText")!
+        case .calenderAndBlocksBackground:
+            return UIColor(named: "assetWhiteSuperDarkGrey")!
+        case .attachmentBlue:
+            return UIColor(named: "attachmentBlue")!
+        case .attachmentYellow:
+            return UIColor(named: "attachmentYellow")!
+        case .attachmentGreen:
+            return UIColor(named: "attachmentGreen")!
+        case .attachmentRed:
+            return UIColor(named: "attachmentRed")!
+        case .attachmentOrange:
+            return UIColor(named: "attachmentOrange")!
 		}
 	}
 	

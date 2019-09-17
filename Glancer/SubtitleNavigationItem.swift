@@ -29,7 +29,8 @@ class SubtitleNavigationItem: UINavigationItem {
 		}
 	}
 	
-	@IBInspectable var subtitleColor: UIColor = UIColor.darkGray {
+    //controls Upcoming subtitle (which shows month
+    @IBInspectable var subtitleColor: UIColor = Scheme.darkLightGreyText.color {
 		didSet {
 			self.subtitleLabel.textColor = self.subtitleColor
 		}
@@ -51,7 +52,7 @@ class SubtitleNavigationItem: UINavigationItem {
 		stackView.alignment = .center
 		
 		let titleLabel = UILabel()
-		titleLabel.textColor = UIColor.darkText
+        titleLabel.textColor = Scheme.darkLightGreyText.color
 		titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
 		titleLabel.text = self.title
 		

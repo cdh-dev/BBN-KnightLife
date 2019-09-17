@@ -26,7 +26,7 @@ class TodayBeforeSchoolModule: TableModule {
 	}
 	
 	override func build() {
-		self.addSection().addCell(TodayStatusCell(state: "Before School", minutes: self.minutesUntil, image: UIImage(named: "icon_clock")!, color: UIColor.black.withAlphaComponent(0.3)))
+        self.addSection().addCell(TodayStatusCell(state: "Before School", minutes: self.minutesUntil, image: UIImage(named: "icon_clock")!, color: Scheme.blackWhiteText.color.withAlphaComponent(0.3)))
 		
 		let upcomingBlocks = self.today.schedule.selectedTimetable!.filterBlocksByLunch()
 		self.addModule(BlockListModule(controller: self.controller, bundle: self.today, title: nil, blocks: upcomingBlocks, options: [ .topBorder, .bottomBorder ]))

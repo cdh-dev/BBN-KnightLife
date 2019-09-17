@@ -71,7 +71,7 @@ class TodayController: DayController {
 //			}
 			
 			subtitleItem.subtitle = Date.today.prettyDate
-			subtitleItem.subtitleColor = UIColor.darkGray
+            subtitleItem.subtitleColor = Scheme.darkLightGreyText.color
 		}
 	}
 	

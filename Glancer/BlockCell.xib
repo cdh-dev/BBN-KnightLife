@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,7 +80,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="75" id="7Cq-jD-eaG"/>
                         <constraint firstItem="eF9-RG-PkO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bYh-BR-FDE" secondAttribute="trailing" id="Ewg-zt-OeE"/>
@@ -99,9 +98,10 @@
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Da-J0-5aU">
                             <rect key="frame" x="20" y="0.0" width="335" height="31"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="3Da-J0-5aU" secondAttribute="bottom" id="Jsd-Bc-fbp"/>
                         <constraint firstAttribute="trailing" secondItem="3Da-J0-5aU" secondAttribute="trailing" constant="20" id="Oo3-tT-wGL"/>
@@ -110,7 +110,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
             <constraints>
                 <constraint firstItem="pc8-4l-gGD" firstAttribute="bottom" secondItem="aAI-en-Pha" secondAttribute="bottom" id="Csl-z8-GHt"/>
                 <constraint firstItem="aAI-en-Pha" firstAttribute="trailing" secondItem="pc8-4l-gGD" secondAttribute="trailing" id="Dy0-ol-n80"/>
@@ -139,5 +139,8 @@
     <resources>
         <image name="icon_right" width="24" height="24"/>
         <image name="icon_tag" width="24" height="24"/>
+        <namedColor name="assetWhiteSuperDarkGrey">
+            <color red="0.070000000000000007" green="0.070000000000000007" blue="0.070000000000000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -12,6 +12,7 @@ import SnapKit
 
 enum AttachmentStyle {
 	
+    //the colors for attachment bubbles
 	case BLUE
 	case YELLOW
 	case GREEN
@@ -20,16 +21,16 @@ enum AttachmentStyle {
 	
 	var color: UIColor {
 		switch self {
-		case .BLUE: // Blue
-			return UIColor(hex: "E4F1FE")!
-		case .YELLOW: // Yellow
-			return UIColor(hex: "FFF0CC")!
-		case .GREEN: // Green
-			return UIColor(hex: "D9F2EB")!
+		case .BLUE:
+            return Scheme.attachmentBlue.color
+		case .YELLOW:
+            return Scheme.attachmentYellow.color
+		case .GREEN:
+            return Scheme.attachmentGreen.color
 		case .RED:
-			return UIColor(hex: "FFD3C9")!
+            return Scheme.attachmentRed.color
 		case .ORANGE:
-			return UIColor(hex: "FFDEB7")!
+            return Scheme.attachmentOrange.color
 		}
 	}
 	
@@ -59,7 +60,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 				}
 				
 				let imageView = UIImageView(image: self.leftImage!.withRenderingMode(.alwaysTemplate))
-				imageView.tintColor = UIColor.black.withAlphaComponent(0.4)
+                imageView.tintColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 
 				self.v_stack.insertArrangedSubview(imageView, at: 0)
 				imageView.snp.makeConstraints() {
@@ -115,7 +116,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 		
 //		Style
 		self.cornerRadius = 5.0
-		self.borderColor = UIColor.black.withAlphaComponent(0.2)
+        self.borderColor = Scheme.blackColor.color.withAlphaComponent(0.2)
 		self.borderWidth = 1.0
 		
 //		Stack
@@ -135,7 +136,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 //		Center label
 		let label = UILabel()
 		label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-		label.textColor = UIColor.black.withAlphaComponent(0.4)
+        label.textColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 		stack.addArrangedSubview(label)
 		
 		label.lineBreakMode = .byWordWrapping
@@ -156,7 +157,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 		
 //		Disclosure image
 		let imageView = UIImageView(image: UIImage(named: "icon_circle-right")!.withRenderingMode(.alwaysTemplate))
-		imageView.tintColor = UIColor.black.withAlphaComponent(0.4)
+        imageView.tintColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 		
 		wrapper.addSubview(imageView)
 		
