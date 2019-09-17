@@ -61,13 +61,12 @@ class UIAttachmentCell: UITableViewCell {
 		}
 		
 		if !animated {
-			self.backgroundColor = selected ? Scheme.backgroundColor.color : .clear
-            
+            self.backgroundColor = selected ? Scheme.calenderAndBlocksBackground.color : .clear
 			return
 		}
 
 		UIView.animate(withDuration: 0.4) {
-			self.backgroundColor = selected ? Scheme.backgroundColor.color : .clear
+			self.backgroundColor = selected ?Scheme.calenderAndBlocksBackground.color : .clear
 		}
 	}
 	
@@ -78,12 +77,12 @@ class UIAttachmentCell: UITableViewCell {
 		}
 		
 		if !animated {
-			self.backgroundColor = highlighted ? Scheme.backgroundColor.color : .clear
+			self.backgroundColor = highlighted ? Scheme.calenderAndBlocksBackground.color : .clear
 			return
 		}
 
 		UIView.animate(withDuration: 0.4) {
-			self.backgroundColor = highlighted ? Scheme.backgroundColor.color: .clear
+			self.backgroundColor = highlighted ? Scheme.calenderAndBlocksBackground.color : .clear
 		}
 	}
 	
