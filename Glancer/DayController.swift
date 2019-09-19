@@ -144,8 +144,8 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 //				self.addMailButton(badge: bundle.schedule.notices.count)
 //			}
 //		} else {
-//            self.removeMailButton()
-            self.addMailButton(badge: 1)
+            self.removeMailButton()
+//            self.addMailButton(badge: 1)
 //		}
 	}
 	
