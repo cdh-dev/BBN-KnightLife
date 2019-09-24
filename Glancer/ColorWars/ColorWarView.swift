@@ -18,24 +18,31 @@ class ColorWarView: UIView {
     
     @IBOutlet weak var blueHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var blackHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var whiteHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var leadingTeam: UILabel!
+    
     
 
     
     let gp = 140
     let bp = 100
-    let blp = 400
-    let wp = 500
+    let blp = 150
+    let wp = 200
     
     
     
     func setupViews() {
-        let pointList = [gp,bp,blp,wp]
+//        let pointList = [gp,bp,blp,wp]
         
-        let pointLead = pointList.max()
+//        let pointLead = pointList.max()
         self.goldHeight.constant = CGFloat(gp)
         self.blueHeight.constant = CGFloat(bp)
-        self.leadingTeam.text = "Gold team is leading by \(pointList.max() ?? 0)"
+        self.whiteHeight.constant = CGFloat(wp)
+        self.blackHeight.constant = CGFloat(blp)
+//        self.leadingTeam.text = "Gold team is leading by \(pointList.max() ?? 0)"
     }
     
 }

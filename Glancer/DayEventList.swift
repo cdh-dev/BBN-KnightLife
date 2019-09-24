@@ -17,11 +17,15 @@ final class DayEventList: Decodable, Refreshable {
 	
 	let date: Date
 	private(set) var events: [Event]
+    private(set) var cwEvents: [ColorWarEvent]
 	
 	required init(json: JSON) throws {
 		
 		self.date = try Optionals.unwrap(json["date"].string?.dateFromInternetFormat)
 		self.events = (try Optionals.unwrap(json["events"].array)).compactMap({ try? Event.instantiate(json: $0) })
+//        self.cwEvents = (try Optionals.unwrap(json["points"].array))
+        
+        self.cwEvents = [try ColorWarEvent.init(json: json)]
 		
 		self.listenToEventUpdates()
 		
@@ -34,10 +38,11 @@ final class DayEventList: Decodable, Refreshable {
 		
 	}
 	
-	init(date: Date, events: [Event]) {
+    init(date: Date, events: [Event], eventCW: [ColorWarEvent]) {
 		
 		self.date = date
 		self.events = events
+        self.cwEvents = eventCW
 		
 		self.listenToEventUpdates()
 		
@@ -96,7 +101,7 @@ final class DayEventList: Decodable, Refreshable {
 extension DayEventList {
 	
 	var blockEvents: [Event] {
-		return self.events.filter({ $0.schedule.usesBlocks })
+        return self.events.filter({ $0.schedule.usesBlocks })
 	}
 	
 	var timeEvents: [Event] {
@@ -106,6 +111,10 @@ extension DayEventList {
 	func eventsFor(block: Block.ID) -> [Event] {
 		return self.blockEvents.filter({ $0.schedule.blocks!.contains(block) })
 	}
+    
+    var colorWar: [ColorWarEvent] {
+        return self.cwEvents.filter({ $0.hasScore})
+    }
 	
 }
 

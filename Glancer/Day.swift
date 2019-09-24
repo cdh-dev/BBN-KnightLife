@@ -21,6 +21,7 @@ final class Day: Decodable, Refreshable {
 	private(set) var schedule: Schedule!
 	private(set) var lunch: Lunch!
 	private(set) var events: DayEventList!
+    private(set) var cwEvents: ColorWarEvent!
 	
 	required init(json: JSON) throws {
 				
@@ -32,8 +33,10 @@ final class Day: Decodable, Refreshable {
 		let events: [Event] = try Optionals.unwrap(json["events"].array).compactMap({
 			try Event.instantiate(json: $0)
 		})
+        
+        self.cwEvents = try ColorWarEvent.init(json: json)
 		
-		self.events = DayEventList(date: self.date, events: events)
+        self.events = DayEventList(date: self.date, events: events, eventCW: [cwEvents])
 		
 		Day.onFetch.subscribe(with: self) {
 			self.updateContent(from: $0)
