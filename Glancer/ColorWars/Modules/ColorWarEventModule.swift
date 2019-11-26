@@ -16,11 +16,11 @@ class ColorWarEventsModule: TableModule {
     let options: [DayModuleOptions]
     
     init(bundle: Day, title: String, options: [DayModuleOptions]) {
-        self.events = bundle.events.colorWar
+        self.events = bundle.events.timeEvents
         self.title = title
         self.options = options
         
-        super.init()
+        super.i4nit()
     }
     
     override func build() {

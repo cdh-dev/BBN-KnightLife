@@ -241,7 +241,7 @@
 /* Begin PBXFileReference section */
 		18D275F10167B98717447A7C /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		22491CBB23351113006F711F /* ColorWarEventModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarEventModule.swift; sourceTree = "<group>"; };
-		225B2DE92328AD6D00255EDF /* ColorWarsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarsController.swift; sourceTree = "<group>"; };
+		225B2DE92328AD6D00255EDF /* ColorWarsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarsController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		225B2DEB2328AD8900255EDF /* ColorWarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarView.swift; sourceTree = "<group>"; };
 		2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55DC2C1B27B21500D55EB9 /* Glancer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Glancer.entitlements; sourceTree = "<group>"; };

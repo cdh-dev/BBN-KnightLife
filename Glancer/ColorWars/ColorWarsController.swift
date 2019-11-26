@@ -97,11 +97,13 @@ class ColorWarController: UIViewController, TableHandlerDataSource, ErrorReloada
         if let navigation = self.navigationItem as? SubtitleNavigationItem {
 //            let formatter = Date.normalizedFormatter
 //            formatter.dateFormat = "MMMM"
-            navigation.subtitle = "Community"
+//            navigation.subtitle = "Community"
         }
     }
 
    func buildCells(handler: TableHandler, layout: TableLayout) {
+    
+    layout.addSection().addCell(TitleCell(title: "Upcoming Events"))
     
     if !self.bundleDownloaded {
         layout.addModule(LoadingModule(table: self.tableView))
