@@ -33,7 +33,7 @@ class PrefsActionCell: TableCell {
 				return
 			}
 			
-			prefsCell.backgroundColor = UIColor.clear
+            prefsCell.backgroundColor = Scheme.statusCell.color
 		
 			prefsCell.actionButton.setTitle(self.title.uppercased(), for: .normal)
 			prefsCell.actionButton.setImage(self.image.withRenderingMode(.alwaysTemplate), for: .normal)

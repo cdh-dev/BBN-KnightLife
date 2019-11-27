@@ -136,7 +136,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 //		Center label
 		let label = UILabel()
 		label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = Scheme.blackColor.color.withAlphaComponent(0.4)
+        label.textColor = Scheme.text.color.withAlphaComponent(0.4)
 		stack.addArrangedSubview(label)
 		
 		label.lineBreakMode = .byWordWrapping
@@ -157,7 +157,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 		
 //		Disclosure image
 		let imageView = UIImageView(image: UIImage(named: "icon_circle-right")!.withRenderingMode(.alwaysTemplate))
-        imageView.tintColor = Scheme.blackColor.color.withAlphaComponent(0.4)
+        imageView.tintColor = Scheme.text.color.withAlphaComponent(0.4)
 		
 		wrapper.addSubview(imageView)
 		
@@ -174,7 +174,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 		
 		self.v_rightDisclosureWrapper.isHidden = !self.showDisclosure
 	}
-	
+    
 	func enableClicks() {
 		if self.clickRecognizer != nil {
 			return

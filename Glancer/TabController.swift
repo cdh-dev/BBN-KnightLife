@@ -18,6 +18,7 @@ class TabController: UITabBarController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+//        self.tabBar.tintColor = Scheme.backgroundColor.color
 		
 		self.hero.modalAnimationType = .fade
 		self.hero.tabBarAnimationType = .none

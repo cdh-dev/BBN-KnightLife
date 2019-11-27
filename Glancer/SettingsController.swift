@@ -23,11 +23,12 @@ class SettingsController: UIViewController, TableHandlerDataSource {
 		
 		self.tableHandler = TableHandler(table: self.tableView)
 		self.tableHandler.dataSource = self
+        self.tableView.backgroundColor = Scheme.statusCell.color
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
+		self.tableView.backgroundColor = Scheme.statusCell.color
 		self.tableHandler.reload()
 	}
 	

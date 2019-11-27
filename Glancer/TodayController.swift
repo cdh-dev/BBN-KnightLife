@@ -35,6 +35,8 @@ class TodayController: DayController {
 		
 		TodayM.startTimer()
 		self.handleStateChange(state: TodayM.state)
+        
+        self.tableView.backgroundColor = Scheme.statusCell.color
 		
 //		Animate status bar for first load
 		self.showStatusBar = true
@@ -51,7 +53,7 @@ class TodayController: DayController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		
+		self.tableView.backgroundColor = Scheme.statusCell.color
 		self.tableHandler.reload() // Deal with any pesky layout constraint bugs.
 	}
 	

@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,11 +75,10 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF9-RG-PkO">
                             <rect key="frame" x="297" y="43.5" width="58" height="17"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                            <color key="textColor" white="0.62075660342261907" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="75" id="7Cq-jD-eaG"/>
                         <constraint firstItem="eF9-RG-PkO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bYh-BR-FDE" secondAttribute="trailing" id="Ewg-zt-OeE"/>
@@ -101,7 +99,6 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="3Da-J0-5aU" secondAttribute="bottom" id="Jsd-Bc-fbp"/>
                         <constraint firstAttribute="trailing" secondItem="3Da-J0-5aU" secondAttribute="trailing" constant="20" id="Oo3-tT-wGL"/>
@@ -110,7 +107,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
             <constraints>
                 <constraint firstItem="pc8-4l-gGD" firstAttribute="bottom" secondItem="aAI-en-Pha" secondAttribute="bottom" id="Csl-z8-GHt"/>
                 <constraint firstItem="aAI-en-Pha" firstAttribute="trailing" secondItem="pc8-4l-gGD" secondAttribute="trailing" id="Dy0-ol-n80"/>
@@ -139,8 +135,5 @@
     <resources>
         <image name="icon_right" width="24" height="24"/>
         <image name="icon_tag" width="24" height="24"/>
-        <namedColor name="assetWhiteSuperDarkGrey">
-            <color red="0.070000000000000007" green="0.070000000000000007" blue="0.070000000000000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

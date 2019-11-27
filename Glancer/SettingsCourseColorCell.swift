@@ -26,6 +26,8 @@ class SettingsCourseColorCell: TableCell {
 			}
 			
 			colorCell.colorView.backgroundColor = color
+            colorCell.backgroundColor = Scheme.calenderAndBlocksBackground.color
+            colorCell.colorLabel.textColor = Scheme.text.color
 		}
 		
 		self.setSelection() {
@@ -40,5 +42,6 @@ class SettingsCourseColorCell: TableCell {
 class UISettingsCourseColorCell: UITableViewCell {
 	
 	@IBOutlet weak var colorView: UIView!
-	
+    @IBOutlet weak var colorLabel: UILabel!
+    
 }

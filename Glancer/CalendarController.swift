@@ -45,6 +45,7 @@ class CalendarController: UIViewController, TableHandlerDataSource, ErrorReloada
 		self.tableHandler.dataSource = self
 		
 		self.calendarView.controller = self
+        self.calendarView.backgroundColor = Scheme.calenderAndBlocksBackground.color
 		
 		self.fetchUpcoming {
 			self.tableHandler.reload()

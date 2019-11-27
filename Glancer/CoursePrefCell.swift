@@ -37,6 +37,7 @@ class CoursePrefCell: TableCell {
 			
 			prefCell.titleLabel.text = course.name
 			prefCell.titleLabel.textColor = course.color
+            prefCell.backgroundColor = Scheme.calenderAndBlocksBackground.color
 			
 			prefCell.blockLabel.text = course.scheduleBlock == nil ? "Not Set" : course.scheduleBlock!.displayName
 			

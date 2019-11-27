@@ -22,11 +22,12 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 		
 		self.tableHandler = TableHandler(table: self.tableView)
 		self.tableHandler.dataSource = self
+        self.tableView.backgroundColor = Scheme.statusCell.color
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
+        self.tableView.backgroundColor = Scheme.statusCell.color
 		self.tableHandler.reload()
 	}
 	
@@ -37,7 +38,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 	func buildCells(handler: TableHandler, layout: TableLayout) {
 		let about = layout.addSection()
 		about.addDivider()
-		about.addCell(TitleCell(title: "About"))
+        about.addCell(TitleCell(title: "About"))
 		about.addDivider()
 		about.addCell(SettingsTextCell(left: "Name", right: self.course.name) {
 			self.showChangeName()

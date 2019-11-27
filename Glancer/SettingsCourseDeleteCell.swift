@@ -16,6 +16,15 @@ class SettingsCourseDeleteCell: TableCell {
 		super.init("coursedelete", nib: "SettingsCourseDeleteCell")
 		
 		self.setHeight(44)
+        
+        self.setCallback {
+            template, cell in
+            
+            guard let deleteCell = cell as? UISettingsCourseDeleteCell else {
+                return
+            }
+            deleteCell.backgroundColor = Scheme.calenderAndBlocksBackground.color
+        }
 		
 		self.setSelection() {
 			_, _ in

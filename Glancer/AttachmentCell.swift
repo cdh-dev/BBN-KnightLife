@@ -38,6 +38,7 @@ class AttachmentCell: TableCell {
 			}
 			
 			cell.selectable = selectable
+            cell.backgroundColor = Scheme.calenderAndBlocksBackground.color
 			
 			for subview in cell.attachmentStack.arrangedSubviews { subview.removeFromSuperview() }
 			

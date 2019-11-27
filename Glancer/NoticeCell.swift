@@ -32,6 +32,7 @@ class NoticeCell: TableCell {
 			let attachment = NoticeAttachmentView()
 //			attachment.notice = notice
 			cell.attachmentStack.addArrangedSubview(attachment)
+            cell.backgroundColor = Scheme.backgroundColor.color
 		}
 	}
 	

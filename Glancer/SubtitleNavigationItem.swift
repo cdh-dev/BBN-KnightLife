@@ -50,16 +50,19 @@ class SubtitleNavigationItem: UINavigationItem {
 		let stackView = UIStackView()
 		stackView.axis = .vertical
 		stackView.alignment = .center
+//        stackView.backgroundColor = Scheme.backgroundColor.color
 		
 		let titleLabel = UILabel()
         titleLabel.textColor = Scheme.darkLightGreyText.color
 		titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
 		titleLabel.text = self.title
+//        titleLabel.backgroundColor = Scheme.backgroundColor.color
 		
 		let subtitleLabel = UILabel()
 		subtitleLabel.textColor = self.subtitleColor
 		subtitleLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
 		subtitleLabel.text = self.subtitle
+//        subtitleLabel.backgroundColor = Scheme.backgroundColor.color
 		
 		self.titleLabel = titleLabel
 		self.subtitleLabel = subtitleLabel

@@ -48,6 +48,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="A3O-zy-ESf"/>
             <connections>
+                <outlet property="colorLabel" destination="hRy-1c-lGr" id="LRM-bT-Eyf"/>
                 <outlet property="colorView" destination="mcG-Ly-tu2" id="SVI-sq-fN1"/>
             </connections>
             <point key="canvasLocation" x="-40" y="65"/>

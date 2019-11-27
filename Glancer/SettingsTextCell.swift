@@ -28,6 +28,9 @@ class SettingsTextCell: TableCell {
 			
 			textCell.leftLabel.text = left
 			textCell.rightLabel.text = right
+            textCell.leftLabel.textColor = Scheme.text.color
+            textCell.rightLabel.textColor = Scheme.text.color
+            textCell.backgroundColor = Scheme.calenderAndBlocksBackground.color
 		}
 		
 		self.setSelection() {

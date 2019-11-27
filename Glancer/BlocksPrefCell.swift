@@ -31,6 +31,7 @@ class BlocksPrefCell: TableCell {
 			
 			prefCell.titleLabel.text = meta.id.displayName
 			prefCell.titleLabel.textColor = meta.color
+            prefCell.backgroundColor = Scheme.calenderAndBlocksBackground.color
 		}
 	}
 	

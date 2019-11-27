@@ -25,7 +25,8 @@ class TodayStatusCell: TableCell {
 				return
 			}
 			
-			todayCell.backgroundColor = .clear
+//			todayCell.backgroundColor = .clear
+            todayCell.backgroundColor = Scheme.statusCell.color
 			
 			let hours: Int = Int(floor(Double(minutes / 60)))
 			let minutes: Int = minutes % 60
