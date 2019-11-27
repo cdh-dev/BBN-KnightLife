@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221B6BB9238EBB6F0066FDFE /* 911Fonts.com_ComicSansMSRegular__-_911fonts.com_fonts_BpCS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 221B6BB8238EBB6F0066FDFE /* 911Fonts.com_ComicSansMSRegular__-_911fonts.com_fonts_BpCS.ttf */; };
 		5BD072481C74AEB40074B56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD072471C74AEB40074B56D /* Main.storyboard */; };
 		5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD285DC1B03CF29007A0472 /* AppDelegate.swift */; };
 		5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD285E31B03CF29007A0472 /* Images.xcassets */; };
@@ -240,6 +241,7 @@
 
 /* Begin PBXFileReference section */
 		18D275F10167B98717447A7C /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
+		221B6BB8238EBB6F0066FDFE /* 911Fonts.com_ComicSansMSRegular__-_911fonts.com_fonts_BpCS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "911Fonts.com_ComicSansMSRegular__-_911fonts.com_fonts_BpCS.ttf"; sourceTree = "<group>"; };
 		2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55DC2C1B27B21500D55EB9 /* Glancer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Glancer.entitlements; sourceTree = "<group>"; };
 		5BD072471C74AEB40074B56D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -428,6 +430,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221B6BB7238EBB400066FDFE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				221B6BB8238EBB6F0066FDFE /* 911Fonts.com_ComicSansMSRegular__-_911fonts.com_fonts_BpCS.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		2760815A1B310CA4470DF205 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1038,6 +1048,7 @@
 		C0A92942225D9A3600CE2D12 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				221B6BB7238EBB400066FDFE /* Fonts */,
 				C0C3DC8F22B4498100268885 /* Extensions */,
 				C079C22F1FACA97D009067DE /* Controllers */,
 				C0A92950225DA0F800CE2D12 /* Views */,
@@ -1469,6 +1480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD072481C74AEB40074B56D /* Main.storyboard in Resources */,
+				221B6BB9238EBB6F0066FDFE /* 911Fonts.com_ComicSansMSRegular__-_911fonts.com_fonts_BpCS.ttf in Resources */,
 				C051F1F8210FF957004C064F /* CoursePrefCell.xib in Resources */,
 				C0315D73211B248300323661 /* PrefToggleCell.xib in Resources */,
 				C061F80D2115F91700F0374C /* SettingsTextCell.xib in Resources */,

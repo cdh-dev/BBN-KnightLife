@@ -136,7 +136,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 //		Center label
 		let label = UILabel()
 		label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = Scheme.text.color.withAlphaComponent(0.4)
+        label.textColor = Scheme.blackColor.color.withAlphaComponent(0.4)
 		stack.addArrangedSubview(label)
 		
 		label.lineBreakMode = .byWordWrapping

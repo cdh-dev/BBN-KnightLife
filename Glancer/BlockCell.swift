@@ -41,10 +41,17 @@ class BlockCell: TableCell {
 		
 //		Setup
 		cell.nameLabel.text = analyst.displayName
+//        cell.nameLabel.font = UIFont(name: "Comic Sans MS", size: CGFloat(20))
 		cell.blockNameLabel.text = block.id.displayName
+        cell.blockNameLabel.textColor = Scheme.calenderText.color
+//        cell.blockNameLabel.font = UIFont(name: "Comic Sans MS", size: CGFloat(14))
 		
 		cell.fromLabel.text = block.schedule.start.prettyTime
+        cell.fromLabel.textColor = Scheme.lightText.color
+//        cell.fromLabel.font = UIFont(name: "Comic Sans MS", size: CGFloat(16))
 		cell.toLabel.text = block.schedule.end.prettyTime
+        cell.toLabel.textColor = Scheme.lightText.color
+//        cell.toLabel.font = UIFont(name: "Comic Sans MS", size: CGFloat(16))
 		
 		cell.locationLabel.text = analyst.location
         cell.backgroundColor = Scheme.calenderAndBlocksBackground.color

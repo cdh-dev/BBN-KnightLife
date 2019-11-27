@@ -18,7 +18,7 @@ enum April {
     var lol: Bool{
         switch self {
         case .YES:
-            if componets.day == 1 || componets.month == 4 {
+            if componets.month == 4 && componets.day == 1 {
                 return true
             }
             else {
@@ -137,7 +137,7 @@ enum Scheme {
                 case .darkGreyColor:
                     return UIColor(named: "backgrounds")!
                 case .blackColor:
-                    return UIColor(named: "backgrounds")!
+                    return UIColor(named: "text")!
                 case .calenderText:
                     return UIColor(named: "text")!
                 case .calenderAndBlocksBackground:
