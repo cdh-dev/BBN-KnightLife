@@ -28,6 +28,9 @@ enum API {
 	
 	case getLunchBy(badge: String)
 	case getLunchFor(date: Date)
+    
+    case getPointsBy(badge: String)
+    case getPointsFor(team: String)
 	
 	case getEventBy(badge: String)
 	case getEvents(categories: [String]?, filters: [String: String])
@@ -41,7 +44,9 @@ extension API: TargetType {
 		if let serverUrl = Bundle.main.object(forInfoDictionaryKey: "KlApiUrl") as? String {
 			return URL(string: serverUrl)!
 		} else {
-			return URL(string: "https://api.bbnknightlife.com/m/")!
+			return URL(string: "https://apitesting-knightlife.herokuapp.com/m/")!
+//            https://api.bbnknightlife.com/m/
+//            https://apitesting-knightlife.herokuapp.com/m/
 		}
 	}
 	
@@ -70,6 +75,11 @@ extension API: TargetType {
 			return "lunch/\( badge )"
 		case let .getLunchFor(date):
 			return "lunch/\( date.year )/\( date.month )/\( date.day )"
+            
+        case let .getPointsBy(badge):
+            return "colorwars/\(badge)"
+        case let .getPointsFor(team):
+            return "colorwars/\(team)"
 			
 		case let .getEventBy(badge):
 			return "events/\( badge )"

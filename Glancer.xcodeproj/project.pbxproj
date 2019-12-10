@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22491CBC23351113006F711F /* ColorWarEventModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22491CBB23351113006F711F /* ColorWarEventModule.swift */; };
 		225B2DEA2328AD6D00255EDF /* ColorWarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B2DE92328AD6D00255EDF /* ColorWarsController.swift */; };
-		225B2DEC2328AD8900255EDF /* ColorWarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B2DEB2328AD8900255EDF /* ColorWarView.swift */; };
+		229E36C2239AA72F003E07DD /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 229E36C1239AA72F003E07DD /* points.json */; };
+		229E36C5239AF1E0003E07DD /* ColorWarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229E36C4239AF1E0003E07DD /* ColorWarCell.xib */; };
+		229E36C7239AF2F4003E07DD /* ColorWarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E36C6239AF2F4003E07DD /* ColorWarCell.swift */; };
+		229E36CB239EAFCE003E07DD /* ColorWars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED72AF23986EB400881912 /* ColorWars.swift */; };
+		22ED72B023986EB400881912 /* ColorWars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED72AF23986EB400881912 /* ColorWars.swift */; };
 		5BD072481C74AEB40074B56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD072471C74AEB40074B56D /* Main.storyboard */; };
 		5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD285DC1B03CF29007A0472 /* AppDelegate.swift */; };
 		5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD285E31B03CF29007A0472 /* Images.xcassets */; };
@@ -240,9 +243,11 @@
 
 /* Begin PBXFileReference section */
 		18D275F10167B98717447A7C /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
-		22491CBB23351113006F711F /* ColorWarEventModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarEventModule.swift; sourceTree = "<group>"; };
 		225B2DE92328AD6D00255EDF /* ColorWarsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarsController.swift; sourceTree = "<group>"; usesTabs = 0; };
-		225B2DEB2328AD8900255EDF /* ColorWarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarView.swift; sourceTree = "<group>"; };
+		229E36C1239AA72F003E07DD /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = points.json; path = ../../../../Users/henryprice/Desktop/points.json; sourceTree = "<group>"; };
+		229E36C4239AF1E0003E07DD /* ColorWarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorWarCell.xib; sourceTree = "<group>"; };
+		229E36C6239AF2F4003E07DD /* ColorWarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWarCell.swift; sourceTree = "<group>"; };
+		22ED72AF23986EB400881912 /* ColorWars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWars.swift; sourceTree = "<group>"; };
 		2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55DC2C1B27B21500D55EB9 /* Glancer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Glancer.entitlements; sourceTree = "<group>"; };
 		5BD072471C74AEB40074B56D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -428,22 +433,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22491CBA233510F4006F711F /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				22491CBB23351113006F711F /* ColorWarEventModule.swift */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
 		225B2DE72328AD3F00255EDF /* ColorWars */ = {
 			isa = PBXGroup;
 			children = (
-				22491CBA233510F4006F711F /* Modules */,
-				225B2DEB2328AD8900255EDF /* ColorWarView.swift */,
+				229E36C3239AF0AE003E07DD /* why */,
 				225B2DE92328AD6D00255EDF /* ColorWarsController.swift */,
 			);
 			path = ColorWars;
+			sourceTree = "<group>";
+		};
+		229E36C3239AF0AE003E07DD /* why */ = {
+			isa = PBXGroup;
+			children = (
+				229E36C4239AF1E0003E07DD /* ColorWarCell.xib */,
+				229E36C6239AF2F4003E07DD /* ColorWarCell.swift */,
+			);
+			path = why;
+			sourceTree = "<group>";
+		};
+		22ED72AE23986E9B00881912 /* Color Wars */ = {
+			isa = PBXGroup;
+			children = (
+				22ED72AF23986EB400881912 /* ColorWars.swift */,
+			);
+			name = "Color Wars";
 			sourceTree = "<group>";
 		};
 		2760815A1B310CA4470DF205 /* Pods */ = {
@@ -480,6 +493,7 @@
 		5BD285D91B03CF29007A0472 /* Glancer */ = {
 			isa = PBXGroup;
 			children = (
+				229E36C1239AA72F003E07DD /* points.json */,
 				5B55DC2C1B27B21500D55EB9 /* Glancer.entitlements */,
 				5BD285DB1B03CF29007A0472 /* Info.plist */,
 				5BD285E31B03CF29007A0472 /* Images.xcassets */,
@@ -1067,6 +1081,7 @@
 		C0A92943225D9A7400CE2D12 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				22ED72AE23986E9B00881912 /* Color Wars */,
 				C0D1126F228DA08F00CE270D /* Bundled Day */,
 				C0CB9C0E1FE4619A00437C5D /* Events */,
 				C081C2E61FE4509F008073F3 /* Lunch */,
@@ -1461,6 +1476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD072481C74AEB40074B56D /* Main.storyboard in Resources */,
+				229E36C2239AA72F003E07DD /* points.json in Resources */,
 				C051F1F8210FF957004C064F /* CoursePrefCell.xib in Resources */,
 				C0315D73211B248300323661 /* PrefToggleCell.xib in Resources */,
 				C061F80D2115F91700F0374C /* SettingsTextCell.xib in Resources */,
@@ -1477,6 +1493,7 @@
 				5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */,
 				C019C1611F7D3CED00FC4EED /* Launch.storyboard in Resources */,
 				C0B72226211F44D40095BA70 /* AttachmentCell.xib in Resources */,
+				229E36C5239AF1E0003E07DD /* ColorWarCell.xib in Resources */,
 				C0929F432110C61B004A373B /* PrefsActionCell.xib in Resources */,
 				C01862AC2118A29E0042F38A /* TodayBarCell.xib in Resources */,
 				C060012B211B2D0D00ECAD1A /* BlocksPrefCell.xib in Resources */,
@@ -1623,6 +1640,7 @@
 				C0CD10A5231B277A0068162E /* DeviceProfile.swift in Sources */,
 				C09B41D0211378BD00D636D7 /* TableSection+KL.swift in Sources */,
 				C0711B0320DAC3BE009243CC /* TimeDuration.swift in Sources */,
+				22ED72B023986EB400881912 /* ColorWars.swift in Sources */,
 				C0D11271228DA0A400CE270D /* Day.swift in Sources */,
 				C0791CA62117E7A20066CE62 /* NotificationManager.swift in Sources */,
 				5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */,
@@ -1630,7 +1648,6 @@
 				C060011A211B280000ECAD1A /* BlockMeta.swift in Sources */,
 				C07D9143225EF7E100A59345 /* Decodable.swift in Sources */,
 				C0600127211B2C5100ECAD1A /* BlockPrefsModule.swift in Sources */,
-				22491CBC23351113006F711F /* ColorWarEventModule.swift in Sources */,
 				C0C3DC9122B4499800268885 /* UITableViewController+Nib.swift in Sources */,
 				C05BD67A2110E2E500B5B399 /* VariationPrefsModule.swift in Sources */,
 				C0791CA82117E80C0066CE62 /* NotificationStorage.swift in Sources */,
@@ -1655,8 +1672,8 @@
 				C04653C8210936B9004AD09C /* BlockCell.swift in Sources */,
 				C0BD0FA52120CE6C00C8F403 /* ScheduleChangedAttachment.swift in Sources */,
 				C0B4DA0122891DF20081075A /* ArtEvent.swift in Sources */,
-				225B2DEC2328AD8900255EDF /* ColorWarView.swift in Sources */,
 				C07D9141225EF7E100A59345 /* Callback.swift in Sources */,
+				229E36C7239AF2F4003E07DD /* ColorWarCell.swift in Sources */,
 				C0B04F461FD177EC00F5D116 /* MeetingPrefModule.swift in Sources */,
 				C07EE28D2119EEF50034B383 /* CalendarView.swift in Sources */,
 				C0A123402115FF4000A72CD8 /* SettingsCourseColorCell.swift in Sources */,
@@ -1742,6 +1759,7 @@
 				C01A6C7A2118CA58000B7442 /* ScheduleVariationStorage.swift in Sources */,
 				C022316E211E1DE20018D517 /* NoClassView.swift in Sources */,
 				C0B4D9FA22891DE40081075A /* EventTypes.swift in Sources */,
+				229E36CB239EAFCE003E07DD /* ColorWars.swift in Sources */,
 				C0600122211B2BC400ECAD1A /* BlockMetaStorage.swift in Sources */,
 				C01A6C7C2118CA64000B7442 /* MeetingPrefModule.swift in Sources */,
 				C07D912D225EF76700A59345 /* UserDefaults+KL.swift in Sources */,

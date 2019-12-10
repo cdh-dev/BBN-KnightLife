@@ -26,6 +26,8 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+        ColorWars.fetch(for: "getall")
+        
 		self.tableHandler = TableHandler(table: self.tableView)
 		self.tableHandler.dataSource = self
 		
@@ -170,7 +172,7 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 //			return
 //		}
 		
-		guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "Messages") as? ColorWarController else {
+		guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "Messages") as? CalendarController else {
 			return
 		}
 		
@@ -212,6 +214,12 @@ class DayController: UIViewController, TableHandlerDataSource, ErrorReloadable {
 		controller.menu = menu
 		self.navigationController?.pushViewController(controller, animated: true)
 	}
+//    func openColorWars(menu: ColorWars) {
+//        let controller = ColorWarController()
+//
+//        controller.list = menu
+//        self.navigationController?.pushViewController(controller, animated: true)
+//    }
 	
 	func showNotices() {
 		if let bundle = self.bundle {

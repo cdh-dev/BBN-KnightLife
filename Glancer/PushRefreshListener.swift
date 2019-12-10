@@ -21,6 +21,8 @@ enum PushRefreshType: String {
 	case SCHEDULE = "schedule"
 	case EVENTS = "events"
 	case LUNCH = "lunch"
+    
+    case COLORWARS = "colorWars"
 	
 	case NOTIFICATIONS = "notifications"
 	

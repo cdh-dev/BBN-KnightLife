@@ -29,30 +29,6 @@ class ColorWarEvent: Event {
 		}
 	}
     
-    class func goldPoints() -> String? {
-        let json: JSON! = 0
-        let points = try? Optionals.unwrap(json["points"]["gold"].string)
-        return points
-    }
-    
-    class func bluePoints() -> String? {
-        let json: JSON! = 0
-        let points = try? Optionals.unwrap(json["points"]["blue"].string)
-        return points
-    }
-    
-    class func whitePoints() -> String? {
-        let json: JSON! = 0
-        let points = try? Optionals.unwrap(json["points"]["white"].string)
-        return points
-    }
-    
-    class func blackPoints() -> String? {
-        let json: JSON! = 0
-        let points = try? Optionals.unwrap(json["points"]["black"].string)
-        return points
-    }
-    
 	override func updateContent(from: Event) {
 		super.updateContent(from: from)
 		

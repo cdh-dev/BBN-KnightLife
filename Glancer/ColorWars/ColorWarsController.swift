@@ -8,113 +8,58 @@
 
 import Foundation
 import UIKit
-import AddictiveLib
-import Moya
-import SwiftyJSON
+import TableManager
 
-class ColorWarController: UIViewController, TableHandlerDataSource, ErrorReloadable {
+class ColorWarsViewController: UITableViewController {
     
+    let colorCellIdentifier = "color"
     
-    var refreshListenerType: [PushRefreshType] = [.EVENTS]
-    
-    var date: Date!
-    
-    var bundle: Day?
-    var bundleError: Error?
-    var bundleDownloaded: Bool { return bundle != nil || bundleError != nil }
-    
-    @IBOutlet var colorWarView: ColorWarView!
-    
-    @IBOutlet weak var tableView: UITableView!
-    var tableHandler: TableHandler!
-    
-    var upcomingItems: [(date: Date, items: [EventUpcomingItem])]?
-    var upcomingItemsError: Error?
-    var upcomingItemsLoaded: Bool {
-        return self.upcomingItems != nil || self.upcomingItemsError != nil
-    }
-    
-    func openDay(date: Date) {
-        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "Day") as? DayController else {
-            return
-        }
-        
-        controller.date = date
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
+    var menu: ColorWars!
+//    var menu: Lunch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableHandler = TableHandler(table: self.tableView)
-        self.tableHandler.dataSource = self
+         
+        self.view.backgroundColor = .groupTableViewBackground
         
-        self.colorWarView.setupViews()
+        // Register cell nib
+        self.registerNib(name: "UIColorWarCell", reuseIdentifier: self.colorCellIdentifier)
         
-        self.registerListeners()
+        self.tableView.allowsSelection = false
+        self.tableView.separatorStyle = .none
         
+        // Set navigation title
+//        self.navigationItem.title = self.menu.title ?? "Lunch"
+        
+        // Listen to menu updates
+        self.menu.onUpdate.subscribe(with: self) { _ in
+            self.configureCells()
+        }
+        
+        // Initial layout of table
+        self.configureCells()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.colorWarView.setupViews()
-        self.setupNavigation()
-        
-        self.tableHandler.reload()
+    deinit {
+        // Stop listening to menu updates when this controller is dismissed
+        self.menu.onUpdate.cancelSubscription(for: self)
     }
     
-    private func registerListeners() {
-        TodayM.onNextDay.subscribe(with: self) { date in
-            self.colorWarView.setupViews()
-            self.setupNavigation()
+    private func configureCells() {
+        self.tableView.clearRows()
+        
+        // Add a cell for each food
+        self.menu.items.forEach({
             
-            self.tableHandler.reload()
-        }
-    }
-    
-    func reloadData() {
-        self.bundle = nil
-        self.bundleError = nil
-        
-        self.tableHandler.reload()
-        
-        Day.fetch(for: self.date).subscribeOnce(with: self) {
-            switch $0 {
-            case .success(let day):
-                self.bundle = day
-                self.bundleError = nil
-            case .failure(let error):
-                self.bundle = nil
-                self.bundleError = error
-            }
+            print("forEach")
+            // Add a cell with the FoodCell ideentifier so that we know it's a Food cell
+            self.tableView.addRow(self.colorCellIdentifier).setObject($0 as AnyObject).setConfiguration(UIColorWarCell.rowConfiguration)
             
-            self.tableHandler.reload()
-        }
+            // Divider
+            self.tableView.addSpace(height: 0.5, bgColor: Scheme.dividerColor.color)
+            
+        })
     }
     
-    private func setupNavigation() {
-        if let navigation = self.navigationItem as? SubtitleNavigationItem {
-//            let formatter = Date.normalizedFormatter
-//            formatter.dateFormat = "MMMM"
-//            navigation.subtitle = "Community"
-        }
-    }
-
-   func buildCells(handler: TableHandler, layout: TableLayout) {
-    
-    layout.addSection().addCell(TitleCell(title: "Upcoming Events"))
-    
-    if !self.bundleDownloaded {
-        layout.addModule(LoadingModule(table: self.tableView))
-        return
-    }
-    
-    if let _ = self.bundleError {
-        layout.addModule(ErrorModule(table: self.tableView, reloadable: self))
-        return
-    }
-    
-    layout.addModule(ColorWarEventsModule(bundle: self.bundle!, title: "Upcoming Color Wars", options: [.bottomBorder]))
-    }
 }
