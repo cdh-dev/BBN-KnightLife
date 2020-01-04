@@ -98,6 +98,7 @@ extension Lunch {
 					_ = try result.filterSuccessfulStatusCodes()
 					
 					let json = try JSON(data: result.data)
+                    print(json)
 					let lunch = try Lunch(json: json)
 					
 					signal.fire(.success(lunch))
@@ -149,6 +150,7 @@ extension Lunch {
 					_ = try result.filterSuccessfulStatusCodes()
 					
 					let json = try JSON(data: result.data)
+                    print(json)
 					let lunch = try Lunch(json: json)
 					
 					signal.fire(.success(lunch))

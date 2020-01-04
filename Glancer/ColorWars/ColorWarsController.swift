@@ -20,11 +20,10 @@ class ColorWarsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         
         self.view.backgroundColor = .groupTableViewBackground
         
         // Register cell nib
-        self.registerNib(name: "UIColorWarCell", reuseIdentifier: self.colorCellIdentifier)
+        self.registerNib(name: "ColorWarCell", reuseIdentifier: self.colorCellIdentifier)
         
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .none
@@ -50,15 +49,18 @@ class ColorWarsViewController: UITableViewController {
         self.tableView.clearRows()
         
         // Add a cell for each food
-        self.menu.items.forEach({
-            
-            print("forEach")
+//        self.menu.items.forEach({
+//            print("forEach")
             // Add a cell with the FoodCell ideentifier so that we know it's a Food cell
-            self.tableView.addRow(self.colorCellIdentifier).setObject($0 as AnyObject).setConfiguration(UIColorWarCell.rowConfiguration)
+//            self.tableView.addRow(self.colorCellIdentifier).setObject($0 as AnyObject).setConfiguration(UIColorWarCell.rowConfiguration)
             
             // Divider
-            self.tableView.addSpace(height: 0.5, bgColor: Scheme.dividerColor.color)
+//            self.tableView.addSpace(height: 0.5, bgColor: Scheme.dividerColor.color)
+//            self.tableView.addSpace(height: 0.5, bgColor: Scheme.dividerColor.color)
             
+//        })
+        self.menu.team.forEach ({
+            self.tableView.addRow(self.colorCellIdentifier).setObject($0 as AnyObject).setConfiguration(UIColorWarCell.rowConfiguration)
         })
     }
     

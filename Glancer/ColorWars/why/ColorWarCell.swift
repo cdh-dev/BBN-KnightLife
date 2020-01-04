@@ -18,16 +18,20 @@ class UIColorWarCell: UITableViewCell {
     
     static let rowConfiguration: Row.Configuration = { row, cell, path in
         // Cast cell to relevant class
-        let cell = cell as! UIColorWarCell
-//        let food = row.object as! ColorWars.thing
-        let food = row.object as! Lunch.Food
+//        let cell = cell as! UIColorWarCell
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value2, reuseIdentifier: "color")
+        let food = row.object as! ColorWars.thing
+//        let food = row.object as! Lunch.Food
         
         row.setHeightAutomatic()
         
         // Delete all previously added attachments
 //        cell.attachmentsStack.arrangedSubviews.forEach({ cell.attachmentsStack.removeArrangedSubview($0) ; $0.removeFromSuperview() })
         
-        cell.teamLabel.text = food.name
+//        cell.textLabel?.text = food.name
+//        cell.detailTextLabel?.text = food.allergy
+        cell.textLabel?.text = "Hey"
+        cell.detailTextLabel?.text = "I'm working"
         print(food.name)
 //        cell.pointLabel.text = String(food.points)
         
