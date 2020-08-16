@@ -211,7 +211,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource, UIPicke
 			textField.placeholder = "e.g. English"
 			textField.text = self.course.name
 			
-			NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: textField, queue: OperationQueue.main) { (notification) in
+			NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main) { (notification) in
 				saveAction.isEnabled = textField.text!.trimmingCharacters(in: .whitespaces).count > 0
 			}
 		})
@@ -348,7 +348,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource, UIPicke
 	private func showDelete() {
 		let alert = UIAlertController(title: "Remove Class", message: "This action cannot be undone.", preferredStyle: .actionSheet)
 		
-		alert.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.destructive) {
+		alert.addAction(UIAlertAction(title: "Remove", style: UIAlertAction.Style.destructive) {
 			action in
 			
 			CourseM.deleteCourse(course: self.course)

@@ -292,7 +292,7 @@ class NotificationManager: AddictiveLib.Manager, PushRefreshListener {
 			content.title = "Get to Class"
 		}
 		
-		content.sound = UNNotificationSound.default()
+		content.sound = UNNotificationSound.default
 		content.body = "5 min until \(analyst.displayName), distance safely"
 		
 		content.threadIdentifier = "schedule"
@@ -332,7 +332,7 @@ class NotificationManager: AddictiveLib.Manager, PushRefreshListener {
 			content.title = "End of Class"
 		}
 		
-		content.sound = UNNotificationSound.default()
+		content.sound = UNNotificationSound.default
 		content.body = "\(analyst.displayName) ends in 2 min"
 		
 		content.threadIdentifier = "schedule"
