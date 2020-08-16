@@ -116,6 +116,10 @@ extension Block {
 		case f = "f"
 		case g = "g"
 		case x = "x"
+        case block1 = "block1"
+        case block2 = "block2"
+        case block3 = "block3"
+        case block4 = "block4"
 		case lunch = "lunch"
 		case activities = "activities"
 		case lab = "lab"
@@ -142,6 +146,14 @@ extension Block {
 				return "G"
 			case .x:
 				return "X"
+            case .block1:
+                return "Block 1"
+            case .block2:
+                return "Block 2"
+            case .block3:
+                return "Block 3"
+            case .block4:
+                return "Block 4"
 			case .lunch:
 				return "Lunch"
 			case .activities:
@@ -170,7 +182,7 @@ extension Block {
 		static var academicBlocks: [ID] { return [.a, .b, .c, .d, .e, .f, .g] }
 		
 		init?(index: Int) {
-			let values: [Block.ID] = [.a, .b, .c, .d, .e, .f, .g, .x, .lunch, .activities, .lab, .custom, .advisory, .classMeeting, .assembly]
+            let values: [Block.ID] = [.a, .b, .c, .d, .e, .f, .g, .x,.block1, .block2, .block3, .block4, .lunch, .activities, .lab, .custom, .advisory, .classMeeting, .assembly]
 			if !values.indices.contains(index) {
 				return nil
 			}

@@ -41,7 +41,8 @@ extension API: TargetType {
 		if let serverUrl = Bundle.main.object(forInfoDictionaryKey: "KlApiUrl") as? String {
 			return URL(string: serverUrl)!
 		} else {
-			return URL(string: "https://api.bbnknightlife.com/m/")!
+			//return URL(string: "https://api.bbnknightlife.com/m/")!
+            return URL(string: "https://apitesting-knightlife.herokuapp.com/m/")!
 		}
 	}
 	

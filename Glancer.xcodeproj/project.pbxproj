@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225BB49D24E84BE6006A1310 /* SettingsCoursePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225BB49C24E84BE6006A1310 /* SettingsCoursePickerCell.swift */; };
+		225BB49F24E84C07006A1310 /* SettingsCoursePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225BB49E24E84C07006A1310 /* SettingsCoursePickerCell.xib */; };
 		5BD072481C74AEB40074B56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD072471C74AEB40074B56D /* Main.storyboard */; };
 		5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD285DC1B03CF29007A0472 /* AppDelegate.swift */; };
 		5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD285E31B03CF29007A0472 /* Images.xcassets */; };
@@ -240,6 +242,8 @@
 
 /* Begin PBXFileReference section */
 		18D275F10167B98717447A7C /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
+		225BB49C24E84BE6006A1310 /* SettingsCoursePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoursePickerCell.swift; sourceTree = "<group>"; };
+		225BB49E24E84C07006A1310 /* SettingsCoursePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCoursePickerCell.xib; sourceTree = "<group>"; };
 		2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55DC2C1B27B21500D55EB9 /* Glancer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Glancer.entitlements; sourceTree = "<group>"; };
 		5BD072471C74AEB40074B56D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -428,6 +432,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225BB49B24E84B9E006A1310 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				225BB49C24E84BE6006A1310 /* SettingsCoursePickerCell.swift */,
+				225BB49E24E84C07006A1310 /* SettingsCoursePickerCell.xib */,
+			);
+			name = Picker;
+			sourceTree = "<group>";
+		};
 		2760815A1B310CA4470DF205 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +781,7 @@
 		C061F8082115F5B700F0374C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				225BB49B24E84B9E006A1310 /* Picker */,
 				C0679140211B5B1800628098 /* Delete */,
 				C039C86B211A8CA2008E0AF0 /* Day */,
 				C0A1233E2115FF2B00A72CD8 /* Color */,
@@ -1481,6 +1495,7 @@
 				C0C785B3210FDB88003A5EB8 /* TitleCell.xib in Resources */,
 				C039C86F211A8CCE008E0AF0 /* SettingsCourseDayCell.xib in Resources */,
 				C04653C6210936AC004AD09C /* BlockCell.xib in Resources */,
+				225BB49F24E84C07006A1310 /* SettingsCoursePickerCell.xib in Resources */,
 				C0760225210F89FD00398827 /* NoClassCell.xib in Resources */,
 				5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */,
 				C019C1611F7D3CED00FC4EED /* Launch.storyboard in Resources */,
@@ -1558,6 +1573,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Glancer/Pods-Glancer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AddictiveLib/AddictiveLib.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CULColorPicker/CULColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1576,6 +1592,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AddictiveLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CULColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1701,6 +1718,7 @@
 				C0FCDBD0210AB5F60080A883 /* EventAttachmentView.swift in Sources */,
 				C0A1FB162001B36C004146CE /* ScheduleVariationStorage.swift in Sources */,
 				C060011E211B291A00ECAD1A /* BlockMetaID.swift in Sources */,
+				225BB49D24E84BE6006A1310 /* SettingsCoursePickerCell.swift in Sources */,
 				C07D912C225EF76700A59345 /* UserDefaults+KL.swift in Sources */,
 				C0600121211B29C400ECAD1A /* BlockMetaStorage.swift in Sources */,
 				C04D1EC4210FD7B90001C99C /* UILunchItemCell.swift in Sources */,
@@ -1941,6 +1959,7 @@
 					"$(SDKROOT)/usr/lib/system",
 					"$(SDKROOT)/usr/lib/system/introspection",
 				);
+				MARKETING_VERSION = 3.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = MAD.BBN.KnightLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1978,6 +1997,7 @@
 					"$(SDKROOT)/usr/lib/system",
 					"$(SDKROOT)/usr/lib/system/introspection",
 				);
+				MARKETING_VERSION = 3.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = MAD.BBN.KnightLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -2006,7 +2026,7 @@
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 3.2.2;
+				MARKETING_VERSION = 3.2.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = MAD.BBN.KnightLife.TodayWidget;
@@ -2038,7 +2058,7 @@
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 3.2.2;
+				MARKETING_VERSION = 3.2.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = MAD.BBN.KnightLife.TodayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
