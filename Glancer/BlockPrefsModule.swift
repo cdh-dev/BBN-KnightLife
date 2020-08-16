@@ -53,7 +53,22 @@ class BlockPrefsModule: TableModule {
 		section.addCell(BlocksPrefCell(module: self, meta: BlockMetaM.getBlockMeta(meta: .assembly)))
 		section.addDivider()
 		
-		section.addSpacerCell().setBackgroundColor(.clear).setHeight(35)
+		section.addSpacerCell().setBackgroundColor(.clear).setHeight(35/2)
+        
+        section.addDivider()
+        section.addCell(BlocksPrefCell(module: self, meta: BlockMetaM.getBlockMeta(meta: .block1)))
+        section.addDivider()
+        
+        section.addCell(BlocksPrefCell(module: self, meta: BlockMetaM.getBlockMeta(meta: .block2)))
+        section.addDivider()
+        
+        section.addCell(BlocksPrefCell(module: self, meta: BlockMetaM.getBlockMeta(meta: .block3)))
+        section.addDivider()
+        
+        section.addCell(BlocksPrefCell(module: self, meta: BlockMetaM.getBlockMeta(meta: .block4)))
+        section.addDivider()
+        
+        section.addSpacerCell().setBackgroundColor(.clear).setHeight(35)
 	}
 	
 	func selected(meta: BlockMeta) {
