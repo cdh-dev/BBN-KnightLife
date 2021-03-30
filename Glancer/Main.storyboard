@@ -2160,11 +2160,11 @@
             </objects>
             <point key="canvasLocation" x="-1229" y="1145"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Notes-->
         <scene sceneID="Fcl-OZ-XkA">
             <objects>
                 <navigationController id="nWe-a4-8ic" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="Lfv-pw-eMc"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="icon_bell" id="Lfv-pw-eMc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="87K-aI-a45">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2179,6 +2179,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_bell" width="24" height="24"/>
         <image name="icon_calendar" width="24" height="24"/>
         <image name="icon_heart" width="24" height="24"/>
         <image name="icon_settings" width="24" height="24"/>
