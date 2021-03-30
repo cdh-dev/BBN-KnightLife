@@ -1,5 +1,5 @@
 //
-//  NotesController.swift
+//  NotesControllerViewController.swift
 //  Glancer
 //
 //  Created by Henry Price on 3/30/21.
@@ -13,13 +13,16 @@ import SafariServices
 import Moya
 import SwiftyJSON
 
-
 class NotesController: UIViewController, TableHandlerDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
     private(set) var tableHandler: TableHandler!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        self.tableHandler = TableHandler(table: self.tableView)
+        self.tableHandler.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,9 +30,8 @@ class NotesController: UIViewController, TableHandlerDataSource {
         
         self.tableHandler.reload()
     }
-    
     func buildCells(handler: TableHandler, layout: TableLayout) {
-        layout.addModule(CoursesPrefModule(controller: self))
-        layout.addModule(BlockPrefsModule(controller: self))
+        
     }
+
 }

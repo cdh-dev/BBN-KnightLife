@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2255AECA2613874A0077456F /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AEC92613874A0077456F /* NotesController.swift */; };
+		2255AECC26138D3E0077456F /* NotesControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AECB26138D3E0077456F /* NotesControllerViewController.swift */; };
+		2255AED2261392910077456F /* UINoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AED0261392910077456F /* UINoteTableViewCell.swift */; };
+		2255AED3261392910077456F /* UINoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255AED1261392910077456F /* UINoteTableViewCell.xib */; };
 		225BB49D24E84BE6006A1310 /* SettingsCoursePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225BB49C24E84BE6006A1310 /* SettingsCoursePickerCell.swift */; };
 		225BB49F24E84C07006A1310 /* SettingsCoursePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225BB49E24E84C07006A1310 /* SettingsCoursePickerCell.xib */; };
 		5BD072481C74AEB40074B56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD072471C74AEB40074B56D /* Main.storyboard */; };
@@ -243,7 +245,9 @@
 
 /* Begin PBXFileReference section */
 		18D275F10167B98717447A7C /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
-		2255AEC92613874A0077456F /* NotesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
+		2255AECB26138D3E0077456F /* NotesControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesControllerViewController.swift; sourceTree = "<group>"; };
+		2255AED0261392910077456F /* UINoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINoteTableViewCell.swift; sourceTree = "<group>"; };
+		2255AED1261392910077456F /* UINoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINoteTableViewCell.xib; sourceTree = "<group>"; };
 		225BB49C24E84BE6006A1310 /* SettingsCoursePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoursePickerCell.swift; sourceTree = "<group>"; };
 		225BB49E24E84C07006A1310 /* SettingsCoursePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCoursePickerCell.xib; sourceTree = "<group>"; };
 		2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -437,9 +441,19 @@
 		2255AEC82613871C0077456F /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				2255AEC92613874A0077456F /* NotesController.swift */,
+				2255AECD261391DB0077456F /* Cells */,
+				2255AECB26138D3E0077456F /* NotesControllerViewController.swift */,
 			);
 			name = Notes;
+			sourceTree = "<group>";
+		};
+		2255AECD261391DB0077456F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2255AED0261392910077456F /* UINoteTableViewCell.swift */,
+				2255AED1261392910077456F /* UINoteTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		225BB49B24E84B9E006A1310 /* Picker */ = {
@@ -1495,6 +1509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD072481C74AEB40074B56D /* Main.storyboard in Resources */,
+				2255AED3261392910077456F /* UINoteTableViewCell.xib in Resources */,
 				C051F1F8210FF957004C064F /* CoursePrefCell.xib in Resources */,
 				C0315D73211B248300323661 /* PrefToggleCell.xib in Resources */,
 				C061F80D2115F91700F0374C /* SettingsTextCell.xib in Resources */,
@@ -1585,7 +1600,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Glancer/Pods-Glancer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AddictiveLib/AddictiveLib.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CULColorPicker/CULColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1604,7 +1618,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AddictiveLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CULColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1696,7 +1709,6 @@
 				C0B4DA0122891DF20081075A /* ArtEvent.swift in Sources */,
 				C07D9141225EF7E100A59345 /* Callback.swift in Sources */,
 				C0B04F461FD177EC00F5D116 /* MeetingPrefModule.swift in Sources */,
-				2255AECA2613874A0077456F /* NotesController.swift in Sources */,
 				C07EE28D2119EEF50034B383 /* CalendarView.swift in Sources */,
 				C0A123402115FF4000A72CD8 /* SettingsCourseColorCell.swift in Sources */,
 				C07D9128225EF72100A59345 /* Realm+KL.swift in Sources */,
@@ -1729,7 +1741,9 @@
 				C0B72224211F44CB0095BA70 /* AttachmentCell.swift in Sources */,
 				C01ECD302129BF280001C013 /* ErrorModule.swift in Sources */,
 				C0FCDBD0210AB5F60080A883 /* EventAttachmentView.swift in Sources */,
+				2255AECC26138D3E0077456F /* NotesControllerViewController.swift in Sources */,
 				C0A1FB162001B36C004146CE /* ScheduleVariationStorage.swift in Sources */,
+				2255AED2261392910077456F /* UINoteTableViewCell.swift in Sources */,
 				C060011E211B291A00ECAD1A /* BlockMetaID.swift in Sources */,
 				225BB49D24E84BE6006A1310 /* SettingsCoursePickerCell.swift in Sources */,
 				C07D912C225EF76700A59345 /* UserDefaults+KL.swift in Sources */,
