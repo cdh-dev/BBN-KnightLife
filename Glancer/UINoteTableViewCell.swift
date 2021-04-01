@@ -12,6 +12,26 @@ import AddictiveLib
 
 class NoteTableCell: TableCell {
     
+    init(title: String){
+        
+        super.init("noteTable", nib: "UINoteTableViewCell")
+        
+        self.setEstimatedHeight(32)
+        self.setSelectionStyle(.none)
+        
+        self.setCallback {
+            template, cell in
+            
+            guard let noteCell = cell as? UINoteTableViewCell else {
+                return
+            }
+            
+            noteCell.backgroundColor = UIColor.clear
+            noteCell.NoteLabel.text = title
+            
+        }
+        
+    }
 }
 
 class UINoteTableViewCell: UITableViewCell {

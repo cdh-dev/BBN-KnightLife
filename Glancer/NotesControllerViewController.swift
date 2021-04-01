@@ -30,8 +30,9 @@ class NotesController: UIViewController, TableHandlerDataSource {
         
         self.tableHandler.reload()
     }
+    
     func buildCells(handler: TableHandler, layout: TableLayout) {
-        
+        layout.addModule(NoteTableModule(controller: self))
     }
 
 }
