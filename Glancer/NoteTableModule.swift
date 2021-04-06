@@ -25,9 +25,9 @@ class NoteTableModule : TableModule {
         section.addDivider()
         section.addCell(TitleCell(title: "Block Configuration"))
         section.addDivider()
-        for index in 1...5  {
+        for course in CourseM.courses  {
             section.addDivider()
-            section.addCell(NoteTableCell(title: "test"))
+            section.addCell(NoteTableCell(title: course.name))
         }
         section.addDivider()
     }

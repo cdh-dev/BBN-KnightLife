@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2232EACB261CA578001A5515 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2232EACA261CA578001A5515 /* NoteTableViewController.swift */; };
+		2232EACF261CA67A001A5515 /* NoteTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2232EACE261CA67A001A5515 /* NoteTestViewController.swift */; };
+		2232EAD4261CB2E6001A5515 /* NoteCreateChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2232EAD3261CB2E6001A5515 /* NoteCreateChangeViewController.swift */; };
 		2255AECC26138D3E0077456F /* NotesControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AECB26138D3E0077456F /* NotesControllerViewController.swift */; };
 		2255AED2261392910077456F /* UINoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AED0261392910077456F /* UINoteTableViewCell.swift */; };
 		2255AED3261392910077456F /* UINoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255AED1261392910077456F /* UINoteTableViewCell.xib */; };
@@ -251,6 +254,9 @@
 
 /* Begin PBXFileReference section */
 		18D275F10167B98717447A7C /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
+		2232EACA261CA578001A5515 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		2232EACE261CA67A001A5515 /* NoteTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTestViewController.swift; sourceTree = "<group>"; };
+		2232EAD3261CB2E6001A5515 /* NoteCreateChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateChangeViewController.swift; sourceTree = "<group>"; };
 		2255AECB26138D3E0077456F /* NotesControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesControllerViewController.swift; sourceTree = "<group>"; };
 		2255AED0261392910077456F /* UINoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINoteTableViewCell.swift; sourceTree = "<group>"; };
 		2255AED1261392910077456F /* UINoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -457,6 +463,9 @@
 				2255AED4261639D00077456F /* Module */,
 				2255AECD261391DB0077456F /* Cells */,
 				2255AECB26138D3E0077456F /* NotesControllerViewController.swift */,
+				2232EACA261CA578001A5515 /* NoteTableViewController.swift */,
+				2232EACE261CA67A001A5515 /* NoteTestViewController.swift */,
+				2232EAD3261CB2E6001A5515 /* NoteCreateChangeViewController.swift */,
 			);
 			name = Notes;
 			sourceTree = "<group>";
@@ -1727,6 +1736,7 @@
 				C0D11271228DA0A400CE270D /* Day.swift in Sources */,
 				C0791CA62117E7A20066CE62 /* NotificationManager.swift in Sources */,
 				C0BD0F9B2120CAA600C8F403 /* NoticesController.swift in Sources */,
+				2232EACB261CA578001A5515 /* NoteTableViewController.swift in Sources */,
 				5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */,
 				C01ECD412129D43C0001C013 /* TodayNextDayModule.swift in Sources */,
 				C060011A211B280000ECAD1A /* BlockMeta.swift in Sources */,
@@ -1799,6 +1809,7 @@
 				2255AECC26138D3E0077456F /* NotesControllerViewController.swift in Sources */,
 				C0A1FB162001B36C004146CE /* ScheduleVariationStorage.swift in Sources */,
 				2255AED2261392910077456F /* UINoteTableViewCell.swift in Sources */,
+				2232EAD4261CB2E6001A5515 /* NoteCreateChangeViewController.swift in Sources */,
 				C060011E211B291A00ECAD1A /* BlockMetaID.swift in Sources */,
 				225BB49D24E84BE6006A1310 /* SettingsCoursePickerCell.swift in Sources */,
 				C07D912C225EF76700A59345 /* UserDefaults+KL.swift in Sources */,
@@ -1809,6 +1820,7 @@
 				C0ACFD1A21116863002886A2 /* TodayStatusCell.swift in Sources */,
 				C0A167B5210E6FB800DB6BC4 /* LoadingCell.swift in Sources */,
 				C006914F210EC55C0099CD57 /* SettingsController.swift in Sources */,
+				2232EACF261CA67A001A5515 /* NoteTestViewController.swift in Sources */,
 				C01ECD3B2129D2330001C013 /* TodayBetweenClassModule.swift in Sources */,
 				C0D6E9422107B8AC004BD0F4 /* Date+KL.swift in Sources */,
 				C0C785B0210FD980003A5EB8 /* LunchItemAttachmentView.swift in Sources */,
