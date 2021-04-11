@@ -10,7 +10,6 @@ import UIKit
 
 class NoteTestViewController: UIViewController {
 
-    
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var noteDate: UILabel!
     @IBOutlet weak var noteTextTextView: UITextView!

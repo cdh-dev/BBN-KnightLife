@@ -10,10 +10,8 @@
 		2232EACB261CA578001A5515 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2232EACA261CA578001A5515 /* NoteTableViewController.swift */; };
 		2232EACF261CA67A001A5515 /* NoteTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2232EACE261CA67A001A5515 /* NoteTestViewController.swift */; };
 		2232EAD4261CB2E6001A5515 /* NoteCreateChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2232EAD3261CB2E6001A5515 /* NoteCreateChangeViewController.swift */; };
-		2255AECC26138D3E0077456F /* NotesControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AECB26138D3E0077456F /* NotesControllerViewController.swift */; };
 		2255AED2261392910077456F /* UINoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AED0261392910077456F /* UINoteTableViewCell.swift */; };
 		2255AED3261392910077456F /* UINoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255AED1261392910077456F /* UINoteTableViewCell.xib */; };
-		2255AED626163A020077456F /* NoteTableModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AED526163A020077456F /* NoteTableModule.swift */; };
 		2255AED926163E5D0077456F /* NotesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2255AED726163E5D0077456F /* NotesDataModel.xcdatamodeld */; };
 		2255AEDC261641190077456F /* NoteDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AEDB261641190077456F /* NoteDateHelper.swift */; };
 		2255AEDF261642150077456F /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AEDE261642150077456F /* NoteData.swift */; };
@@ -257,10 +255,8 @@
 		2232EACA261CA578001A5515 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		2232EACE261CA67A001A5515 /* NoteTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTestViewController.swift; sourceTree = "<group>"; };
 		2232EAD3261CB2E6001A5515 /* NoteCreateChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateChangeViewController.swift; sourceTree = "<group>"; };
-		2255AECB26138D3E0077456F /* NotesControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesControllerViewController.swift; sourceTree = "<group>"; };
 		2255AED0261392910077456F /* UINoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINoteTableViewCell.swift; sourceTree = "<group>"; };
 		2255AED1261392910077456F /* UINoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UINoteTableViewCell.xib; sourceTree = "<group>"; };
-		2255AED526163A020077456F /* NoteTableModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableModule.swift; sourceTree = "<group>"; };
 		2255AED826163E5D0077456F /* NotesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		2255AEDB261641190077456F /* NoteDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDateHelper.swift; sourceTree = "<group>"; };
 		2255AEDE261642150077456F /* NoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
@@ -462,7 +458,6 @@
 				2255AEDD261642020077456F /* NoteData */,
 				2255AED4261639D00077456F /* Module */,
 				2255AECD261391DB0077456F /* Cells */,
-				2255AECB26138D3E0077456F /* NotesControllerViewController.swift */,
 				2232EACA261CA578001A5515 /* NoteTableViewController.swift */,
 				2232EACE261CA67A001A5515 /* NoteTestViewController.swift */,
 				2232EAD3261CB2E6001A5515 /* NoteCreateChangeViewController.swift */,
@@ -482,7 +477,6 @@
 		2255AED4261639D00077456F /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				2255AED526163A020077456F /* NoteTableModule.swift */,
 			);
 			name = Module;
 			sourceTree = "<group>";
@@ -1751,7 +1745,6 @@
 				C0B4DA0322891DF20081075A /* ColorWarEvent.swift in Sources */,
 				C01ECD2A2129BC0A0001C013 /* DayNoClassModule.swift in Sources */,
 				C07D913F225EF7E100A59345 /* BadgeTetheredPreferences.swift in Sources */,
-				2255AED626163A020077456F /* NoteTableModule.swift in Sources */,
 				C0B4DA09228921570081075A /* DayEventList.swift in Sources */,
 				C0FCDBC4210978D00080A883 /* SubtitleNavigationItem.swift in Sources */,
 				C0BD0F9F2120CBE400C8F403 /* NoticeCell.swift in Sources */,
@@ -1806,7 +1799,6 @@
 				2255AEDF261642150077456F /* NoteData.swift in Sources */,
 				C01ECD302129BF280001C013 /* ErrorModule.swift in Sources */,
 				C0FCDBD0210AB5F60080A883 /* EventAttachmentView.swift in Sources */,
-				2255AECC26138D3E0077456F /* NotesControllerViewController.swift in Sources */,
 				C0A1FB162001B36C004146CE /* ScheduleVariationStorage.swift in Sources */,
 				2255AED2261392910077456F /* UINoteTableViewCell.swift in Sources */,
 				2232EAD4261CB2E6001A5515 /* NoteCreateChangeViewController.swift in Sources */,

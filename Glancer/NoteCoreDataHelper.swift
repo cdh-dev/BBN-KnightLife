@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class ReallySimpleNoteCoreDataHelper {
+class NoteCoreDataHelper {
     
     private(set) static var count: Int = 0
     

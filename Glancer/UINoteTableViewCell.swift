@@ -6,34 +6,17 @@
 //  Copyright © 2021 Dylan Hanson. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
-import AddictiveLib
 
-class NoteTableCell: TableCell {
+class UINoteTableViewCell : UITableViewCell {
+    private(set) var noteTitle : String = ""
+    private(set) var noteText  : String = ""
+    private(set) var noteDate  : String = ""
+ 
+    @IBOutlet weak var noteTitleLabel: UILabel!
+    @IBOutlet weak var noteDateLabel: UILabel!
+    @IBOutlet weak var noteTextLabel: UILabel!
     
-    init(title: String){
-        
-        super.init("noteTable", nib: "UINoteTableViewCell")
-        
-        self.setEstimatedHeight(32)
-        self.setSelectionStyle(.none)
-        
-        self.setCallback {
-            template, cell in
-            
-            guard let noteCell = cell as? UINoteTableViewCell else {
-                return
-            }
-            
-            noteCell.backgroundColor = UIColor.clear
-            noteCell.NoteLabel.text = title
-            
-        }
-        
-    }
-}
-
-class UINoteTableViewCell: UITableViewCell {
-    @IBOutlet weak var NoteLabel: UILabel!
+    
 }

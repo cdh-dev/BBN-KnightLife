@@ -10,7 +10,6 @@ import UIKit
 
 class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
     
-    
     @IBOutlet weak var noteTitleTextField: UITextField!
     @IBOutlet weak var noteTextTextView: UITextView!
     @IBOutlet weak var noteDoneButton: UIButton!
@@ -94,7 +93,7 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()  {
         super.viewDidLoad()
         
         // set text view delegate so that we can react on text change

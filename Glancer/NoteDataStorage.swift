@@ -27,8 +27,8 @@ class NoteDataStorage {
     func setManagedContext(managedObjectContext: NSManagedObjectContext) {
         self.managedObjectContext = managedObjectContext
         self.managedContextHasBeenSet = true
-        let notes = ReallySimpleNoteCoreDataHelper.readNotesFromCoreData(fromManagedObjectContext: self.managedObjectContext)
-        currentIndex = ReallySimpleNoteCoreDataHelper.count
+        let notes = NoteCoreDataHelper.readNotesFromCoreData(fromManagedObjectContext: self.managedObjectContext)
+        currentIndex = NoteCoreDataHelper.count
         for (index, note) in notes.enumerated() {
             noteIndexToIdDict[index] = note.noteId
         }
@@ -38,7 +38,7 @@ class NoteDataStorage {
         if managedContextHasBeenSet {
             // add note UUID to the dictionary
             noteIndexToIdDict[currentIndex] = noteToBeAdded.noteId
-            ReallySimpleNoteCoreDataHelper.createNoteInCoreData(
+            NoteCoreDataHelper.createNoteInCoreData(
                 noteToBeCreated:          noteToBeAdded,
                 intoManagedObjectContext: self.managedObjectContext)
             // increase index
@@ -55,7 +55,7 @@ class NoteDataStorage {
             }
             // get note UUID from the dictionary
             let noteUUID = noteIndexToIdDict[at]
-            ReallySimpleNoteCoreDataHelper.deleteNoteFromCoreData(
+            NoteCoreDataHelper.deleteNoteFromCoreData(
                 noteIdToBeDeleted:        noteUUID!,
                 fromManagedObjectContext: self.managedObjectContext)
             // update noteIndexToIdDict dictionary
@@ -86,7 +86,7 @@ class NoteDataStorage {
             // get note UUID from the dictionary
             let noteUUID = noteIndexToIdDict[at]
             let noteReadFromCoreData: NoteData?
-            noteReadFromCoreData = ReallySimpleNoteCoreDataHelper.readNoteFromCoreData(
+            noteReadFromCoreData = NoteCoreDataHelper.readNoteFromCoreData(
                 noteIdToBeRead:           noteUUID!,
                 fromManagedObjectContext: self.managedObjectContext)
             return noteReadFromCoreData
@@ -105,7 +105,7 @@ class NoteDataStorage {
                 }
             }
             if noteToBeChangedIndex != nil {
-                ReallySimpleNoteCoreDataHelper.changeNoteInCoreData(
+                NoteCoreDataHelper.changeNoteInCoreData(
                 noteToBeChanged: noteToBeChanged,
                 inManagedObjectContext: self.managedObjectContext)
             } else {
@@ -116,6 +116,6 @@ class NoteDataStorage {
 
     
     func count() -> Int {
-        return ReallySimpleNoteCoreDataHelper.count
+        return NoteCoreDataHelper.count
     }
 }
