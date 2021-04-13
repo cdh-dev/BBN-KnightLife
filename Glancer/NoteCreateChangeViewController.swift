@@ -11,7 +11,11 @@ import UIKit
 class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var noteTitleTextField: UITextField!
-    @IBOutlet weak var noteTextTextView: UITextView!
+    @IBOutlet weak var noteTextTextView: UITextView! {
+       didSet {
+           noteTextTextView.delegate = self
+       }
+   }
     @IBOutlet weak var noteDoneButton: UIButton!
     @IBOutlet weak var noteDateLabel: UILabel!
     
@@ -122,6 +126,22 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
         backButton.title = "Back"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
+    
+    private func textLimit(existingText: String?,
+                           newText: String,
+                           limit: Int) -> Bool {
+        let text = existingText ?? ""
+        let isAtLimit = text.count + newText.count <= limit
+        return isAtLimit
+    }
+    
+    func textView(_ textView: UITextView,
+                  shouldChangeTextIn range: NSRange,
+                  replacementText text: String) -> Bool {
+        return self.textLimit(existingText: textView.text,
+                              newText: text,
+                              limit: 2048)
+    }
 
     //Handle the text changes here
     func textViewDidChange(_ textView: UITextView) {
@@ -138,4 +158,39 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
         }
     }
 
+}
+
+private var kAssociationKeyMaxLength: Int = 0
+
+extension UITextField {
+    
+    @IBInspectable var maxLength: Int {
+        get {
+            if let length = objc_getAssociatedObject(self, &kAssociationKeyMaxLength) as? Int {
+                return length
+            } else {
+                return Int.max
+            }
+        }
+        set {
+            objc_setAssociatedObject(self, &kAssociationKeyMaxLength, newValue, .OBJC_ASSOCIATION_RETAIN)
+            addTarget(self, action: #selector(checkMaxLength), for: .editingChanged)
+        }
+    }
+    
+    @objc func checkMaxLength(textField: UITextField) {
+        guard let prospectiveText = self.text,
+            prospectiveText.count > maxLength
+            else {
+                return
+        }
+        
+        let selection = selectedTextRange
+        
+        let indexEndOfText = prospectiveText.index(prospectiveText.startIndex, offsetBy: maxLength)
+        let substring = prospectiveText[..<indexEndOfText]
+        text = String(substring)
+        
+        selectedTextRange = selection
+    }
 }

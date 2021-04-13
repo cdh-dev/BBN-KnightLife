@@ -8,11 +8,15 @@
 
 import UIKit
 
-class NoteTestViewController: UIViewController {
+class NoteTestViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var noteDate: UILabel!
-    @IBOutlet weak var noteTextTextView: UITextView!
+    @IBOutlet weak var noteTextTextView: UITextView! {
+        didSet {
+            noteTextTextView.delegate = self
+        }
+    }
     
     func configureView() {
         // Update the user interface for the detail item.
@@ -26,7 +30,7 @@ class NoteTestViewController: UIViewController {
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,6 +42,22 @@ class NoteTestViewController: UIViewController {
             // Update the view.
             configureView()
         }
+    }
+    
+    private func textLimit(existingText: String?,
+                           newText: String,
+                           limit: Int) -> Bool {
+        let text = existingText ?? ""
+        let isAtLimit = text.count + newText.count <= limit
+        return isAtLimit
+    }
+    
+    func textView(_ textView: UITextView,
+                  shouldChangeTextIn range: NSRange,
+                  replacementText text: String) -> Bool {
+        return self.textLimit(existingText: textView.text,
+                              newText: text,
+                              limit: 10)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
