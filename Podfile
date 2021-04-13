@@ -17,6 +17,7 @@ target 'Glancer' do
   pod 'SwiftyJSON'
   pod 'SwiftyUserDefaults'
   pod 'Timepiece'
+  pod 'CULColorPicker'
   pod 'TableManager'
 end
 

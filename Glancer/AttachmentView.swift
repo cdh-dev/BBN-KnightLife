@@ -130,7 +130,7 @@ class AttachmentView: UIView, UIGestureRecognizerDelegate {
 		stack.snp.makeConstraints() {
 			constrain in
 			
-			constrain.edges.equalToSuperview().inset(UIEdgeInsetsMake(10, 15, 10, 15))
+			constrain.edges.equalToSuperview().inset(UIEdgeInsets.init(top: 10, left: 15, bottom: 10, right: 15))
 		}
 		
 //		Center label

@@ -18,7 +18,11 @@ extension BlockMeta {
 		case classMeeting
 		case assembly
 		case x
-		
+		case block1
+        case block2
+        case block3
+        case block4
+        
 		case free
 		
 	}
@@ -41,6 +45,14 @@ extension BlockMeta.ID {
 			return "Class Meeting"
 		case .assembly:
 			return "Assembly"
+        case .block1:
+            return "Block 1"
+        case .block2:
+            return "Block 2"
+        case .block3:
+            return "Block 3"
+        case .block4:
+            return "Block 4"
 		case .free:
 			return "Free Blocks"
 		}
@@ -57,6 +69,10 @@ extension BlockMeta.ID {
 		.classMeeting,
 		.assembly,
 		.x,
+        .block1,
+        .block2,
+        .block3,
+        .block4,
 		.free]
 	
 }
@@ -82,6 +98,14 @@ extension BlockMeta.ID {
 			self = .classMeeting
 		case .assembly:
 			self = .assembly
+        case .block1:
+            self = .block1
+        case .block2:
+            self = .block2
+        case .block3:
+            self = .block3
+        case .block4:
+            self = .block4
 		default:
 			self = .free
 		}

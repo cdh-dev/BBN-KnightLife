@@ -41,7 +41,7 @@ class SettingsBlockController: UIViewController, TableHandlerDataSource {
 		about.addCell(TitleCell(title: "About"))
 		about.addDivider()
 		
-		if self.meta.id == .free {
+        if self.meta.id == .free {
 			about.addCell(SettingsTextCell(left: "Name", right: self.meta.customName ?? "") {
 				self.showChangeName()
 			})
@@ -51,6 +51,50 @@ class SettingsBlockController: UIViewController, TableHandlerDataSource {
 			
 			about.addDivider()
 		}
+        
+        if self.meta.id == .block1 {
+            about.addCell(SettingsTextCell(left: "Name", right: self.meta.customName ?? "") {
+                self.showChangeBlockName()
+            })
+            about.addDivider()
+            
+            about.addSpacerCell().setBackgroundColor(.clear).setHeight(35 / 2)
+            
+            about.addDivider()
+        }
+        if self.meta.id == .block2 {
+            about.addCell(SettingsTextCell(left: "Name", right: self.meta.customName ?? "") {
+                self.showChangeBlockName()
+            })
+            about.addDivider()
+            
+            about.addSpacerCell().setBackgroundColor(.clear).setHeight(35 / 2)
+            
+            about.addDivider()
+        }
+
+        if self.meta.id == .block3 {
+            about.addCell(SettingsTextCell(left: "Name", right: self.meta.customName ?? "") {
+                self.showChangeBlockName()
+            })
+            about.addDivider()
+            
+            about.addSpacerCell().setBackgroundColor(.clear).setHeight(35 / 2)
+            
+            about.addDivider()
+        }
+
+        if self.meta.id == .block4 {
+            about.addCell(SettingsTextCell(left: "Name", right: self.meta.customName ?? "") {
+                self.showChangeBlockName()
+            })
+            about.addDivider()
+            
+            about.addSpacerCell().setBackgroundColor(.clear).setHeight(35 / 2)
+            
+            about.addDivider()
+        }
+
 		
 		about.addCell(SettingsCourseColorCell(color: self.meta.color) {
 			guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "Color") as? SettingsColorPickerController else {
@@ -123,5 +167,33 @@ class SettingsBlockController: UIViewController, TableHandlerDataSource {
 		
 		self.present(alert, animated: true)
 	}
+    private func showChangeBlockName() {
+        let alert = UIAlertController(title: "Block Name", message: "This will be displayed instead of the block's type.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { action in
+            if let name = alert.textFields?.first?.text {
+                let trimmed = name.trimmingCharacters(in: .whitespaces)
+                
+                self.meta.customName = trimmed.count > 0 ? trimmed : nil
+                
+                self.tableHandler.reload()
+                
+                self.needsNotificationsUpdate()
+            }
+        })
+        
+        alert.addAction(saveAction)
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.autocapitalizationType = .words
+            textField.autocorrectionType = .default
+            
+            textField.placeholder = "Activity Name"
+            textField.text = self.meta.customName
+        })
+        
+        self.present(alert, animated: true)
+    }
 	
 }

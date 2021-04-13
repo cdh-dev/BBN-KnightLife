@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 import AddictiveLib
 
-class SettingsColorPickerController: UIViewController {
-	
+class SettingsColorPickerController: UIViewController  {
+
+    
+    
+    
+    
 	var color: UIColor!
 	var colorPicked: (UIColor) -> Void = {_ in}
 	
@@ -59,5 +63,6 @@ class SettingsColorPickerController: UIViewController {
 		self.selected = view
 		self.colorPicked(color)
 	}
+ 
 	
 }

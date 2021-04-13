@@ -74,9 +74,23 @@ extension Block {
 				return course.name
 			} else {
 				guard let previous = self.labAssociatedBlock else {
-					if let blockMeta = BlockMetaM.getBlockMeta(block: self.block.id), blockMeta.id == .free {
+                    if let blockMeta = BlockMetaM.getBlockMeta(block: self.block.id), blockMeta.id == .free{
 						return blockMeta.customName ?? self.block.id.displayName
 					}
+                    if let blockMeta = BlockMetaM.getBlockMeta(block: self.block.id), blockMeta.id == .block1{
+                        return blockMeta.customName ?? self.block.id.displayName
+                    }
+                    if let blockMeta = BlockMetaM.getBlockMeta(block: self.block.id), blockMeta.id == .block2{
+                        return blockMeta.customName ?? self.block.id.displayName
+                    }
+                    if let blockMeta = BlockMetaM.getBlockMeta(block: self.block.id), blockMeta.id == .block3{
+                        return blockMeta.customName ?? self.block.id.displayName
+                    }
+                    if let blockMeta = BlockMetaM.getBlockMeta(block: self.block.id), blockMeta.id == .block4{
+                        return blockMeta.customName ?? self.block.id.displayName
+                    }
+                    
+                    //Really lazy coding, but it didnt like the OR I tried so this is it
 					
 					return self.block.id.displayName
 				}

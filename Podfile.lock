@@ -4,6 +4,7 @@ PODS:
     - Unbox
     - UnboxedAlamofire
   - Alamofire (4.8.2)
+  - CULColorPicker (0.1.0)
   - Hero (1.4.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -29,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - AddictiveLib
+  - CULColorPicker
   - Hero
   - Moya
   - RealmSwift
@@ -42,8 +44,9 @@ DEPENDENCIES:
 SPEC REPOS:
   "https://cdh-dev@bitbucket.org/cdh-dev/specs.git":
     - AddictiveLib
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - CULColorPicker
     - Hero
     - Moya
     - Realm
@@ -61,6 +64,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AddictiveLib: 3ebfbb9e1244eb61196e59c52bd9d9ce92889b48
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CULColorPicker: 43417b036b75277029de0c489d94d6d3a7378ddc
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
@@ -75,6 +79,6 @@ SPEC CHECKSUMS:
   Unbox: 30e437e6151a6de16139375fd4e8dd9a664cfbf7
   UnboxedAlamofire: e803f471553e3aecec711f5d50f80cda6c65feaa
 
-PODFILE CHECKSUM: a1b09e4953cf23337831872ca3ada8588446e57b
+PODFILE CHECKSUM: 28b7ec2e6d214fad7c6cd32a96df8f77c6319590
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.3

@@ -204,6 +204,7 @@ extension Schedule {
 					
 					let json = try JSON(data: result.data)
 					let schedule = try Schedule(json: json)
+                    print("badge")
 					
 					signal.fire(.success(schedule))
 					
@@ -247,6 +248,7 @@ extension Schedule {
 					
 					let json = try JSON(data: result.data)
 					let schedule = try Schedule(json: json)
+                    print("date")
 					
 					signal.fire(.success(schedule))
 					

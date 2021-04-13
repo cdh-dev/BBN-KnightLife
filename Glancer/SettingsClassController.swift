@@ -10,9 +10,29 @@ import Foundation
 import UIKit
 import AddictiveLib
 
-class SettingsClassController: UIViewController, TableHandlerDataSource {
+class SettingsClassController: UIViewController, TableHandlerDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countryList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCountry = countryList[row]
+    }
+    
 	
 	var course: Course!
+    var selectedCountry: String?
+    var countryList = ["Algeria", "Andorra", "Angola", "India", "Thailand"]
 	
 	@IBOutlet weak var tableView: UITableView!
 	private var tableHandler: TableHandler!
@@ -82,9 +102,17 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 		scheduling.addDivider()
 		
 		scheduling.addCell(SettingsTextCell(left: "Block", right: self.course.scheduleBlock == nil ? "Not Set" : self.course.scheduleBlock!.displayName) {
-			self.showChangeBlock()
+            self.showChangeBlock()
 		})
 		
+        /*
+        scheduling.addDivider()
+        
+        scheduling.addCell(SettingsPickerCell(left: "Test", right: "Tesy") {
+            self.showChangeBlock()
+        })
+        */
+        
 		scheduling.addDivider()
 		
 		scheduling.addCell(SettingsTextCell(left: "Days", right: {
@@ -158,7 +186,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 		delete.addDivider()
 		delete.addSpacerCell().setBackgroundColor(.clear).setHeight(35)
 	}
-	
+
 	private func showChangeName() {
 		let alert = UIAlertController(title: "Class Name", message: nil, preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -183,7 +211,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 			textField.placeholder = "e.g. English"
 			textField.text = self.course.name
 			
-			NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: textField, queue: OperationQueue.main) { (notification) in
+			NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main) { (notification) in
 				saveAction.isEnabled = textField.text!.trimmingCharacters(in: .whitespaces).count > 0
 			}
 		})
@@ -221,6 +249,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 	}
 	
 	private func showChangeBlock() {
+        
 		let alert = UIAlertController(title: "Block", message: "During what block does this class meet?", preferredStyle: .actionSheet)
 		
 //		Array of tuples instead of dictionary so that it retains its order
@@ -249,6 +278,10 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 			(.f, UIAlertAction(title: "F Block", style: .default, handler: handler)),
 			(.g, UIAlertAction(title: "G Block", style: .default, handler: handler)),
 			(.x, UIAlertAction(title: "X Block", style: .default, handler: handler)),
+            //(.block1, UIAlertAction(title: "Block 1", style: .default, handler: handler)),
+            //(.block2, UIAlertAction(title: "Block 2", style: .default, handler: handler)),
+            //(.block3, UIAlertAction(title: "Block 3", style: .default, handler: handler)),
+            //(.block4, UIAlertAction(title: "Block 4", style: .default, handler: handler)),
 			(.activities, UIAlertAction(title: "Activities", style: .default, handler: handler))
 		]
 		
@@ -259,7 +292,8 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 			
 			alert.addAction(action)
 		}
-		
+        
+        //self.present(alert, animated: true, completion: nil)
 		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 		
 		self.present(alert, animated: true)
@@ -314,7 +348,7 @@ class SettingsClassController: UIViewController, TableHandlerDataSource {
 	private func showDelete() {
 		let alert = UIAlertController(title: "Remove Class", message: "This action cannot be undone.", preferredStyle: .actionSheet)
 		
-		alert.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.destructive) {
+		alert.addAction(UIAlertAction(title: "Remove", style: UIAlertAction.Style.destructive) {
 			action in
 			
 			CourseM.deleteCourse(course: self.course)
