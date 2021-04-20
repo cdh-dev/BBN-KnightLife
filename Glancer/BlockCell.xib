@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,16 +49,16 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kkm-UY-OD4" userLabel="Time Stack">
-                            <rect key="frame" x="225" y="17.5" width="130" height="19.5"/>
+                            <rect key="frame" x="224" y="17.5" width="131" height="19.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX:XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cY-jk-fvp">
-                                    <rect key="frame" x="0.0" y="0.0" width="48" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="48.5" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                     <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_right" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-5b-oQh">
-                                    <rect key="frame" x="56" y="0.5" width="18" height="18"/>
+                                    <rect key="frame" x="56.5" y="0.5" width="18" height="18"/>
                                     <color key="tintColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="RNh-YP-KMI"/>
@@ -66,7 +66,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX:XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0h-0P-7Wq">
-                                    <rect key="frame" x="82" y="0.0" width="48" height="19.5"/>
+                                    <rect key="frame" x="82.5" y="0.0" width="48.5" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                     <color key="textColor" white="0.70999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -110,6 +110,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="aAI-en-Pha"/>
             <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
             <constraints>
                 <constraint firstItem="pc8-4l-gGD" firstAttribute="bottom" secondItem="aAI-en-Pha" secondAttribute="bottom" id="Csl-z8-GHt"/>
@@ -121,7 +122,6 @@
                 <constraint firstItem="pc8-4l-gGD" firstAttribute="top" secondItem="kGJ-NF-agL" secondAttribute="bottom" id="y32-pN-MwG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="aAI-en-Pha"/>
             <connections>
                 <outlet property="attachmentStackBottomConstraint" destination="Jsd-Bc-fbp" id="lKm-Pz-rdo"/>
                 <outlet property="attachmentsStack" destination="3Da-J0-5aU" id="Owu-VX-KUO"/>
@@ -140,7 +140,7 @@
         <image name="icon_right" width="24" height="24"/>
         <image name="icon_tag" width="24" height="24"/>
         <namedColor name="assetWhiteSuperDarkGrey">
-            <color red="0.070000000000000007" green="0.070000000000000007" blue="0.070000000000000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

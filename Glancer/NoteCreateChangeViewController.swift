@@ -117,9 +117,14 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
         }
         
         // initialize text view UI - border width, radius and color
-        noteTextTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+//        noteTextTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColors
         noteTextTextView.layer.borderWidth = 1.0
         noteTextTextView.layer.cornerRadius = 5
+//        noteTextTextView.backgroundColor = Scheme.backgroundColor.color
+//        noteTextTextView.textColor = Scheme.darkLightGreyText.color
+//        noteDateLabel.textColor = Scheme.darkLightGreyText.color
+//        noteTitleTextField.backgroundColor = Scheme.backgroundColor.color
+//        noteTitleTextField.textColor = Scheme.darkLightGreyText.color
 
         // For back button in navigation bar, change text
         let backButton = UIBarButtonItem()

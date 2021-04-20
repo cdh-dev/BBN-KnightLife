@@ -25,8 +25,11 @@ class NoteTestViewController: UIViewController, UITextViewDelegate {
                let dateLabel = noteDate,
                let textView = noteTextTextView {
                 topicLabel.text = detail.noteTitle
+//                topicLabel.textColor = Scheme.darkLightGreyText.color
                 dateLabel.text = NoteDateHelper.convertDate(date: Date.init(seconds: detail.noteTimeStamp))
+//                dateLabel.textColor = Scheme.darkLightGreyText.color
                 textView.text = detail.noteText
+//                textView.textColor = Scheme.darkLightGreyText.color
             }
         }
     }
