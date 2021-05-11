@@ -10,6 +10,8 @@ import UIKit
 
 class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
     
+    var cheese: Course!
+    
     @IBOutlet weak var noteTitleTextField: UITextField!
     @IBOutlet weak var noteTextTextView: UITextView! {
        didSet {
@@ -18,6 +20,7 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
    }
     @IBOutlet weak var noteDoneButton: UIButton!
     @IBOutlet weak var noteDateLabel: UILabel!
+    @IBOutlet weak var noteBlockButton: UIButton!
     
     private let noteCreationTimeStamp : Int64 = Date().toSeconds()
     private(set) var changingNote : NoteData?
@@ -36,6 +39,30 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    
+    @IBAction func blockAlertView(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Block", message: "What block does this note pertain too?", preferredStyle: .actionSheet)
+        
+        //        Array of tuples instead of dictionary so that it retains its order
+        
+        
+        func myHandler(action: UIAlertAction){
+            print("this ran")
+            sender.setTitle(action.title, for: .normal)
+        }
+        
+        for course in CourseM.courses {
+            alert.addAction(UIAlertAction(title: course.name, style: .default, handler: myHandler))
+        }
+        //self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: myHandler))
+        
+        self.present(alert, animated: true)
+        
+    }
+    
+
     @IBAction func doneButtonClicked(_ sender: UIButton, forEvent event: UIEvent) {
         // distinguish change mode and create mode
         if self.changingNote != nil {
@@ -99,7 +126,7 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad()  {
         super.viewDidLoad()
-        
+        initializeHideKeyboard()
         // set text view delegate so that we can react on text change
         noteTextTextView.delegate = self
         
@@ -120,6 +147,7 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
 //        noteTextTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColors
         noteTextTextView.layer.borderWidth = 1.0
         noteTextTextView.layer.cornerRadius = 5
+        
 //        noteTextTextView.backgroundColor = Scheme.backgroundColor.color
 //        noteTextTextView.textColor = Scheme.darkLightGreyText.color
 //        noteDateLabel.textColor = Scheme.darkLightGreyText.color
@@ -140,9 +168,11 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
         return isAtLimit
     }
     
-    func textView(_ textView: UITextView,
-                  shouldChangeTextIn range: NSRange,
-                  replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        if(text == "\n") {
+//            textView.resignFirstResponder()
+//            return false
+//        }
         return self.textLimit(existingText: textView.text,
                               newText: text,
                               limit: 2048)
@@ -164,6 +194,23 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
     }
 
 }
+
+extension NoteCreateChangeViewController {
+    func initializeHideKeyboard(){
+    //Declare a Tap Gesture Recognizer which will trigger our dismissMyKeyboard() function
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+        target: self,
+        action: #selector(dismissMyKeyboard))
+        //Add this tap gesture recognizer to the parent view
+        view.addGestureRecognizer(tap)
+        }
+        @objc func dismissMyKeyboard(){
+        //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
+        //In short- Dismiss the active keyboard.
+        view.endEditing(true)
+        }
+}
+
 
 private var kAssociationKeyMaxLength: Int = 0
 

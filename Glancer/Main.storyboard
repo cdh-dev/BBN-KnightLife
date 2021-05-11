@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dMb-BZ-as2">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -2305,7 +2304,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5Y-46-TzD">
-                                <rect key="frame" x="16" y="85" width="382" height="34"/>
+                                <rect key="frame" x="16" y="85" width="182" height="34"/>
                                 <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -2325,7 +2324,7 @@
                                     <action selector="noteTitleChanged:forEvent:" destination="xhk-dv-g31" eventType="valueChanged" id="XdX-7t-1Ix"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkK-Sq-KSJ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="EkK-Sq-KSJ">
                                 <rect key="frame" x="16" y="152" width="382" height="640"/>
                                 <color key="backgroundColor" name="assetWhiteSuperDarkGrey"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -2354,9 +2353,17 @@
                                     <action selector="doneButtonClicked:forEvent:" destination="xhk-dv-g31" eventType="touchUpInside" id="yxs-yg-hCV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-23-FTV">
+                                <rect key="frame" x="218" y="89" width="180" height="30"/>
+                                <state key="normal" title="Block"/>
+                                <connections>
+                                    <action selector="blockAlertView:" destination="xhk-dv-g31" eventType="touchUpInside" id="54k-7F-9ER"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lOh-Fg-L4b"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6jP-Ah-oBT" firstAttribute="top" secondItem="lOh-Fg-L4b" secondAttribute="top" constant="16" id="1kI-cC-rJz"/>
                             <constraint firstItem="cW6-Re-ESq" firstAttribute="top" secondItem="t5Y-46-TzD" secondAttribute="bottom" constant="8" id="DAd-E8-AFZ"/>
@@ -2364,22 +2371,29 @@
                             <constraint firstItem="EkK-Sq-KSJ" firstAttribute="leading" secondItem="lOh-Fg-L4b" secondAttribute="leading" constant="16" id="Ptg-rj-YO0"/>
                             <constraint firstItem="bHm-3s-eBj" firstAttribute="leading" secondItem="lOh-Fg-L4b" secondAttribute="leading" constant="16" id="S8c-80-fOw"/>
                             <constraint firstItem="EkK-Sq-KSJ" firstAttribute="top" secondItem="cW6-Re-ESq" secondAttribute="bottom" constant="8" id="SUO-Bo-BO4"/>
+                            <constraint firstItem="XLi-23-FTV" firstAttribute="trailing" secondItem="cW6-Re-ESq" secondAttribute="trailing" id="SfT-Ne-QYa"/>
+                            <constraint firstItem="cW6-Re-ESq" firstAttribute="top" secondItem="XLi-23-FTV" secondAttribute="bottom" constant="8" symbolic="YES" id="WeG-Om-jlt"/>
                             <constraint firstItem="lOh-Fg-L4b" firstAttribute="trailing" secondItem="b21-0B-Qlw" secondAttribute="trailing" constant="16" id="hfr-rv-oGb"/>
                             <constraint firstItem="t5Y-46-TzD" firstAttribute="leading" secondItem="lOh-Fg-L4b" secondAttribute="leading" constant="16" id="iu6-o3-eWC"/>
                             <constraint firstItem="lOh-Fg-L4b" firstAttribute="bottom" secondItem="b21-0B-Qlw" secondAttribute="bottom" constant="20" id="j4e-5P-kuO"/>
                             <constraint firstItem="t5Y-46-TzD" firstAttribute="top" secondItem="bHm-3s-eBj" secondAttribute="bottom" constant="8" id="maN-PV-yRn"/>
                             <constraint firstItem="b21-0B-Qlw" firstAttribute="leading" secondItem="lOh-Fg-L4b" secondAttribute="leading" constant="16" id="nHX-EJ-jC4"/>
                             <constraint firstItem="6jP-Ah-oBT" firstAttribute="leading" secondItem="lOh-Fg-L4b" secondAttribute="leading" constant="150" id="oSM-RY-Rox"/>
-                            <constraint firstItem="lOh-Fg-L4b" firstAttribute="trailing" secondItem="t5Y-46-TzD" secondAttribute="trailing" constant="16" id="qrb-fR-8wA"/>
+                            <constraint firstItem="lOh-Fg-L4b" firstAttribute="trailing" secondItem="t5Y-46-TzD" secondAttribute="trailing" constant="216" id="qrb-fR-8wA"/>
                             <constraint firstItem="cW6-Re-ESq" firstAttribute="leading" secondItem="lOh-Fg-L4b" secondAttribute="leading" constant="16" id="qsc-xE-bg4"/>
                             <constraint firstItem="bHm-3s-eBj" firstAttribute="top" secondItem="lOh-Fg-L4b" secondAttribute="top" constant="16" id="sLM-83-5zi"/>
+                            <constraint firstItem="XLi-23-FTV" firstAttribute="leading" secondItem="t5Y-46-TzD" secondAttribute="trailing" constant="20" id="tN9-hV-tJ7"/>
                             <constraint firstItem="b21-0B-Qlw" firstAttribute="top" secondItem="EkK-Sq-KSJ" secondAttribute="bottom" constant="8" id="wAZ-mQ-So6"/>
                             <constraint firstItem="lOh-Fg-L4b" firstAttribute="trailing" secondItem="EkK-Sq-KSJ" secondAttribute="trailing" constant="16" id="wLb-FY-BzE"/>
                             <constraint firstItem="lOh-Fg-L4b" firstAttribute="trailing" secondItem="cW6-Re-ESq" secondAttribute="trailing" constant="16" id="wy9-bp-jPt"/>
                             <constraint firstItem="lOh-Fg-L4b" firstAttribute="trailing" secondItem="6jP-Ah-oBT" secondAttribute="trailing" constant="16" id="yZD-h3-uFp"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="htd-yp-KEr" appends="YES" id="H0p-6G-N4U"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="noteBlockButton" destination="XLi-23-FTV" id="do5-sH-HVc"/>
                         <outlet property="noteDateLabel" destination="6jP-Ah-oBT" id="tlw-pz-Tlm"/>
                         <outlet property="noteDoneButton" destination="b21-0B-Qlw" id="0av-a5-bJW"/>
                         <outlet property="noteTextTextView" destination="EkK-Sq-KSJ" id="0Mt-oV-kb5"/>
@@ -2388,6 +2402,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sh-ho-XJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="htd-yp-KEr"/>
             </objects>
             <point key="canvasLocation" x="511.59420289855075" y="1930.5803571428571"/>
         </scene>
