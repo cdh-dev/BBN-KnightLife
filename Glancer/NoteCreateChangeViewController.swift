@@ -42,7 +42,7 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func blockAlertView(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Block", message: "What block does this note pertain too?", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "No Block Set", message: "What block does this note pertain too?", preferredStyle: .actionSheet)
         
         //        Array of tuples instead of dictionary so that it retains its order
         
@@ -83,7 +83,8 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
         let note = NoteData(
             noteTitle:     noteTitleTextField.text!,
             noteText:      noteTextTextView.text,
-            noteTimeStamp: noteCreationTimeStamp)
+            noteTimeStamp: noteCreationTimeStamp,
+            noteBlock: noteBlockButton.currentTitle)
 
         NoteDataStorage.storage.addNote(noteToBeAdded: note)
         
@@ -101,7 +102,8 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
                     noteId:        changingNote.noteId,
                     noteTitle:     noteTitleTextField.text!,
                     noteText:      noteTextTextView.text,
-                    noteTimeStamp: noteCreationTimeStamp)
+                    noteTimeStamp: noteCreationTimeStamp,
+                    noteBlock: noteBlockButton.currentTitle)
             )
             // navigate back to list of notes
             performSegue(
@@ -136,6 +138,7 @@ class NoteCreateChangeViewController: UIViewController, UITextViewDelegate {
             noteDateLabel.text = NoteDateHelper.convertDate(date: Date.init(seconds: noteCreationTimeStamp))
             noteTextTextView.text = changingNote.noteText
             noteTitleTextField.text = changingNote.noteTitle
+            noteBlockButton.setTitle(changingNote.noteBlock, for: .normal)
             // enable done button by default
             noteDoneButton.isEnabled = true
         } else {

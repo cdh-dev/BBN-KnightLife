@@ -64,6 +64,7 @@ class NoteTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
+            // When you click on a note,takes you to the proper view
             if let indexPath = tableView.indexPathForSelectedRow {
                 //let object = objects[indexPath.row]
                 let object = NoteDataStorage.storage.readNote(at: indexPath.row)
@@ -88,11 +89,12 @@ class NoteTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UINoteTableViewCell
-
+        // Changes the table view to be the right note
         if let object = NoteDataStorage.storage.readNote(at: indexPath.row) {
         cell.noteTitleLabel!.text = object.noteTitle
         cell.noteTextLabel!.text = object.noteText
             cell.noteDateLabel!.text = NoteDateHelper.convertDate(date: Date.init(seconds: object.noteTimeStamp))
+            cell.noteBlockLabel!.text = object.noteBlock
         }
         return cell
     }

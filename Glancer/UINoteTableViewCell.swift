@@ -13,10 +13,12 @@ class UINoteTableViewCell : UITableViewCell {
     private(set) var noteTitle : String = ""
     private(set) var noteText  : String = ""
     private(set) var noteDate  : String = ""
+    private(set) var noteBlock : String = ""
  
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var noteDateLabel: UILabel!
     @IBOutlet weak var noteTextLabel: UILabel!
+    @IBOutlet weak var noteBlockLabel: UILabel!
     
     
 }

@@ -42,6 +42,10 @@ class NoteCoreDataHelper {
             noteToBeCreated.noteTimeStamp,
             forKey: "noteTimeStamp")
         
+        newNoteToBeCreated.setValue(
+            noteToBeCreated.noteBlock,
+            forKey: "noteBlock")
+        
         do {
             try intoManagedObjectContext.save()
             count += 1
@@ -78,6 +82,10 @@ class NoteCoreDataHelper {
             noteManagedObjectToBeChanged.setValue(
                 noteToBeChanged.noteTimeStamp,
                 forKey: "noteTimeStamp")
+            
+            noteManagedObjectToBeChanged.setValue(
+                noteToBeChanged.noteBlock,
+                forKey: "noteBlock")
 
             // save
             try inManagedObjectContext.save()
@@ -103,7 +111,9 @@ class NoteCoreDataHelper {
                     noteId:        noteManagedObjectRead.value(forKey: "noteId")        as! UUID,
                     noteTitle:     noteManagedObjectRead.value(forKey: "noteTitle")     as! String,
                     noteText:      noteManagedObjectRead.value(forKey: "noteText")      as! String,
-                    noteTimeStamp: noteManagedObjectRead.value(forKey: "noteTimeStamp") as! Int64))
+                    noteTimeStamp: noteManagedObjectRead.value(forKey: "noteTimeStamp") as! Int64,
+                    noteBlock:    noteManagedObjectRead.value(forKey: "noteBlock") as? String)
+                )
             }
         } catch let error as NSError {
             // TODO error handling
@@ -133,7 +143,9 @@ class NoteCoreDataHelper {
                 noteId:        noteManagedObjectToBeRead.value(forKey: "noteId")        as! UUID,
                 noteTitle:     noteManagedObjectToBeRead.value(forKey: "noteTitle")     as! String,
                 noteText:      noteManagedObjectToBeRead.value(forKey: "noteText")      as! String,
-                noteTimeStamp: noteManagedObjectToBeRead.value(forKey: "noteTimeStamp") as! Int64)
+                noteTimeStamp: noteManagedObjectToBeRead.value(forKey: "noteTimeStamp") as! Int64,
+                noteBlock:     noteManagedObjectToBeRead.value(forKey: "noteBlock") as? String
+            )
         } catch let error as NSError {
             // TODO error handling
             print("Could not read. \(error), \(error.userInfo)")

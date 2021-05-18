@@ -34,6 +34,11 @@ class NoteDataStorage {
         }
     }
     
+    func IwantToKnowStuff(noteToRead: NoteData?) {
+        print(noteToRead?.noteId as Any)
+        print(noteToRead?.noteText as Any)
+    }
+    
     func addNote(noteToBeAdded: NoteData) {
         if managedContextHasBeenSet {
             // add note UUID to the dictionary
@@ -89,6 +94,7 @@ class NoteDataStorage {
             noteReadFromCoreData = NoteCoreDataHelper.readNoteFromCoreData(
                 noteIdToBeRead:           noteUUID!,
                 fromManagedObjectContext: self.managedObjectContext)
+            IwantToKnowStuff(noteToRead: noteReadFromCoreData)
             return noteReadFromCoreData
         }
         return nil
