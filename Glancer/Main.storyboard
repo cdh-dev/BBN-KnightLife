@@ -2223,7 +2223,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wmA-Iu-l5v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wde-ry-qxH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isy-vH-Cwz">
@@ -2376,7 +2376,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLi-23-FTV">
                                 <rect key="frame" x="218" y="89" width="180" height="30"/>
-                                <state key="normal" title="Block"/>
+                                <state key="normal" title="No Block Set"/>
                                 <connections>
                                     <action selector="blockAlertView:" destination="xhk-dv-g31" eventType="touchUpInside" id="54k-7F-9ER"/>
                                 </connections>
@@ -2475,7 +2475,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="35P-z0-fo2"/>
+        <segue reference="tAn-l2-wNH"/>
         <segue reference="Kcv-xE-7tn"/>
     </inferredMetricsTieBreakers>
     <resources>

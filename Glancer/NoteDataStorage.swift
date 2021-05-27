@@ -34,9 +34,33 @@ class NoteDataStorage {
         }
     }
     
-    func IwantToKnowStuff(noteToRead: NoteData?) {
-        print(noteToRead?.noteId as Any)
-        print(noteToRead?.noteText as Any)
+    func IwantToKnowStuff() {
+
+        
+        print(noteIndexToIdDict)
+        
+        var tempDict = noteIndexToIdDict
+        var counter = 0
+        
+        for index in stride(from: noteIndexToIdDict.count - 1, to: -1, by: -1){
+            
+//            print(noteIndexToIdDict[index])
+            tempDict.updateValue(noteIndexToIdDict[counter]!, forKey: index)
+            counter += 1
+        }
+        
+        print(tempDict)
+        
+        noteIndexToIdDict = tempDict
+        
+//        noteIndexToIdDict = tempDict
+//        print("----------")
+//        for val in noteIndexToIdDict {
+//            print(val.value)
+//        }
+//        print("----------")
+//        let fun = noteIndexToIdDict.sorted(by: {$0.key < $1.key})
+//        print(fun)
     }
     
     func addNote(noteToBeAdded: NoteData) {
@@ -88,13 +112,12 @@ class NoteDataStorage {
                 // TODO error handling
                 return nil
             }
-            // get note UUID from the dictionary
             let noteUUID = noteIndexToIdDict[at]
             let noteReadFromCoreData: NoteData?
             noteReadFromCoreData = NoteCoreDataHelper.readNoteFromCoreData(
                 noteIdToBeRead:           noteUUID!,
                 fromManagedObjectContext: self.managedObjectContext)
-            IwantToKnowStuff(noteToRead: noteReadFromCoreData)
+            
             return noteReadFromCoreData
         }
         return nil

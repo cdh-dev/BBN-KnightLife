@@ -12,11 +12,15 @@ import AddictiveLib
 import SafariServices
 import Moya
 import SwiftyJSON
+import GameKit
 
 class SettingsController: UIViewController, TableHandlerDataSource {
 	
 	@IBOutlet weak var tableView: UITableView!
+//    class var shared: GKAccessPoint {get}
 	private(set) var tableHandler: TableHandler!
+    
+//    GKAccessPoint.shared.location = .topLeading
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

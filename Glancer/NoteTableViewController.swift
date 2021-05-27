@@ -15,6 +15,8 @@ class NoteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dragInteractionEnabled = true // Enable intra-app drags for iPhone.
+        
         // Core data initialization
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             // create alert
@@ -38,7 +40,7 @@ class NoteTableViewController: UITableViewController {
         
         // set context in the storage
         NoteDataStorage.storage.setManagedContext(managedObjectContext: managedContext)
-        
+        NoteDataStorage.storage.IwantToKnowStuff()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
 
@@ -88,6 +90,7 @@ class NoteTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UINoteTableViewCell
         // Changes the table view to be the right note
         if let object = NoteDataStorage.storage.readNote(at: indexPath.row) {
@@ -97,6 +100,22 @@ class NoteTableViewController: UITableViewController {
             cell.noteBlockLabel!.text = object.noteBlock
         }
         return cell
+    }
+    
+    
+    func updateTableContentInset() {
+        print("this ran")
+        let numRows = self.tableView.numberOfRows(inSection: 0)
+        var contentInsetTop = self.tableView.bounds.size.height
+        for i in 0..<numRows {
+            let rowRect = self.tableView.rectForRow(at: IndexPath(item: i, section: 0))
+            contentInsetTop -= rowRect.size.height
+            if contentInsetTop <= 0 {
+                contentInsetTop = 0
+                break
+            }
+        }
+        self.tableView.contentInset = UIEdgeInsets(top: contentInsetTop,left: 0,bottom: 0,right: 0)
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -14,6 +14,7 @@ import Moya
 import SwiftyJSON
 import RealmSwift
 import CoreData
+import GameKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -27,6 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		Globals.StorageID = "group.KnightLife.MAD.Storage"
 		
 		application.registerForRemoteNotifications()
+        
+        GKLocalPlayer.local.authenticateHandler = { viewController, error in
+            if let viewConroller = viewController {
+                return
+            }
+            if error != nil {
+                return
+            }
+            
+        }
 		
 		UNUserNotificationCenter.current().delegate = self
 		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {

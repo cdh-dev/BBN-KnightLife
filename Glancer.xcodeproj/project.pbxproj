@@ -19,6 +19,8 @@
 		2255AEE42616430E0077456F /* NoteDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255AEE32616430E0077456F /* NoteDataStorage.swift */; };
 		225BB49D24E84BE6006A1310 /* SettingsCoursePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225BB49C24E84BE6006A1310 /* SettingsCoursePickerCell.swift */; };
 		225BB49F24E84C07006A1310 /* SettingsCoursePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225BB49E24E84C07006A1310 /* SettingsCoursePickerCell.xib */; };
+		22F9099D265DCD9600B8957D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F9099C265DCD9600B8957D /* GameKit.framework */; };
+		22F9099E265DCDF600B8957D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F9099C265DCD9600B8957D /* GameKit.framework */; };
 		5BD072481C74AEB40074B56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD072471C74AEB40074B56D /* Main.storyboard */; };
 		5BD285DD1B03CF29007A0472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD285DC1B03CF29007A0472 /* AppDelegate.swift */; };
 		5BD285E41B03CF29007A0472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD285E31B03CF29007A0472 /* Images.xcassets */; };
@@ -264,6 +266,7 @@
 		2255AEE32616430E0077456F /* NoteDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataStorage.swift; sourceTree = "<group>"; };
 		225BB49C24E84BE6006A1310 /* SettingsCoursePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoursePickerCell.swift; sourceTree = "<group>"; };
 		225BB49E24E84C07006A1310 /* SettingsCoursePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCoursePickerCell.xib; sourceTree = "<group>"; };
+		22F9099C265DCD9600B8957D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B55DC2C1B27B21500D55EB9 /* Glancer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Glancer.entitlements; sourceTree = "<group>"; };
 		5BD072471C74AEB40074B56D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -437,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CFBEFE6144F6AA9605B073D /* Pods_Glancer.framework in Frameworks */,
+				22F9099E265DCDF600B8957D /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +448,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F9099D265DCD9600B8957D /* GameKit.framework in Frameworks */,
 				A600C00A614BDF7292AD1D30 /* Pods_TodayWidget.framework in Frameworks */,
 				C01A6C4B2118C892000B7442 /* NotificationCenter.framework in Frameworks */,
 			);
@@ -565,6 +570,7 @@
 		B0E83D8F4EDAB52132304F9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22F9099C265DCD9600B8957D /* GameKit.framework */,
 				C0B08EC42115108D00FD7289 /* NotificationCenter.framework */,
 				768D5C143BC6676A698CE0BD /* Pods_Glancer.framework */,
 				2CA411407FAA1EF6BCD02F68 /* Pods_TodayWidget.framework */,
@@ -2033,7 +2039,7 @@
 				CODE_SIGN_ENTITLEMENTS = Glancer/Glancer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 3.0;
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2071,7 +2077,7 @@
 				CODE_SIGN_ENTITLEMENTS = Glancer/Glancer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 3.0;
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2108,7 +2114,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 3.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2141,7 +2147,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0;
+				CURRENT_PROJECT_VERSION = 3.0;
 				DEVELOPMENT_TEAM = P57BN8GJ33;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TodayWidget/Info.plist;
